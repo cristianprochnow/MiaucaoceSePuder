@@ -17,7 +17,45 @@
                 <img id="headerImage" src="_images/logomarcaPequena.png">
             </a>
         </div>
-        <form method="POST" role="form" action="loginUserMessage.php">
+
+        <?php
+            if ($_POST) {
+                require_once("config.php");
+
+                try {
+                    $query = "INSERT INTO usuario SET usuario_nickname=:nickname, usuario_senha=:passwd, usuario_nome_completo=:completeName, usuario_email=:email, usuario_foto_perfil=:picture";
+
+                    $execute = $connection -> prepare($query);
+
+                    $userNickname = htmlspecialchars(trim(strip_tags($_POST["registerNickname"])));
+                    $userPasswd = htmlspecialchars(trim(strip_tags($_POST["registerPassword"])));
+                    $passwordHash = sha1(md5($userPasswd));
+                    // $userConfirmationPasswd = htmlspecialchars(trim(strip_tags($_POST['registerConfirmationPassword'])));
+                    $userName = htmlspecialchars(trim(strip_tags($_POST["registerUsername"])));
+                    $userEmail = htmlspecialchars(trim(strip_tags($_POST["registerEmail"])));
+                    // $userState = htmlspecialchars(trim(strip_tags($_POST["registerState"]));
+                    // $userCity = htmlspecialchars(trim(strip_tags($_POST["registerCity"]));
+                    $userPicture = htmlspecialchars($_POST["registerPicture"]);
+
+                    $execute -> bindParam(":nickname", $userNickname);
+                    $execute -> bindParam(":passwd", $passwordHash);
+                    $execute -> bindParam(":completeName", $userName);
+                    $execute -> bindParam(":email", $userEmail);
+                    $execute -> bindParam(":picture", $userPicture);
+
+                    if ($execute -> execute()) {
+                        echo "<p class='p-execute'> Registro salvo com sucesso! </p>";
+                        echo "<p class='link-login-from-register-page'><a href='login.php'> Fazer Login </a></p>";
+                    } else {
+                        echo "<p class='p-execute'> Não foi possível efetuar o registro. </p>";
+                    }
+                } catch (PDOException $error) {
+                    echo "Erro de conexão! " . $error -> getMessage();
+                }
+            }
+        ?>
+
+        <form method="POST" role="form" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>>
             <fieldset id="formLogin">
 
                 <p class="UserLogin">
@@ -30,10 +68,12 @@
                     <input class="userLogin" id="userPassword" name="registerPassword" type="password" aria-label="Senha" placeholder="Senha*" required="required">
                 </p>
 
+                <!--
                 <p class="UserLogin">
                     <label for="UserPasswordConfirmation">Confirmação de Senha*</label>
-                    <input class="userLogin" id="UserPasswordConfirmation" name="registerPassword" type="password" min="8" max="40" aria-label="Digite novamente sua senha" placeholder="Digite novamente sua senha*" required>
+                    <input class="userLogin" id="UserPasswordConfirmation" name="register   ConfirmationPassword" type="password" aria-label="Digite novamente sua senha" placeholder="Digite novamente sua senha*" required>
                 </p>
+                -->
 
                 <p class="UserLogin">
                     <label for="userName">Nome Completo*</label>
@@ -57,6 +97,7 @@
                 </p>
                 -->
 
+                <!--
                 <p class="UserLogin">
                     <label for="userEstado">Estado</label>
                     <input class="userLogin" id="userEstado" name="registerState" type="text" aria-label="Estado que você reside" placeholder="Estado que você reside" list="estados">
@@ -95,6 +136,7 @@
                     <label for="userCidade">Cidade</label>
                     <input class="userLogin" id="userCidade" name="registerCity" type="text" aria-label="Cidade que você reside" placeholder="Cidade que você reside">
                 </p>
+                -->
 
                 <p class="UserLogin">
                     <label for="userPicture">Foto de Perfil</label>

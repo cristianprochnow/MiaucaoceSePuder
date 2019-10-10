@@ -5,6 +5,7 @@ USE miaucaoce_se_puder;
 CREATE TABLE usuario
 (
 cod_usuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+usuario_nickname VARCHAR(50) NOT NULL,
 usuario_senha VARCHAR(20) NOT NULL,
 usuario_nome_completo VARCHAR(100) NOT NULL,
 usuario_email VARCHAR(100) NOT NULL,

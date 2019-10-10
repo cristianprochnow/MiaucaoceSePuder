@@ -44,7 +44,7 @@ img#headerImage {
     width: 100%;
     height: 60px;
     padding: 0 110px 0 110px;
-    margin-top: 10px;
+    margin: 10px 0 50px 0;
 }
 
 
@@ -71,6 +71,27 @@ p {
 p.UserLogin {
     margin-top: 20px;
     font-size: 20px;
+}
+
+.p-execute {
+    text-align: center; color: #d6d6d6;
+}
+
+.link-login-from-register-page {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* formatting the a, from the p */
+.link-login-from-register-page a {
+    text-decoration: none;
+    color: #c0c0c0;
+    font-family: 'Raleway', sans-serif;
+    transition: all 0.5s;
+}
+
+.link-login-from-register-page a:hover {
+    color: #0a2a5b;
 }
 
 input {
