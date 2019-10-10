@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+/* Formatação do corpo do site */
+
+body {
+    background-color: #ebebeb;
+    font-family: 'Raleway', sans-serif;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* Formatação do corpo de login */
+
+div.loginPage {
+    background-color: #606060;
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+    width: 300px;
+    height: 100%;
+    margin: 100px auto 0 auto;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+div.imageLogo {
+    display: block;
+    box-shadow: none;
+    margin: auto;
+}
+
+img#headerImage {
+    width: 100%;
+    height: 60px;
+    padding: 0 110px 0 110px;
+    margin-top: 10px;
+}
+
+
+/* Formatação do formulário de login/cadastro */
+
+fieldset {
+    position: relative;
+    top: 20px;
+    border-color: transparent;
+    text-align: center;
+    height: 100%;
+}
+
+label {
+    display: none;
+}
+
+p {
+    padding: 0;
+    margin: 0 0 20px 0;
+    color: #c0c0c0;
+}
+
+p.UserLogin {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+input {
+    width: 90%;
+    height: 50px;
+    background-color: #c0c0c0;
+    border: solid 1px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+}
+
+input.userLogin {
+    text-indent: 20px;
+    transition: background-color 0.5s;
+    border: transparent;
+}
+
+input.userLogin:hover {
+    background-color: #d6d6d6;
+}
+
+input.enterButton {
+    background-color: #113f90;
+    color: #c0c0c0;
+    border-color: transparent;
+    transition: background-color 0.5s;
+}
+
+input.enterButton:hover {
+    background-color: #0a2a5b;
+}
+
+input#userPicture {
+    width: 90%;
+    height: 100%;
+    font-size: 16px;
+}
+
+
+/* Formatação da mensagem para cadastro no "rodapé" */
+
+p.mensagemCadastro {
+    margin-top: 50px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+p.mensagemCadastro a {
+    text-decoration: none;
+    padding-top: 20px;
+    color: #c0c0c0;
+    transition: color 0.5s;
+    font-size: 14px;
+}
+
+p.mensagemCadastro a:hover {
+    color: #0e3475;
+}
+
+#rodapePicture {
+    width: 100%;
+    height: 5px;
+    margin: 15px 0 0 0;
+    background-image: linear-gradient(to right, #154da4, #05203e);
+}

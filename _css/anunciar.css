@@ -1,0 +1,363 @@
+@charset "UTF-8";
+
+/* Formatação do formulário para a página de anúncio */
+
+
+/* Formatação geral */
+
+form#formularioAnunciar {
+    display: block;
+    width: 899px;
+    margin: auto;
+    margin-top: 55px;
+    font-family: 'Raleway', sans-serif;
+}
+
+label {
+    display: none;
+}
+
+
+/* Formatação do fieldset de "contato" do formulário */
+
+fieldset.formContato {
+    display: block;
+    width: 899px;
+    height: 260px;
+    border: none;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+div.tituloForm {
+    display: block;
+    width: 899px;
+    height: 60px;
+    background-color: #606060;
+    color: #f7f6f6;
+    margin-top: -16px;
+}
+
+div.tituloForm:hover {
+    color: #c0c0c0;
+}
+
+div.tituloForm p {
+    text-indent: 15px;
+    font-size: 16px;
+    padding-top: 27px;
+    transition: color 0.5s;
+}
+
+p.itensFormAnunciar {
+    display: block;
+    width: 800px;
+    height: 40px;
+    margin: 15px auto 10px auto;
+}
+
+input.anunciarInput {
+    width: 800px;
+    height: 40px;
+    background-color: #d6d6d6;
+    border: transparent;
+    text-indent: 10px;
+    transition: background-color 0.5s;
+    border-radius: 2px;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+}
+
+input.anunciarInput:hover {
+    background-color: #c0c0c0;
+}
+
+
+/* Formatação do fieldset "localização" do formulário */
+
+fieldset.formLocalizacao {
+    display: block;
+    width: 899px;
+    height: 225px;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+div.tituloForm {
+    display: block;
+    width: 899px;
+    height: 60px;
+    background-color: #606060;
+    color: #f7f6f6;
+    margin-top: -16px;
+}
+
+div.tituloForm:hover {
+    color: #c0c0c0;
+}
+
+div.tituloForm p {
+    text-indent: 15px;
+    font-size: 16px;
+    padding-top: 27px;
+    transition: color 0.5s;
+}
+
+p.itensFormLocalizacao {
+    display: block;
+    width: 800px;
+    height: 40px;
+    margin: 15px auto 10px auto;
+}
+
+input.localizacaoInput {
+    width: 800px;
+    height: 40px;
+    background-color: #d6d6d6;
+    border: transparent;
+    text-indent: 10px;
+    transition: background-color 0.5s;
+    border-radius: 2px;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+}
+
+input.localizacaoInput:hover {
+    background-color: #c0c0c0;
+}
+
+
+/* Formatação do fieldset "Mascote" do formulário */
+
+fieldset.formAnimal {
+    display: block;
+    width: 899px;
+    height: 530px;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+div.tituloForm {
+    display: block;
+    width: 899px;
+    height: 60px;
+    background-color: #606060;
+    color: #f7f6f6;
+    margin-top: -16px;
+    font-family: 'Raleway', sans-serif;
+}
+
+div.tituloForm:hover {
+    color: #c0c0c0;
+}
+
+div.tituloForm p {
+    text-indent: 15px;
+    font-size: 16px;
+    padding-top: 27px;
+    transition: color 0.5s;
+}
+
+p.itensFormAnimal {
+    display: block;
+    width: 800px;
+    height: 40px;
+    margin: 15px auto 10px auto;
+}
+
+input.animalInput {
+    width: 800px;
+    height: 40px;
+    background-color: #d6d6d6;
+    border: transparent;
+    text-indent: 10px;
+    transition: background-color 0.5s;
+    border-radius: 2px;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+}
+
+input.animalInput:hover {
+    background-color: #c0c0c0;
+}
+
+p.itensSelectFormAnimal {
+    display: block;
+    width: 800px;
+    height: 40px;
+    margin: 15px auto 10px auto;
+}
+
+span.esquerda {
+    width: 390px;
+    height: 40px;
+    float: left;
+}
+
+span.direita {
+    width: 390px;
+    height: 40px;
+    float: right;
+}
+
+select.itensSelecionarInput {
+    width: 390px;
+    height: 40px;
+    text-indent: 8px;
+    border: transparent;
+    border-radius: 2px;
+    background-color: #d6d6d6;
+    transition: background-color 0.5s;
+    color: #606060;
+    font-family: 'Raleway', sans-serif;
+}
+
+select.itensSelecionarInput:hover {
+    background-color: #c0c0c0;
+}
+
+p.caixasTextoForm {
+    width: 800px;
+    height: 120px;
+    margin: 20px auto 0 auto;
+    color: #606060;
+}
+
+textarea.caixaTextoAnimal {
+    min-width: 370px;
+    max-width: 370px;
+    min-height: 100px;
+    max-height: 100px;
+    overflow: auto;
+    background-color: #d6d6d6;
+    border: transparent;
+    border-radius: 2px;
+    padding: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    transition: background-color 0.5s;
+}
+
+textarea.caixaTextoAnimal:hover {
+    background-color: #c0c0c0;
+}
+
+textarea#animalCaracteristicas {
+    width: 390px;
+    height: 120px;
+    float: left;
+}
+
+textarea#animalDescricao {
+    width: 390px;
+    height: 120px;
+    float: right;
+}
+
+
+/* Formatação da área de inserção de imagens */
+
+fieldset.formAnimalImages {
+    display: block;
+    width: 800px;
+    height: 185px;
+    margin: -35px auto 0 auto;
+    border: transparent;
+    padding: 0;
+}
+
+div.introFormImages {
+    display: block;
+    width: 800px;
+    height: 50px;
+    margin-top: -16px;
+}
+
+div.introFormImages p {
+    width: 800px;
+    height: 50px;
+    font-size: 16px;
+    color: #606060;
+    padding: 20px 15px 0 5px;
+    transition: color 0.5s;
+}
+
+div.introFormImages p:hover {
+    color: #444444;
+}
+
+p.itensFormImagens {
+    display: block;
+    margin-top: 20px;
+    width: 390px;
+    height: 110px;
+}
+
+input.imageInput {
+    display: block;
+    width: 335px;
+    height: 40px;
+    margin-bottom: 25px;
+    border-radius: 3px;
+    padding: 10px 15px 0 40px;
+    font-size: 14px;
+    color: #606060;
+    background-color: #d6d6d6;
+    transition: background-color 0.5s;
+    font-family: 'Raleway', sans-serif;
+}
+
+input.imageInput:hover {
+    background-color: #c0c0c0;
+}
+
+p#imagensEsquerda {
+    float: left;
+}
+
+p#imagensDireita {
+    float: right;
+}
+
+
+/* Formatação dos botões do rodapé do formulário */
+
+fieldset#rodapeFormBotoes {
+    width: 800px;
+    height: 50px;
+    margin: 0 auto 40px auto;
+    border: transparent;
+    padding: 0;
+}
+
+div.buttons {
+    width: 390px;
+    height: 50px;
+    float: right;
+}
+
+span.left {
+    float: left;
+}
+
+span.right {
+    float: right;
+}
+
+input.formButtons {
+    width: 185px;
+    height: 50px;
+    border: transparent;
+    background-color: #113f90;
+    color: #c0c0c0;
+    transition: all 0.5s;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+input.formButtons:hover {
+    background-color: #0a2a5b;
+    color: #d6d6d6;
+}

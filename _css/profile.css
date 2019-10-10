@@ -1,0 +1,213 @@
+@charset "UTF-8";
+
+/* Formatação do corpo total onde está todo o conteúdo */
+
+#listraTopoSite {
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-image: linear-gradient(to right, #154da4, #05203e);
+}
+
+div.corpoTotalProfile {
+    display: block;
+    width: 900px;
+    min-height: 100%;
+    margin: 55px auto 55px auto;
+}
+
+
+/* Formatação do cabeçalho do profile */
+
+div.cabecalhoProfile {
+    display: block;
+    width: 900px;
+    height: 100%;
+    margin: auto;
+}
+
+.fotoPerfilAnimal {
+    border-radius: 2px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+    background-image: linear-gradient(to right, #154da4, #05203e);
+}
+
+figure.fotoPerfilAnimal {
+    width: 45%;
+    height: 100%;
+    margin: 0 auto 30px auto;
+}
+
+figure.fotoPerfilAnimal img {
+    width: 100%;
+    height: 100%;
+}
+
+figcaption.nomeAnimal {
+    text-align: center;
+}
+
+figcaption.nomeAnimal h1 {
+    font-size: 20pt;
+    color: #aaaaaa;
+    font-weight: bolder;
+    padding: 0 0 20px 0;
+}
+
+
+/* Formatação Individual de cada bloco do corpo */
+
+div.itensPerfilAnimal {
+    display: block;
+    width: 900px;
+    height: 100%;
+    margin-top: 40px;
+}
+
+div.titulosItens {
+    display: block;
+    width: 900px;
+    height: 55px;
+    background-color: #7a7a7a;
+    color: #c0c0c0;
+    font-size: 13pt;
+    font-weight: bolder;
+}
+
+div.titulosItens p {
+    padding: 20px 0 0 10px;
+}
+
+.listras {
+    width: 900px;
+    height: 6px;
+    margin-top: 20px;
+    background-image: linear-gradient(to right, #154da4, #05203e);
+}
+
+
+/* Formatação do bloco de características gerais em tópicos */
+
+div#topicosDeCaracteristicas {
+    display: block;
+    width: 900px;
+    height: 145px;
+}
+
+div.topicos {
+    display: block;
+    margin-top: 10px;
+    width: 450px;
+    height: 130px;
+}
+
+div.topicos p {
+    line-height: 15px;
+    text-indent: 11px;
+    font-size: 10pt;
+    color: #444444;
+}
+
+div#topicosEsquerda {
+    float: left;
+}
+
+div#topicosDireita {
+    float: right;
+}
+
+
+/* Formatação do bloco da descrição de características dos animais e a descrição do anúncio */
+
+div.textoCaixas {
+    width: 900px;
+    height: 100%;
+}
+
+div.textoCaixas p {
+    color: #444444;
+    line-height: 13px;
+    font-size: 11pt;
+    text-align: justify;
+    padding: 10px;
+}
+
+
+/* Formatação do bloco de fotos dos animais */
+
+div#fotosAnimal {
+    display: block;
+    width: 900px;
+    height: 100%;
+}
+
+div#fotosAnimal ul {
+    display: block;
+    width: 900px;
+    height: 100%;
+    padding: 0;
+}
+
+div#fotosAnimal ul li {
+    display: inline-block;
+    list-style: none;
+    width: 15%;
+    height: 10%;
+    transition: all 0.5s ease-in;
+}
+
+div#fotosAnimal ul li:hover {
+    transform: scale(3.8);
+}
+
+div#fotosAnimal ul li img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Formatação do bloco de informações para contato */
+
+div#contatoTopicos {
+    display: block;
+    width: 900px;
+    height: 150px;
+}
+
+p#NomeCompletoAnunciante {
+    width: 100%;
+    height: 40px;
+    padding: 15px 0 0 10px;
+    font-size: 10pt;
+    color: #444444;
+}
+
+div.topicosEsquerda {
+    width: 450px;
+    height: 80px;
+    float: left;
+}
+
+div.topicosEsquerda p {
+    font-size: 10pt;
+    color: #444444;
+    line-height: 15px;
+    text-indent: 11px;
+    font-size: 10pt;
+}
+
+div.topicosDireita {
+    width: 450px;
+    height: 80px;
+    float: left;
+}
+
+div.topicosDireita p {
+    font-size: 10pt;
+    color: #444444;
+    line-height: 15px;
+    text-indent: 11px;
+    font-size: 10pt;
+}

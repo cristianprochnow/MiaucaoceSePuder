@@ -1,0 +1,13 @@
+{
+    "sqltools.connections": [
+        {
+            "askForPassword": false,
+            "database": "miaucaoce_se_puder",
+            "dialect": "MySQL",
+            "name": "MiauCaoCe_Se_Puder",
+            "port": 3306,
+            "server": "localhost",
+            "username": "root"
+        }
+    ]
+}

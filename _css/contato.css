@@ -1,0 +1,235 @@
+@charset "UTF-8";
+
+/* Formatação do corpo inteiro, onde está o formulário e as informações */
+
+div.conteudoTotal {
+    display: block;
+    width: 899px;
+    min-height: 550px;
+    margin: 50px auto 50px auto;
+    padding: 0;
+    margin-top: 50px;
+    font-family: 'Raleway', sans-serif;
+}
+
+label {
+    display: none;
+}
+
+
+/* Formatação do formulário, à esquerda */
+
+div.introForm {
+    width: 460px;
+    height: 40px;
+    margin: -16px auto 10px auto;
+}
+
+div.introForm p {
+    text-align: justify;
+    color: #606060;
+    transition: color 0.5s;
+    width: 460px;
+    height: 40px;
+    padding-top: 15px;
+    text-indent: 10px;
+}
+
+div.introForm p:hover {
+    color: #929292;
+}
+
+div.conteudoEsquerda {
+    display: block;
+    width: 460px;
+    min-height: 550px;
+    float: left;
+}
+
+p.itensFormContato {
+    width: 440px;
+    height: 40px;
+    margin: 15px auto 15px auto;
+    font-family: 'Raleway', sans-serif;
+}
+
+input.contatoInput:hover {
+    background-color: #aaaaaa;
+}
+
+input.contatoInput {
+    background-color: #d6d6d6;
+    border: transparent;
+    border-radius: 2px;
+    width: 440px;
+    height: 40px;
+    text-indent: 10px;
+    font-size: 12px;
+    transition: background-color 0.5s;
+    font-family: 'Raleway', sans-serif;
+}
+
+p.caixaTextoContato {
+    width: 440px;
+    height: 90px;
+    margin: 5px auto 5px auto;
+}
+
+textarea#mensagem {
+    min-width: 420px;
+    max-width: 420px;
+    min-height: 100px;
+    max-height: 100px;
+    overflow: auto;
+    border: transparent;
+    border-radius: 2px;
+    background-color: #d6d6d6;
+    transition: background-color 0.5s;
+    padding: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+}
+
+textarea#mensagem:hover {
+    background-color: #aaaaaa;
+}
+
+
+/* Formatação dos botões do formulário */
+
+div.botoesForm {
+    width: 440px;
+    height: 40px;
+    margin: 45px auto 0 auto;
+}
+
+input.botoesForm {
+    font-family: 'Raleway', sans-serif;
+    width: 214px;
+    height: 40px;
+    border: transparent;
+    border-radius: 3px;
+    color: #7a7a7a;
+    background-color: #d6d6d6;
+    transition: all 0.5s;
+}
+
+input.botoesForm:hover {
+    background-color: #113f90;
+    color: #d6d6d6;
+}
+
+span.botaoEsquerda {
+    float: left;
+}
+
+span.botaoDireita {
+    float: right;
+}
+
+
+/* Formatação do conteúdo informativo, à direita */
+
+div.conteudoDireita {
+    display: block;
+    width: 420px;
+    height: 550px;
+    float: right;
+}
+
+
+/* Formatação da informação de "Nossa Localização" */
+
+div.localizacao {
+    display: block;
+    width: 420px;
+    height: 175px;
+    margin: -12px auto 0 auto;
+}
+
+div.localizacao h1 {
+    display: block;
+    font-size: 18px;
+    background-color: #606060;
+    padding: 15px;
+    color: #d6d6d6;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4)
+}
+
+div.localizacao p {
+    display: block;
+    font-size: 14px;
+    padding: 15px 15px 10px 15px;
+    color: #444444;
+    text-align: justify;
+    line-height: 10px;
+    transition: color 0.5s;
+}
+
+div.localizacao p:hover {
+    color: #0e3475;
+}
+
+
+/* Formatação da informação de "Nosso E-mail" */
+
+div.email {
+    display: block;
+    width: 420px;
+    height: 175px;
+}
+
+div.email h1 {
+    display: block;
+    font-size: 18px;
+    background-color: #606060;
+    padding: 15px;
+    color: #d6d6d6;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4)
+}
+
+div.email p {
+    display: block;
+    font-size: 14px;
+    padding: 15px 15px 10px 15px;
+    color: #444444;
+    text-align: justify;
+    line-height: 10px;
+    transition: color 0.5s;
+}
+
+div.email p:hover {
+    color: #0e3475;
+}
+
+
+/* Formatação da informação de "Aviso" */
+
+div.aviso {
+    display: block;
+    width: 420px;
+    height: 176px;
+}
+
+div.aviso h1 {
+    display: block;
+    font-size: 18px;
+    background-color: #606060;
+    padding: 15px;
+    color: #d6d6d6;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4)
+}
+
+div.aviso p {
+    display: block;
+    font-size: 14px;
+    padding: 15px 15px 10px 15px;
+    color: #444444;
+    text-align: justify;
+    line-height: 20px;
+    transition: color 0.5s;
+}
+
+div.aviso p:hover {
+    color: #0e3475;
+}

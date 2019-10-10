@@ -1,0 +1,596 @@
+@charset "UTF-8";
+
+/* Formatação geral do corpo do site */
+
+html,
+body
+{
+    font-family: 'Raleway', sans-serif;
+    height: 100%;
+    background-color: #ebebeb;
+    margin: 0;
+}
+
+button
+{
+    background-color: transparent;
+    border-color: transparent;
+}
+
+div.interface
+{
+    min-height: 100%;
+    display: block;
+    width: 100%;
+}
+
+
+/* Formatação do cabeçalho */
+
+
+header#cabecalho
+{
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 120px;
+    background-color: #aaaaaa;
+    margin-bottom: 25px;
+    font-family: 'Raleway', sans-serif;
+}
+
+img#cabecalhoLogo
+{
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+div#userInteractingBox
+{
+    display: block;
+    width: 240px;
+    height: 50px;
+    float: right;
+    margin: 30px 0 0 0;
+}
+
+button.userAccountButton
+{
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+}
+
+button#userProfileLogoutButton
+{
+    width: 60px;
+    height: 100%;
+    float: right;
+}
+
+button#userProfileVisualizationButton
+{
+    width: 180px;
+    height: 100%;
+}
+
+a.accountLinks
+{
+    text-decoration: none;
+}
+
+a#profileViewLink
+{
+    color: #f7f6f6;
+    transition: all 0.5s;
+}
+
+a#profileViewLink:hover
+{
+    color: #0e3475;
+}
+
+a#logoutLink
+{
+    width: 100%;
+    height: 100%;
+}
+
+a#logoutLink img
+{
+    width: 100%;
+    height: 100%;
+}
+
+div#listraCabecalho
+{
+    width: 100%;
+    height: 8px;
+    overflow: hidden;
+    margin: 30px 0 0 0;
+    padding: 0;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.8);
+    background-image: linear-gradient(to right, #154da4, #05203e);
+}
+
+
+/* Formatação do menu principal no cabeçalho */
+
+nav.menuPrincipal
+{
+    display: block;
+    height: 55px;
+    width: 900px;
+    margin: 50px auto 0 auto;
+    padding: 0;
+    background-image: linear-gradient(to right, #154da4, #05203e);
+    font-family: 'Raleway', sans-serif;
+}
+
+ul.moduloTotalMenuHome
+{
+    margin: 0 auto 0 auto;
+    list-style: none;
+    text-align: center;
+    height: 55px;
+    width: 100%;
+    padding: 0;
+}
+
+li.menuHome
+{
+    border: none;
+    font-size: 10pt;
+    display: inline-block;
+    width: 24%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+a.menuLink
+{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: #f7f6f6;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0 0 0;
+    transition: all 0.5s;
+}
+
+a.menuLink:hover
+{
+    color: #aaaaaa;
+}
+
+
+/* Formatação do rodape do site */
+
+div.rodape
+{
+    display: block;
+    float: bottom;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: #7a7a7a;
+    box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.8);
+    height: 215px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.listrasRodape
+{
+    height: 8px;
+    width: 100%;
+    background-image: linear-gradient(to right, #154da4, #05203e);
+}
+
+div.copyright
+{
+    margin-top: 50px;
+    text-align: center;
+    background-color: #444444;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: 11pt;
+}
+
+div.logoEsquerdaRodape
+{
+    width: 130px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: -20px;
+}
+
+
+/* Formatação do menu no rodape */
+
+div.menuRodape
+{
+    position: relative;
+    bottom: 200px;
+    left: 170px;
+    width: 400px;
+    font-size: 10pt;
+    padding-top: 5px;
+    font-family: 'Raleway', sans-serif;
+}
+
+a.menuLinkRodape
+{
+    text-decoration: none;
+    color: #c0c0c0;
+    transition: color 0.5s;
+}
+
+p
+{
+    line-height: 10px;
+}
+
+a.menuLinkRodape:hover
+{
+    color: #0e3475;
+}
+
+
+/* Formatação do conteúdo principal do site */
+
+div.corpoHome
+{
+    width: 900px;
+    height: 400px;
+    margin: auto;
+    display: block;
+    font-family: 'Raleway', sans-serif;
+}
+
+div.imagemHome
+{
+    width: 900px;
+    height: 340px;
+}
+
+div.bordaImagemHome
+{
+    width: 900px;
+    height: 60px;
+    display: block;
+    background-color: #aaaaaa;
+    margin-top: -20px;
+}
+
+#listraImagemPrincipal
+{
+    width: 100%;
+    height: 8px;
+    margin: 15px 0 0 0;
+    background-image: linear-gradient(to right, #154da4, #05203e);
+}
+
+div.bordaImagemHome p
+{
+    padding: 25px 0 2px 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14pt;
+    text-indent: 15px;
+    color: #f7f6f6;
+}
+
+
+/* Formatação das quatro caixas no conteúdo principal do "home" */
+
+div.corpoInterface
+{
+    display: block;
+    width: 900px;
+    height: 100%;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 80px;
+}
+
+div.conjuntoBoxCima
+{
+    display: block;
+    width: 900px;
+    height: 400px;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+div.informationBox
+{
+    display: block;
+    width: 400px;
+    height: 400px;
+    background-color: #aaaaaa;
+    float: left;
+}
+
+div.adotarBox
+{
+    display: block;
+    width: 400px;
+    height: 400px;
+    background-color: #aaaaaa;
+    float: right;
+}
+
+div.conjuntoBoxBaixo
+{
+    display: block;
+    width: 900px;
+    height: 400px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+div.cadastroBox
+{
+    display: block;
+    width: 400px;
+    height: 400px;
+    background-color: #aaaaaa;
+    float: left;
+}
+
+div.contactBox
+{
+    display: block;
+    width: 400px;
+    height: 400px;
+    background-color: #aaaaaa;
+    float: right;
+}
+
+
+/* Formatação interior de cada uma das quatro caixas */
+
+
+/* Caixa "Anunciar" */
+
+figure.informationFigure
+{
+    text-align: center;
+    line-height: 20px;
+    padding-top: 15px;
+}
+
+figcaption.legendaInformationFigure h1
+{
+    padding-top: 5px;
+    color: #444444;
+}
+
+p.texto
+{
+    padding-top: 20px;
+    line-height: 20px;
+    color: #d6d6d6;
+    font-size: 14px;
+    transition: color 0.5s;
+}
+
+p.texto:hover
+{
+    color: #7a7a7a;
+}
+
+button.buttonInformationFigure
+{
+    background-color: #c0c0c0;
+    width: 150px;
+    height: 60px;
+    border-radius: 3px;
+    margin-top: 30px;
+    transition: background-color 0.5s;
+}
+
+button.buttonInformationFigure:hover
+{
+    background-color: #0e3475;
+}
+
+button.buttonInformationFigure a
+{
+    text-decoration: none;
+}
+
+button.buttonInformationFigure a p
+{
+    color: #f7f6f6;
+    font-size: 16px;
+    position: relative;
+    left: 1px;
+    bottom: 3px;
+    padding: 25px 30px 25px 30px;
+    margin: 0 -7px 0 -7px;
+}
+
+
+/* Caixa "Reencontrar animal" */
+
+figure.adotarFigure
+{
+    text-align: center;
+    line-height: 20px;
+    padding-top: 15px;
+}
+
+figcaption.legendaAdotarFigure h1
+{
+    padding-top: 5px;
+    color: #444444;
+}
+
+p.texto
+{
+    padding-top: 20px;
+    line-height: 20px;
+    color: #d6d6d6;
+    font-size: 14px;
+    transition: color 0.5s;
+}
+
+p.texto:hover
+{
+    color: #7a7a7a;
+}
+
+button.buttonAdotarFigure
+{
+    background-color: #c0c0c0;
+    width: 150px;
+    height: 60px;
+    border-radius: 3px;
+    margin-top: 70px;
+    transition: background-color 0.5s;
+}
+
+button.buttonAdotarFigure:hover
+{
+    background-color: #0e3475;
+}
+
+button.buttonAdotarFigure a
+{
+    text-decoration: none;
+}
+
+button.buttonAdotarFigure a p
+{
+    color: #f7f6f6;
+    font-size: 16px;
+    position: relative;
+    left: 1px;
+    bottom: 3px;
+    padding: 25px 30px 25px 30px;
+    margin: 0 -7px 0 -7px;
+}
+
+
+/* Caixa "Cadastro" */
+
+figure.cadastroFigure
+{
+    text-align: center;
+    line-height: 20px;
+    padding-top: 15px;
+}
+
+figcaption.legendaCadastroFigure h1
+{
+    padding-top: 5px;
+    color: #444444;
+}
+
+p.texto
+{
+    padding-top: 20px;
+    line-height: 20px;
+    color: #d6d6d6;
+    font-size: 14px;
+    transition: color 0.5s;
+}
+
+p.texto:hover
+{
+    color: #7a7a7a;
+}
+
+button.buttonCadastroFigure
+{
+    background-color: #c0c0c0;
+    width: 150px;
+    height: 60px;
+    border-radius: 3px;
+    margin-top: 50px;
+    transition: background-color 0.5s;
+}
+
+button.buttonCadastroFigure:hover
+{
+    background-color: #0e3475;
+}
+
+button.buttonCadastroFigure a
+{
+    text-decoration: none;
+}
+
+button.buttonCadastroFigure a p
+{
+    color: #f7f6f6;
+    font-size: 16px;
+    position: relative;
+    left: 1px;
+    bottom: 3px;
+    padding: 25px 30px 25px 30px;
+    margin: 0 -7px 0 -7px;
+}
+
+
+/* Caixa "Contato" */
+
+figure.contactFigure 
+{
+    text-align: center;
+    line-height: 20px;
+    padding-top: 15px;
+}
+
+figcaption.legendaContactFigure h1
+{
+    padding-top: 5px;
+    color: #444444;
+}
+
+p.texto
+{
+    padding-top: 20px;
+    line-height: 20px;
+    color: #d6d6d6;
+    font-size: 14px;
+    transition: color 0.5s;
+}
+
+p.texto:hover
+{
+    color: #7a7a7a;
+}
+
+button.buttonContactFigure
+{
+    background-color: #c0c0c0;
+    width: 150px;
+    height: 60px;
+    border-radius: 3px;
+    margin-top: 70px;
+    transition: background-color 0.5s;
+}
+
+button.buttonContactFigure:hover
+{
+    background-color: #0e3475;
+}
+
+button.buttonContactFigure a
+{
+    text-decoration: none;
+}
+
+button.buttonContactFigure a p
+{
+    color: #f7f6f6;
+    font-size: 16px;
+    position: relative;
+    left: 1px;
+    bottom: 3px;
+    padding: 25px 30px 25px 30px;
+    margin: 0 -7px 0 -7px;
+}

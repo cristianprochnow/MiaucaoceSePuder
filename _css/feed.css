@@ -1,0 +1,197 @@
+@charset "UTF-8";
+
+/* Formatação geral do conteúdo principal */
+
+div.conteudoAnuncios {
+    display: block;
+    width: 899px;
+    height: 900px;
+    margin: 50px auto 30px auto;
+}
+
+
+/* Formatação do conjunto de caixas, de cima, do conteúdo principal */
+
+div.caixaCima {
+    display: block;
+    width: 899px;
+    height: 260px;
+    margin-bottom: 30px;
+}
+
+
+/* Formatação do conjunto de caixas, do meio, do conteúdo principal */
+
+div.caixaMeio {
+    display: block;
+    width: 899px;
+    height: 260px;
+    margin-bottom: 30px;
+}
+
+
+/* Formatação do conjunto de caixas, de baixo, do conteúdo principal */
+
+div.caixaBaixo {
+    display: block;
+    width: 899px;
+    height: 260px;
+    margin-bottom: 30px;
+}
+
+
+/* Formatação das caixas menores individuais */
+
+div.box1 {
+    display: block;
+    width: 280px;
+    height: 190px;
+    float: left;
+}
+
+div.box1 figure {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0 -20px 0 0;
+}
+
+div.box1 figure img {
+    width: 100%;
+    height: 100%;
+}
+
+div.box1 p {
+    width: 280px;
+    height: 52px;
+    font-size: 14px;
+    margin-top: -4px;
+    background-color: #7a7a7a;
+    transition: background-color 0.5s;
+}
+
+div.box1 p:hover {
+    background-color: #113f90;
+}
+
+div.box1 a {
+    text-decoration: none;
+    color: #d6d6d6;
+    position: relative;
+    bottom: -20px;
+    left: 0;
+    padding: 18px 60px 18px 60px;
+}
+
+div.box2 {
+    display: block;
+    width: 280px;
+    height: 190px;
+    margin: auto;
+}
+
+div.box2 figure {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0 -20px 0 0;
+}
+
+div.box2 figure img {
+    width: 100%;
+    height: 100%;
+}
+
+div.box2 p {
+    width: 280px;
+    height: 52px;
+    font-size: 14px;
+    margin-top: -4px;
+    background-color: #7a7a7a;
+    transition: background-color 0.5s;
+}
+
+div.box2 p:hover {
+    background-color: #113f90;
+}
+
+div.box2 a {
+    text-decoration: none;
+    color: #d6d6d6;
+    position: relative;
+    bottom: -20px;
+    left: 0;
+    padding: 18px 60px 18px 60px;
+}
+
+div.box3 {
+    display: block;
+    width: 280px;
+    height: 190px;
+    float: right;
+    margin-top: -190px;
+}
+
+div.box3 figure {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0 -20px 0 0;
+}
+
+div.box3 figure img {
+    width: 100%;
+    height: 100%;
+}
+
+div.box3 p {
+    width: 280px;
+    height: 52px;
+    font-size: 14px;
+    margin-top: -4px;
+    background-color: #7a7a7a;
+    transition: background-color 0.5s;
+}
+
+div.box3 p:hover {
+    background-color: #113f90;
+}
+
+div.box3 a {
+    text-decoration: none;
+    color: #d6d6d6;
+    position: relative;
+    bottom: -20px;
+    left: 0;
+    padding: 18px 60px 18px 60px;
+}
+
+
+/* Formatação do botão "ver mais" */
+
+div.botaoVerMais {
+    display: block;
+    width: 900;
+    height: 40px;
+    margin-top: -10px;
+}
+
+div.botaoVerMais button {
+    display: block;
+    width: 140px;
+    height: 40px;
+    float: right;
+    background-color: #444444;
+    padding: 0;
+    transition: background-color 0.5s;
+}
+
+div.botaoVerMais button:hover {
+    background-color: #7a7a7a;
+}
+
+div.botaoVerMais a {
+    text-decoration: none;
+    color: #d6d6d6;
+    padding: 12px 42px 12px 42px;
+}
