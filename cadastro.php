@@ -12,77 +12,73 @@
 
 <body>
     <div class="loginPage">
-        <div class="imageLogo">
-            <a href="index.php">
-                <img id="headerImage" src="_images/logomarcaPequena.png">
-            </a>
-        </div>
 
-        <?php
-            if ($_POST) {
-                require_once("config.php");
+    <?php
+        if ($_POST) {
+            // exige o arquivo de configuração incial do database
+            require_once("config.php");
 
-                try {
-                    $query = "INSERT INTO usuario SET usuario_nickname=:nickname, usuario_senha=:passwd, usuario_nome_completo=:completeName, usuario_email=:email, usuario_foto_perfil=:picture";
+            try {
+                // texto que passa os parâmetros de cada insert no database
+                $query = "INSERT INTO usuario SET usuario_nickname=:nickname, usuario_senha=:passwd, usuario_nome_completo=:completeName, usuario_email=:email, usuario_foto_perfil=:picture";
 
-                    $execute = $connection -> prepare($query);
+                // prepara a conexão para realizar o insert  
+                $execute = $connection -> prepare($query);
 
-                    $userNickname = htmlspecialchars(trim(strip_tags($_POST["registerNickname"])));
-                    $userPasswd = htmlspecialchars(trim(strip_tags($_POST["registerPassword"])));
-                    $passwordHash = sha1(md5($userPasswd));
-                    // $userConfirmationPasswd = htmlspecialchars(trim(strip_tags($_POST['registerConfirmationPassword'])));
-                    $userName = htmlspecialchars(trim(strip_tags($_POST["registerUsername"])));
-                    $userEmail = htmlspecialchars(trim(strip_tags($_POST["registerEmail"])));
-                    // $userState = htmlspecialchars(trim(strip_tags($_POST["registerState"]));
-                    // $userCity = htmlspecialchars(trim(strip_tags($_POST["registerCity"]));
-                    $userPicture = htmlspecialchars($_POST["registerPicture"]);
+                // pega os dados do form, fazendo a higienização
+                $userNickname = htmlspecialchars(trim(strip_tags($_POST["registerNickname"])));
+                $userPasswd = htmlspecialchars(trim(strip_tags($_POST["registerPassword"])));
+                $passwordHash = sha1(md5($userPasswd));
+                $userName = htmlspecialchars(trim(strip_tags($_POST["registerUsername"])));
+                $userEmail = htmlspecialchars(trim(strip_tags($_POST["registerEmail"])));
+                // $userState = htmlspecialchars(trim(strip_tags($_POST["registerState"]));
+                // $userCity = htmlspecialchars(trim(strip_tags($_POST["registerCity"]));
+                $userPicture = htmlspecialchars($_POST["registerPicture"]);
 
-                    $execute -> bindParam(":nickname", $userNickname);
-                    $execute -> bindParam(":passwd", $passwordHash);
-                    $execute -> bindParam(":completeName", $userName);
-                    $execute -> bindParam(":email", $userEmail);
-                    $execute -> bindParam(":picture", $userPicture);
+                // define os parâmetros com os respectivos dados
+                $execute -> bindParam(":nickname", $userNickname);
+                $execute -> bindParam(":passwd", $passwordHash);
+                $execute -> bindParam(":completeName", $userName);
+                $execute -> bindParam(":email", $userEmail);
+                $execute -> bindParam(":picture", $userPicture);
 
-                    if ($execute -> execute()) {
-                        echo "<p class='p-execute'> Registro salvo com sucesso! </p>";
-                        echo "<p class='link-login-from-register-page'><a href='login.php'> Fazer Login </a></p>";
-                    } else {
-                        echo "<p class='p-execute'> Não foi possível efetuar o registro. </p>";
-                    }
-                } catch (PDOException $error) {
-                    echo "Erro de conexão! " . $error -> getMessage();
+                if ($execute -> execute()) /* realiza a conexão */ {
+                    echo "<p class='p-execute'> Registro salvo com sucesso! </p>";
+                    echo "<div class='link-login-from-register-page'><a href='login.php'>Fazer Login</a></div>";
+                } else {
+                    echo "<p class='p-execute'> Não foi possível efetuar o registro. </p>";
                 }
+            } catch (PDOException $error) {
+                echo "Erro de conexão! " . $error -> getMessage();
             }
-        ?>
+        }
+    ?>
+
+        <div class="imageLogo">
+                <img id="headerImage" src="_images/logomarcaPequena.png">
+        </div>
 
         <form method="POST" role="form" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>>
             <fieldset id="formLogin">
 
                 <p class="UserLogin">
                     <label for="userLogin">Usuário*</label>
-                    <input class="userLogin" id="userLogin" name="registerNickname" type="text" aria-label="Usuário" placeholder="Usuário*" required="required">
+                    <input class="userLogin" id="userLogin" name="registerNickname" maxlength="50" type="text" aria-label="Usuário" placeholder="Usuário*" required>
                 </p>
 
                 <p class="UserLogin">
                     <label for="userPassword">Senha*</label>
-                    <input class="userLogin" id="userPassword" name="registerPassword" type="password" aria-label="Senha" placeholder="Senha*" required="required">
+                    <input class="userLogin" id="userPassword" name="registerPassword" maxlength="20" type="password" aria-label="Senha" placeholder="Senha*" required>
                 </p>
-
-                <!--
-                <p class="UserLogin">
-                    <label for="UserPasswordConfirmation">Confirmação de Senha*</label>
-                    <input class="userLogin" id="UserPasswordConfirmation" name="register   ConfirmationPassword" type="password" aria-label="Digite novamente sua senha" placeholder="Digite novamente sua senha*" required>
-                </p>
-                -->
 
                 <p class="UserLogin">
                     <label for="userName">Nome Completo*</label>
-                    <input class="userLogin" id="userName" name="registerUsername" type="text" aria-label="Nome Completo" placeholder="Nome Completo*" required>
+                    <input class="userLogin" id="userName" name="registerUsername" maxlength="100" type="text" aria-label="Nome Completo" placeholder="Nome Completo*" required>
                 </p>
 
                 <p class="UserLogin">
                     <label for="userEmail">E-mail para contato*</label>
-                    <input class="userLogin" id="userEmail" name="registerEmail" type="email" aria-label="E-mail" placeholder="E-mail*" required>
+                    <input class="userLogin" id="userEmail" name="registerEmail" maxlength="100" type="email" aria-label="E-mail" placeholder="E-mail*" required>
                 </p>
 
                 <!--

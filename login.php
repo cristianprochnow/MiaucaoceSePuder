@@ -17,7 +17,14 @@
                 <img id="headerImage" src="_images/logomarcaPequena.png">
             </a>
         </div>
-        <form method="POST" role="form" action="index.php">
+
+        <?php
+            if ($_POST) {
+                
+            }
+        ?>
+
+        <form method="POST" role="form" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>>
             <fieldset id="formLogin">
                 <p class="UserLogin"><label for="userLogin">Usuário</label>
                     <input class="userLogin" id="userLogin" type="text" aria-label="Usuário" placeholder="Usuário" required="required">
@@ -27,7 +34,7 @@
                     <input class="userLogin" id="userPassword" type="password" aria-label="Senha" placeholder="Senha" required="required">
                 </p>
 
-                <input type="submit" value="Entrar" class="enterButton">
+                <input type="submit" value="Login" name="login" class="enterButton">
                 <p class="mensagemCadastro">Não possui uma conta no nosso site?
                     <br>
                     <a href="cadastro.php">Cadastre-se agora</a>
