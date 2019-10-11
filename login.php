@@ -1,3 +1,15 @@
+<?php
+    session_start();
+
+    require_once("config.php");
+    require_once("functions.php");
+
+    if (isset($_POST["login"])) {
+        $userName = isset($_POST["loginNickname"]) ? getDataFromForm($_POST["loginNickname"]) : "";
+        $userPassword = isset($_POST["loginPass"]) ? getDataFromForm($_POST["loginPass"]) : "";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -18,20 +30,14 @@
             </a>
         </div>
 
-        <?php
-            if ($_POST) {
-                
-            }
-        ?>
-
         <form method="POST" role="form" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>>
             <fieldset id="formLogin">
                 <p class="UserLogin"><label for="userLogin">Usuário</label>
-                    <input class="userLogin" id="userLogin" type="text" aria-label="Usuário" placeholder="Usuário" required="required">
+                    <input class="userLogin" id="userLogin" name="loginNickname" type="text" aria-label="Usuário" placeholder="Usuário" required>
                 </p>
 
                 <p><label for="userPassword">Senha</label>
-                    <input class="userLogin" id="userPassword" type="password" aria-label="Senha" placeholder="Senha" required="required">
+                    <input class="userLogin" id="userPassword" name="loginPass" type="password" aria-label="Senha" placeholder="Senha" required="required">
                 </p>
 
                 <input type="submit" value="Login" name="login" class="enterButton">
