@@ -1,3 +1,12 @@
+<?php
+    // inicia a sessão
+    session_start();
+
+    require_once("config.php");
+    require_once("functions.php");
+    require_once("check.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -17,9 +26,7 @@
             <img id="cabecalhoLogo" src="_images/logomarcaMedia.png">
 
             <div id="userInteractingBox">
-                <button class="userAccountButton" id="userProfileVisualizationButton">
-                    <a href="profile.php" id="profileViewLink" class="accountLinks">Visualizar Perfil</a>
-                </button>
+                <p id="profileViewLink" class="accountLinks"><?php echo $_SESSION["nomeCompletoUsuario"] ?></p>
 
                 <button class="userAccountButton" id="userProfileLogoutButton" onmouseout="changeLogoutIcon('_images/white-logout-icon.png')" onmouseover="changeLogoutIcon('_images/blue-logout-icon.png')">
                     <a href="logout.php" id="logoutLink" class="accountLinks"><img id="logout-icon" src="_images/white-logout-icon.png"></a>
