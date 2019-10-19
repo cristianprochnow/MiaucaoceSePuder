@@ -1,11 +1,12 @@
 <?php
+/*
     require_once("config.php");
     require_once("functions.php");
 
     session_start();
 
     try {
-        if (isset($_POST["login"])) /* Verificando se foi feito o envio do form */ {
+        if (isset($_POST["login"])) {
             $userName = isset($_POST["loginNickname"]) ? getDataFromForm($_POST["loginNickname"]) : "";
             $userPassword = isset($_POST["loginPass"]) ? getDataFromForm($_POST["loginPass"]) : "";    
             
@@ -28,8 +29,8 @@
                 echo "<div class='alert-box'>Usuário ou senha incorretos.</div>";
             } else {
                 $_SESSION["isLogged"] = true;
-                $_SESSION["codUsuario"] = $users["cod_usuario"];
-                $_SESSION["nomeCompletoUsuario"] = $users["usuario_nome_completo"];
+                $_SESSION["cod_usuario"] = $users["cod_usuario"];
+                $_SESSION["usuario_nome_completo"] = $users["usuario_nome_completo"];
 
                 header("Location: index.php");
             }
@@ -37,6 +38,7 @@
     } catch (PDOException $error) {
         echo "Conexão falhou! " . $error -> getMessage();
     }
+*/
 ?>
 
 <!DOCTYPE html>
@@ -76,9 +78,7 @@
                 </p>
             </fieldset>
         </form>
-        <div id="rodapePicture">
-            <!--<img id="rodapePicture" src="_images/faixaFinaAzulPequena.png">-->
-        </div>
+        <div id="rodapePicture"></div>
     </div>
 </body>
 

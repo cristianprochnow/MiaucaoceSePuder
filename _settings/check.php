@@ -1,11 +1,5 @@
 <?php
-    function makeHash($password) {
-        return sha1(md5($password));
-    }
-
-    function getDataFromForm($data) {
-        return htmlspecialchars(trim(strip_tags($data)));
-    }
+    require_once("config.php");
 
     function isLoggedIn() {
         if (!isset($_SESSION["isLogged"]) || isset($_SESSION["isLogged"]) !== true ) {
@@ -13,5 +7,9 @@
         }
 
         return true;
+    }
+
+    if (!isLoggedIn()) {
+        header("Location: ../login.php");
     }
 ?>

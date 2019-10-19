@@ -49,7 +49,7 @@ img#cabecalhoLogo
 div#userInteractingBox
 {
     display: block;
-    width: 240px;
+    width: 300px;
     height: 50px;
     float: right;
     margin: 30px 0 0 0;
@@ -68,19 +68,14 @@ button#userProfileLogoutButton
     float: right;
 }
 
-button#userProfileVisualizationButton
-{
-    width: 180px;
-    height: 100%;
-}
-
 a.accountLinks
 {
     text-decoration: none;
+    padding: 5px;
 }
 
-#profileViewLink
-{
+#profileViewLink {
+    line-height: 50px;
     color: #f7f6f6;
     transition: all 0.5s;
 }

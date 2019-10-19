@@ -17,6 +17,7 @@
             </div>
 
             <?php
+            /*
                 if (isset($_POST["register"])) {
                     // exige o arquivo de configuração incial do database
                     require_once("config.php");
@@ -46,14 +47,14 @@
                     } elseif (strlen(trim($_POST["registerPassword"])) > 20) {
                         echo "<div class='alert-box'>A senha pode ter no máximo 20 caracteres.</div>";
                     } elseif (trim($_POST["registerPassword"]) != trim($_POST["registerPasswordConfirmation"])) {
-                        echo "<div class='alert-box'>Senhas inseridas não são iguais.</div>";
+                        echo "<div class='alert-box'>Senhas inseridas são diferentes.</div>";
                     } elseif (strlen(trim($_POST["registerUsername"])) > 100) {
                         echo "<div class='alert-box'>Nome de Usuário deve conter no máximo 100 caracteres.</div>";
                     } elseif (strlen(trim($_POST["registerEmail"])) > 100) {
                         echo "<div class='alert-box'>E-mail deve conter no máximo 100 caracteres.</div>";
-                    } elseif ($userAmount["qtd_usuario"] > 0) /** verificação de número de usuários com o mesmo nickname */ {
+                    } elseif ($userAmount["qtd_usuario"] > 0) {
                         echo "<div class='alert-box'>Este nome de usuário já existe.</div>";
-                    } else {        
+                    } else {
                         try {
                             // texto que passa os parâmetros de cada insert no database
                             $query = "INSERT INTO usuario SET usuario_nickname=:nickname, usuario_senha=:passwd, usuario_nome_completo=:completeName, usuario_email=:email, usuario_foto_perfil=:picture";
@@ -76,7 +77,7 @@
                             $execute -> bindParam(":email", $userEmail);
                             $execute -> bindParam(":picture", $userPicture);
         
-                            if ($execute -> execute()) /* realiza a conexão */ {
+                            if ($execute -> execute()) {
                                 echo "<div class='alert-box'>Registro salvo com sucesso!</div>";
                                 echo "<div class='link-login-from-register-page'><a href='login.php'>Fazer Login</a></div>";
                             } else {
@@ -87,6 +88,7 @@
                         }
                     }
                 }
+            */
             ?>
 
             <form method="POST" role="form" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>>
