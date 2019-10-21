@@ -28,13 +28,9 @@
             <img id="cabecalhoLogo" src="_images/logomarcaMedia.png">
 
             <div id="userInteractingBox">
-                <!--
-                <?php // if (isLoggedIn()): ?>
-                    <a id="profileViewLink" class="accountLinks">Olá, <?php // echo $_SESSION["usuario_nome_completo"] ?></a>
-                <?php // else: ?>
-                    <p id="profileViewLink" class="accountLinks">Olá, visitante!</p>
-                <?php // endif; ?>
-                -->
+                <button class="userAccountButton" id="userProfileVisualizationButton">
+                    <a href="profile.php" id="profileViewLink" class="accountLinks">Visualizar Perfil</a>
+                </button>
 
                 <button class="userAccountButton" id="userProfileLogoutButton" onmouseout="changeLogoutIcon('_images/white-logout-icon.png')" onmouseover="changeLogoutIcon('_images/blue-logout-icon.png')">
                     <a href="logout.php" id="logoutLink" class="accountLinks"><img id="logout-icon" src="_images/white-logout-icon.png"></a>
