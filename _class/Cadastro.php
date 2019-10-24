@@ -1,15 +1,15 @@
 <?php
     class Cadastro extends Autenticacao {
-        public function higienizarDados($dadosDoFormulário) {
-            if (isset($dadosDoFormulário)) {
-                return trim(strip_tags(htmlspecialchars($dadosDoFormulário)));
+        public function higienizarDados($dadoDoFormulario) {
+            if (isset($dadoDoFormulario)) {
+                return trim(strip_tags(htmlspecialchars($dadoDoFormulario)));
             } else {
                 return "";
             }
         }
 
-        public function contarCaracteresDaStringInserida($dadosDoFormulário) {
-            return strlen(trim($dadosDoFormulário));
+        public function contarCaracteresDaStringInserida($dadoDoFormulario) {
+            return strlen(trim($dadoDoFormulario));
         }
     }
 ?>

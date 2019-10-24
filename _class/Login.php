@@ -1,8 +1,8 @@
 <?php
     class Login extends Autenticacao {
-        public function higienizarDados($dadosDoFormulário) {
-            if (isset($dadosDoFormulário)) {
-                return trim(strip_tags(htmlspecialchars($dadosDoFormulário)));
+        public function higienizarDados($dadoDoFormulario) {
+            if (isset($dadoDoFormulario)) {
+                return trim(strip_tags(htmlspecialchars($dadoDoFormulario)));
             } else {
                 return "";
             }

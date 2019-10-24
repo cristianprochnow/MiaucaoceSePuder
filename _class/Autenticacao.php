@@ -2,13 +2,13 @@
     abstract class Autenticacao {
         protected $senha;
         protected $mensagemDeAlerta;
-        protected $dadosDoFormulário;
+        protected $dadoDoFormulário;
 
         public function criptografarSenha($senha) {
             return sha1(md5($senha));
         }
 
-        public function alertaUsuário($mensagemDeAlerta) {
+        public function alertaUsuario($mensagemDeAlerta) {
             return "<div class='alert-box'> $mensagemDeAlerta </div>";
         }
     }
