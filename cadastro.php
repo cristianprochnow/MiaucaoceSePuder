@@ -17,78 +17,69 @@
             </div>
 
             <?php
-            /*
-                if (isset($_POST["register"])) {
-                    // exige o arquivo de configuração incial do database
-                    require_once("config.php");
-                    require_once("functions.php");
+                require_once('_settings/config.php');
+                require_once('_class/Autenticacao.php');
+                require_once('_class/Cadastro.php');
+                require_once('_class/Alertas.php');
 
-                    // pega os dados inseridos no input de "usuário"
-                    $userNicknameVerification = isset($_POST["registerNickname"]) ? getDataFromForm($_POST["registerNickname"]) : "";
+                try {
+                    if (isset($_POST['register'])) {
+                        $register = new Cadastro();
+                        $alert = new Alertas();
 
-                    // query que seleciona o número de usuarios com aquele nome de usuário
-                    $queryVerification = "SELECT COUNT(usuario_nickname) as qtd_usuario FROM usuario WHERE usuario_nickname=:usuario_nickname";
+                        $queryOfVerification = 'SELECT COUNT(usuario_nickname) AS qtd_usuario FROM usuario WHERE usuario_nickname =:nickname';
+                        $verificationExecute = $connection -> prepare($queryOfVerification);
 
-                    // prepara a query
-                    $verification = $connection -> prepare($queryVerification);
+                        $registerNicknameVerification = $register -> higienizarDados($_POST['registerNickname']);
 
-                    // instancia os valores
-                    $verification -> bindParam(":usuario_nickname", $userNicknameVerification);
+                        $verificationExecute -> bindParam(':nickname', $registerNicknameVerification);
 
-                    // executa a query
-                    $verification -> execute();
+                        $verificationExecute -> execute();
+                        $resultOfVerification = $verificationExecute -> fetch(PDO::FETCH_ASSOC);
 
-                    // puxa todos os usuarios correspondentes
-                    $userAmount = $verification -> fetch(PDO::FETCH_ASSOC);
+                        if (empty($_POST['registerNickname']) || empty($_POST['registerPassword']) || empty($_POST['registerUsername']) || empty($_POST['registerEmail'])) {
+                            print $alert -> errorMessage('Campos com * são de preenchimento obrigatório.');
+                        } elseif ($resultOfVerification['qtd_usuario'] > 0) { 
+                            print $alert -> errorMessage('Este nome de usuário já existe. Por favor, selecione outro.');
+                        }elseif ($register -> contarCaracteresDaStringInserida($_POST['registerNickname']) > 50) {
+                            print $alert -> errorMessage('Número inválido de caracteres. O campo Usuário pode conter no máximo 50 caracteres.');
+                        } elseif ($register -> contarCaracteresDaStringInserida($_POST['registerPassword']) > 20) {
+                            print $alert -> errorMessage('Número inválido de caracteres. O campo Senha pode conter no máximo 20 caracteres.');
+                        } elseif ($register -> higienizarDados($_POST['registerPassword']) != $register -> higienizarDados($_POST['registerPasswordConfirmation'])) {
+                            print $alert -> errorMessage('As senhas que foram inseridas são diferentes. Insira as mesmas senhas nos campos Senha e Confirme sua Senha');
+                        } elseif ($register -> contarCaracteresDaStringInserida($_POST['registerUsername']) > 100) {
+                            print $alert -> errorMessage('Número inválido de caracteres. O campo Nome Completo pode conter no máximo 100 caracteres.');
+                        } elseif ($register -> contarCaracteresDaStringInserida($_POST['registerEmail']) > 100) {
+                            print $alert -> errorMessage('Número inválido de caracteres. O campo E-mail pode conter no máximo 100 caracteres.');
+                        } else {
+                            $query = 'INSERT INTO usuario SET usuario_nickname=:nickname, usuario_senha=:senha, usuario_nome_completo=:nomeCompleto, usuario_email=:email, usuario_foto_perfil=:fotoPerfil';
 
-                    // validações de formulário
-                    if (strlen(trim($_POST["registerNickname"])) > 50) {
-                        echo "<div class='alert-box'>O nome de usuário pode ter no máximo 50 caracteres.</div>";
-                    } elseif (strlen(trim($_POST["registerPassword"])) > 20) {
-                        echo "<div class='alert-box'>A senha pode ter no máximo 20 caracteres.</div>";
-                    } elseif (trim($_POST["registerPassword"]) != trim($_POST["registerPasswordConfirmation"])) {
-                        echo "<div class='alert-box'>Senhas inseridas são diferentes.</div>";
-                    } elseif (strlen(trim($_POST["registerUsername"])) > 100) {
-                        echo "<div class='alert-box'>Nome de Usuário deve conter no máximo 100 caracteres.</div>";
-                    } elseif (strlen(trim($_POST["registerEmail"])) > 100) {
-                        echo "<div class='alert-box'>E-mail deve conter no máximo 100 caracteres.</div>";
-                    } elseif ($userAmount["qtd_usuario"] > 0) {
-                        echo "<div class='alert-box'>Este nome de usuário já existe.</div>";
-                    } else {
-                        try {
-                            // texto que passa os parâmetros de cada insert no database
-                            $query = "INSERT INTO usuario SET usuario_nickname=:nickname, usuario_senha=:passwd, usuario_nome_completo=:completeName, usuario_email=:email, usuario_foto_perfil=:picture";
-        
-                            // prepara a conexão para realizar o insert  
-                            $execute = $connection -> prepare($query);
-        
-                            // pega os dados do form, fazendo a higienização
-                            $userNickname = isset($_POST["registerNickname"]) ? getDataFromForm($_POST["registerNickname"]) : "";
-                            $userPasswd = isset($_POST["registerPassword"]) ? getDataFromForm($_POST["registerPassword"]) : "";
-                            $passwordHash = makeHash($userPasswd);
-                            $userName = isset($_POST["registerUsername"]) ? getDataFromForm($_POST["registerUsername"]) : "";
-                            $userEmail = isset($_POST["registerEmail"]) ? getDataFromForm($_POST["registerEmail"]) : "";
-                            $userPicture = isset($_POST["registerPicture"]) ? htmlspecialchars($_POST["registerPicture"]) : "";
-        
-                            // define os parâmetros com os respectivos dados
-                            $execute -> bindParam(":nickname", $userNickname);
-                            $execute -> bindParam(":passwd", $passwordHash);
-                            $execute -> bindParam(":completeName", $userName);
-                            $execute -> bindParam(":email", $userEmail);
-                            $execute -> bindParam(":picture", $userPicture);
-        
-                            if ($execute -> execute()) {
-                                echo "<div class='alert-box'>Registro salvo com sucesso!</div>";
-                                echo "<div class='link-login-from-register-page'><a href='login.php'>Fazer Login</a></div>";
+                            $submitData = $connection -> prepare($query);
+
+                            $registerNickname = $register -> higienizarDados($_POST['registerUsername']);
+                            $registerPassword = $register -> criptografarSenha($register -> higienizarDados($_POST['registerPassword']));
+                            $registerUsername = $register -> higienizarDados($_POST['registerUsername']);
+                            $registerEmail = $register -> higienizarDados($_POST['registerEmail']);
+                            $registerPicture = $register -> higienizarDados($_POST['registerPicture']);
+
+                            $submitData -> bindParam(':nickname', $registerNickname);
+                            $submitData -> bindParam(':senha', $registerPassword);
+                            $submitData -> bindParam(':nomeCompleto', $registerUsername);
+                            $submitData -> bindParam(':email', $registerEmail);
+                            $submitData -> bindParam(':fotoPerfil', $registerPicture);
+
+                            if ($submitData -> execute()) {
+                                print $alert -> successMessage('Registro salvo com sucesso!');
+
+                                print "<div class='link-login-from-register-page'><a href='login.php'>Fazer Login</a></div>";
                             } else {
-                                echo "<p class='p-execute'> Não foi possível efetuar o registro. </p>";
+                                print $alert -> errorMessage('Não foi possível efetuar o registro. Por favor, tente novamente mais tarde.');
                             }
-                        } catch (PDOException $error) {
-                            echo "Erro de conexão! " . $error -> getMessage();
                         }
                     }
+                } catch (PDOException $error) {
+                    print 'Conexão falhou! ' . $error -> getMessage();
                 }
-            */
             ?>
 
             <form method="POST" role="form" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>>
@@ -96,27 +87,27 @@
 
                     <p class="UserLogin">
                         <label for="userLogin">Usuário*</label>
-                        <input class="userLogin" id="userLogin" name="registerNickname" maxlength="50" type="text" aria-label="Usuário" placeholder="Usuário*" required>
+                        <input class="userLogin" id="userLogin" name="registerNickname" type="text" aria-label="Usuário" placeholder="Usuário*">
                     </p>
 
                     <p class="UserLogin">
                         <label for="userPassword">Senha*</label>
-                        <input class="userLogin" id="userPassword" name="registerPassword" maxlength="20" type="password" aria-label="Senha" placeholder="Senha*" required>
+                        <input class="userLogin" id="userPassword" name="registerPassword"  type="password" aria-label="Senha" placeholder="Senha*">
                     </p>
 
                     <p class="UserLogin">
                         <label for="userPassword">Confirme sua Senha*</label>
-                        <input class="userLogin" id="userPassword" name="registerPasswordConfirmation" maxlength="20" type="password" aria-label="Senha" placeholder="Confirme sua Senha*" required>
+                        <input class="userLogin" id="userPassword" name="registerPasswordConfirmation" type="password" aria-label="Senha" placeholder="Confirme sua Senha*">
                     </p>
 
                     <p class="UserLogin">
                         <label for="userName">Nome Completo*</label>
-                        <input class="userLogin" id="userName" name="registerUsername" maxlength="100" type="text" aria-label="Nome Completo" placeholder="Nome Completo*" required>
+                        <input class="userLogin" id="userName" name="registerUsername" type="text" aria-label="Nome Completo" placeholder="Nome Completo*">
                     </p>
 
                     <p class="UserLogin">
                         <label for="userEmail">E-mail para contato*</label>
-                        <input class="userLogin" id="userEmail" name="registerEmail" maxlength="100" type="email" aria-label="E-mail" placeholder="E-mail*" required>
+                        <input class="userLogin" id="userEmail" name="registerEmail" type="email" aria-label="E-mail" placeholder="E-mail*">
                     </p>
 
                     <p class="UserLogin">

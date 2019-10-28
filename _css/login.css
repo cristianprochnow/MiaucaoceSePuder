@@ -165,12 +165,60 @@ p.mensagemCadastro a:hover {
     transition: all 0.5s;
 }
 
+/* FORMATTING THE ALERT BOXES, THAT WILL TO BE VISIBLE TO THE USER */
+
+.information-box {
+    width: 250px;
+    min-height: 10px;
+    padding: 5px;
+    line-height: 20px;
+    text-align: justify;
+    font-weight: bolder;
+    font-size: 12px;
+    margin: 30px auto -10px auto;
+    background-color: #9fb3d4;
+    color: #0e3475;
+    border: solid 1px #0e3475;
+    border-radius: 3px;
+}
+
+.success-box {
+    width: 250px;
+    min-height: 10px;
+    padding: 5px;
+    line-height: 20px;
+    text-align: justify;
+    font-weight: bolder;
+    font-size: 12px;
+    margin: 30px auto -10px auto;
+    background-color: rgb(148, 216, 147);
+    color: #2B802A;
+    border: solid 1px #2B802A;
+    border-radius: 3px;
+}
+
 .alert-box {
     width: 250px;
     min-height: 10px;
     padding: 5px;
     line-height: 20px;
     text-align: justify;
+    font-weight: bolder;
+    font-size: 12px;
+    margin: 30px auto -10px auto;
+    background-color: rgb(233, 209, 136);
+    color: #FFCD36;
+    border: solid 1px #FFCD36;
+    border-radius: 3px;
+}
+
+.error-box {
+    width: 250px;
+    min-height: 10px;
+    padding: 5px;
+    line-height: 20px;
+    text-align: justify;
+    font-weight: bolder;
     font-size: 12px;
     margin: 30px auto -10px auto;
     background-color: rgb(255, 186, 179);
