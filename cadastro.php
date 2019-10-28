@@ -56,7 +56,7 @@
 
                             $submitData = $connection -> prepare($query);
 
-                            $registerNickname = $register -> higienizarDados($_POST['registerUsername']);
+                            $registerNickname = $register -> higienizarDados($_POST['registerNickname']);
                             $registerPassword = $register -> criptografarSenha($register -> higienizarDados($_POST['registerPassword']));
                             $registerUsername = $register -> higienizarDados($_POST['registerUsername']);
                             $registerEmail = $register -> higienizarDados($_POST['registerEmail']);
