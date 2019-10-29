@@ -32,7 +32,7 @@
 
                         $registerNicknameVerification = $register -> higienizarDados($_POST['registerNickname']);
 
-                        $verificationExecute -> bindParam(':nickname', $registerNicknameVerification);
+                        $verificationExecute -> bindValue(':nickname', $registerNicknameVerification);
 
                         $verificationExecute -> execute();
                         $resultOfVerification = $verificationExecute -> fetch(PDO::FETCH_ASSOC);
@@ -56,17 +56,11 @@
 
                             $submitData = $connection -> prepare($query);
 
-                            $registerNickname = $register -> higienizarDados($_POST['registerNickname']);
-                            $registerPassword = $register -> criptografarSenha($register -> higienizarDados($_POST['registerPassword']));
-                            $registerUsername = $register -> higienizarDados($_POST['registerUsername']);
-                            $registerEmail = $register -> higienizarDados($_POST['registerEmail']);
-                            $registerPicture = $register -> higienizarDados($_POST['registerPicture']);
-
-                            $submitData -> bindParam(':nickname', $registerNickname);
-                            $submitData -> bindParam(':senha', $registerPassword);
-                            $submitData -> bindParam(':nomeCompleto', $registerUsername);
-                            $submitData -> bindParam(':email', $registerEmail);
-                            $submitData -> bindParam(':fotoPerfil', $registerPicture);
+                            $submitData -> bindValue(':nickname', $register -> higienizarDados($_POST['registerNickname']));
+                            $submitData -> bindValue(':senha', $register -> criptografarSenha($register -> higienizarDados($_POST['registerPassword'])));
+                            $submitData -> bindValue(':nomeCompleto', $register -> higienizarDados($_POST['registerUsername']));
+                            $submitData -> bindValue(':email', $register -> higienizarDados($_POST['registerEmail']));
+                            $submitData -> bindValue(':fotoPerfil', $register -> higienizarDados($_POST['registerPicture']));
 
                             if ($submitData -> execute()) {
                                 print $alert -> successMessage('Registro salvo com sucesso!');
