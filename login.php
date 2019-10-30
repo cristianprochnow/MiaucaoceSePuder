@@ -1,46 +1,3 @@
-<?php
-/*
-    require_once("config.php");
-    require_once("functions.php");
-
-    session_start();
-
-    try {
-        if (isset($_POST["login"])) {
-            $userName = isset($_POST["loginNickname"]) ? getDataFromForm($_POST["loginNickname"]) : "";
-            $userPassword = isset($_POST["loginPass"]) ? getDataFromForm($_POST["loginPass"]) : "";    
-            
-            $passwordHash = makeHash($userPassword); // criptografando a senha
-
-            // pegando a id e o nome completo de usuario do banco de dados
-            $query = "SELECT cod_usuario, usuario_nome_completo FROM usuario WHERE usuario_nickname=:nickname AND usuario_senha=:senha";
-
-            $execute = $connection -> prepare($query);
-
-            $execute -> bindParam(":nickname", $userName);
-            $execute -> bindParam(":senha", $passwordHash);
-
-            $execute -> execute();
-
-            // pega todos os usuarios correspondentes
-            $users = $execute -> fetch(PDO::FETCH_ASSOC);
-
-            if (count($users) < 1) {
-                echo "<div class='alert-box'>Usuário ou senha incorretos.</div>";
-            } else {
-                $_SESSION["isLogged"] = true;
-                $_SESSION["cod_usuario"] = $users["cod_usuario"];
-                $_SESSION["usuario_nome_completo"] = $users["usuario_nome_completo"];
-
-                header("Location: index.php");
-            }
-        }
-    } catch (PDOException $error) {
-        echo "Conexão falhou! " . $error -> getMessage();
-    }
-*/
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -61,14 +18,57 @@
             </a>
         </div>
 
+        <?php
+            require_once('_settings/config.php');
+            require_once('_class/Autenticacao.php');
+            require_once('_class/Login.php');
+            require_once('_class/Alertas.php');
+
+            if (isset($_POST['login'])) {
+                $login = new Login();
+                $alert = new Alertas();
+
+                if (empty($_POST['loginNickname']) || empty($_POST['loginPass'])) {
+                    print $alert -> errorMessage('Campos Usuário e Senha são de preenchimento obrigatório.');
+                } else {
+                    try {
+                        $query = 'SELECT cod_usuario, usuario_nome_completo FROM usuario WHERE usuario_nickname=:nickname AND usuario_senha=:senha';
+
+                        $submitData = $connection -> prepare($query);
+
+                        $submitData -> bindValue(':nickname', $login -> higienizarDados($_POST['loginNickname']));
+                        $submitData -> bindValue(':senha', $login -> criptografarSenha($login -> higienizarDados($_POST['loginPass'])));
+
+                        $submitData -> execute();
+                        $usersAmount = $submitData -> rowCount();
+                        $user = $submitData -> fetch(PDO::FETCH_ASSOC);
+
+                        if ($usersAmount == 0) {
+                            print $alert -> errorMessage('Usuário ou Senha incorretos.');
+                        } else {
+                            session_start();
+
+                            $_SESSION['isLogged'] = true;
+                            $_SESSION['nomeUsuario'] = $user['usuario_nome_completo'];
+                            $_SESSION['codUsuario'] = $user['cod_usuario'];
+
+                            header('Location: index.php');
+                        }
+                    } catch (PDOException $error) {
+                        print 'Conexão falhou!' . $error -> getMessage();
+                    }
+                }
+            }
+        ?>
+
         <form method="POST" role="form" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>>
             <fieldset id="formLogin">
                 <p class="UserLogin"><label for="userLogin">Usuário</label>
-                    <input class="userLogin" id="userLogin" name="loginNickname" type="text" aria-label="Usuário" placeholder="Usuário" required>
+                    <input class="userLogin" id="userLogin" name="loginNickname" type="text" aria-label="Usuário" placeholder="Usuário">
                 </p>
 
                 <p><label for="userPassword">Senha</label>
-                    <input class="userLogin" id="userPassword" name="loginPass" type="password" aria-label="Senha" placeholder="Senha" required="required">
+                    <input class="userLogin" id="userPassword" name="loginPass" type="password" aria-label="Senha" placeholder="Senha">
                 </p>
 
                 <input type="submit" value="Login" name="login" class="enterButton">

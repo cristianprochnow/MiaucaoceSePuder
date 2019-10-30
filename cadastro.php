@@ -30,9 +30,7 @@
                         $queryOfVerification = 'SELECT COUNT(usuario_nickname) AS qtd_usuario FROM usuario WHERE usuario_nickname =:nickname';
                         $verificationExecute = $connection -> prepare($queryOfVerification);
 
-                        $registerNicknameVerification = $register -> higienizarDados($_POST['registerNickname']);
-
-                        $verificationExecute -> bindValue(':nickname', $registerNicknameVerification);
+                        $verificationExecute -> bindValue(':nickname', $register -> higienizarDados($_POST['registerNickname']));
 
                         $verificationExecute -> execute();
                         $resultOfVerification = $verificationExecute -> fetch(PDO::FETCH_ASSOC);

@@ -1,3 +1,7 @@
+<?php
+    require_once('_settings/check.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
