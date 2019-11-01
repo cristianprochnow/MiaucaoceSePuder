@@ -38,7 +38,7 @@
 
                         $submitData -> bindValue(':nickname', $login -> higienizarDados($_POST['loginNickname']));
                         $submitData -> bindValue(':senha', $login -> criptografarSenha($login -> higienizarDados($_POST['loginPass'])));
-
+                        
                         $submitData -> execute();
                         $usersAmount = $submitData -> rowCount();
                         $user = $submitData -> fetch(PDO::FETCH_ASSOC);

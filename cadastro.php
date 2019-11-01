@@ -35,28 +35,37 @@
                         $verificationExecute -> execute();
                         $resultOfVerification = $verificationExecute -> fetch(PDO::FETCH_ASSOC);
 
-                        if (empty($_POST['registerNickname']) || empty($_POST['registerPassword']) || empty($_POST['registerUsername']) || empty($_POST['registerEmail'])) {
+                        if (empty($_POST['registerNickname']) || empty($_POST['registerPassword']) || empty($_POST['registerUsername']) || empty($_POST['registerEmail']) || empty($_POST['registerTelefone']) || empty($_POST['registerEstado']) || empty($_POST['registerCidade'])) {
                             print $alert -> errorMessage('Campos com * são de preenchimento obrigatório.');
                         } elseif ($resultOfVerification['qtd_usuario'] > 0) { 
                             print $alert -> errorMessage('Este nome de usuário já existe. Por favor, selecione outro.');
-                        }elseif ($register -> contarCaracteresDaStringInserida($_POST['registerNickname']) > 50) {
-                            print $alert -> errorMessage('Número inválido de caracteres. O campo Usuário pode conter no máximo 50 caracteres.');
+                        }elseif ($register -> contarCaracteresDaStringInserida($_POST['registerNickname']) > 80) {
+                            print $alert -> errorMessage('Número inválido de caracteres. O campo Usuário pode conter no máximo 80 caracteres.');
+                        } elseif ($register -> contarCaracteresDaStringInserida($_POST['registerTelefone']) > 80) {
+                            print $alert -> errorMessage('Número inválido de caracteres. O campo Telefone pode conter no máximo 80 caracteres.'); 
+                        } elseif ($register -> contarCaracteresDaStringInserida($_POST['registerEstado']) > 200) {
+                            print $alert -> errorMessage('Número inválido de caracteres. O campo Estado pode conter no máximo 200 caracteres.'); 
+                        } elseif ($register -> contarCaracteresDaStringInserida($_POST['registerCidade']) > 200) {
+                            print $alert -> errorMessage('Número inválido de caracteres. O campo Cidade pode conter no máximo 200 caracteres.'); 
                         } elseif ($register -> contarCaracteresDaStringInserida($_POST['registerPassword']) > 20) {
                             print $alert -> errorMessage('Número inválido de caracteres. O campo Senha pode conter no máximo 20 caracteres.');
                         } elseif ($register -> higienizarDados($_POST['registerPassword']) != $register -> higienizarDados($_POST['registerPasswordConfirmation'])) {
                             print $alert -> errorMessage('As senhas que foram inseridas são diferentes. Insira as mesmas senhas nos campos Senha e Confirme sua Senha');
-                        } elseif ($register -> contarCaracteresDaStringInserida($_POST['registerUsername']) > 100) {
-                            print $alert -> errorMessage('Número inválido de caracteres. O campo Nome Completo pode conter no máximo 100 caracteres.');
-                        } elseif ($register -> contarCaracteresDaStringInserida($_POST['registerEmail']) > 100) {
-                            print $alert -> errorMessage('Número inválido de caracteres. O campo E-mail pode conter no máximo 100 caracteres.');
+                        } elseif ($register -> contarCaracteresDaStringInserida($_POST['registerUsername']) > 200) {
+                            print $alert -> errorMessage('Número inválido de caracteres. O campo Nome Completo pode conter no máximo 200 caracteres.');
+                        } elseif ($register -> contarCaracteresDaStringInserida($_POST['registerEmail']) > 200) {
+                            print $alert -> errorMessage('Número inválido de caracteres. O campo E-mail pode conter no máximo 200 caracteres.');
                         } else {
-                            $query = 'INSERT INTO usuario SET usuario_nickname=:nickname, usuario_senha=:senha, usuario_nome_completo=:nomeCompleto, usuario_email=:email, usuario_foto_perfil=:fotoPerfil';
+                            $query = 'INSERT INTO usuario SET usuario_nickname=:nickname, usuario_senha=:senha, usuario_nome_completo=:nomeCompleto, usuario_email=:email, usuario_telefone=:telefone, usuario_estado=:estado, usuario_cidade=:cidade, usuario_foto_perfil=:fotoPerfil';
 
                             $submitData = $connection -> prepare($query);
 
                             $submitData -> bindValue(':nickname', $register -> higienizarDados($_POST['registerNickname']));
                             $submitData -> bindValue(':senha', $register -> criptografarSenha($register -> higienizarDados($_POST['registerPassword'])));
                             $submitData -> bindValue(':nomeCompleto', $register -> higienizarDados($_POST['registerUsername']));
+                            $submitData -> bindValue(':telefone', $register -> higienizarDados($_POST['registerTelefone']));
+                            $submitData -> bindValue(':estado', $register -> higienizarDados($_POST['registerEstado']));
+                            $submitData -> bindValue(':cidade', $register -> higienizarDados($_POST['registerCidade']));
                             $submitData -> bindValue(':email', $register -> higienizarDados($_POST['registerEmail']));
                             $submitData -> bindValue(':fotoPerfil', $register -> higienizarDados($_POST['registerPicture']));
 
@@ -100,6 +109,65 @@
                     <p class="UserLogin">
                         <label for="userEmail">E-mail para contato*</label>
                         <input class="userLogin" id="userEmail" name="registerEmail" type="email" aria-label="E-mail" placeholder="E-mail*">
+                    </p>
+
+                    <p class="UserLogin">
+                        <label for="userTelefone">Telefone/Celular*</label>
+                        <input class="userLogin" id="userTelefone" name="registerTelefone" type="text" aria-label="Telefone/Celular" placeholder="Telefone/Celular*">
+                    </p>
+
+                    <p class="UserLogin">
+                        <label for="userEstado">Estado*</label>
+                        <input class="userLogin" id="userEstado" list="estados" name="registerEstado" type="text" aria-label="Estado" placeholder="Estado*">
+
+                        <datalist id="estados">
+                            <optgroup label="Região Norte">
+                                <option>Acre</option>
+                                <option>Amapá</option>
+                                <option>Amazonas</option>
+                                <option>Pará</option>
+                                <option>Rondônia</option>
+                                <option>Roraima</option>
+                                <option>Tocantins</option>
+                            </optgroup>
+
+                            <optgroup label="Região Nordeste">
+                                <option>Alagoas</option>
+                                <option>Bahia</option>
+                                <option>Ceará</option>
+                                <option>Maranhão</option>
+                                <option>Paraíba</option>
+                                <option>Pernambuco</option>
+                                <option>Piauí</option>
+                                <option>Rio Grande do Norte</option>
+                                <option>Sergipe</option>
+                            </optgroup>
+
+                            <optgroup label="Região Centro-Oeste">
+                                <option>Goiás</option>
+                                <option>Mato Grosso</option>
+                                <option>Mato Grosso do Sul</option>
+                                <option>Distrito Federal</option>
+                            </optgroup>
+
+                            <optgroup label="Região Sudeste">
+                                <option>Espírito Santo</option>
+                                <option>Minas Gerais</option>
+                                <option>São Paulo</option>
+                                <option>Rio de Janeiro</option>
+                            </optgroup>
+
+                            <optgroup label="Região Nordeste">
+                                <option>Paraná</option>
+                                <option>Rio Grande do Sul</option>
+                                <option>Santa Catarina</option>
+                            </optgroup>
+                        </datalist>
+                    </p>
+
+                    <p class="UserLogin">
+                        <label for="userCidade">Cidade*</label>
+                        <input class="userLogin" id="userCidade" name="registerCidade" type="text" aria-label="Cidade" placeholder="Cidade*">
                     </p>
 
                     <p class="UserLogin">
