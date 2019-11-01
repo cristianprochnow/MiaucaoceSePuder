@@ -1,4 +1,8 @@
 <?php
+    session_start();
+
+    require_once('_settings/config.php');
+    require_once('_settings/functions.php');
     require_once('_settings/check.php');
 ?>
 
@@ -22,7 +26,11 @@
 
         <div id="userInteractingBox">
             <button class="userAccountButton" id="userProfileVisualizationButton">
-                <a href="profile.php" id="profileViewLink" class="accountLinks">Visualizar Perfil</a>
+                <?php if (isLoggedIn()): ?>
+                    <a href="profile.php" id="profileViewLink" class="accountLinks">Olá, <?php print $_SESSION['nomeUsuario'] ?></a>
+                <?php else: ?>
+                    <a href="login.php" id="profileViewLink" class="accountLinks">Olá, Visitante!</a>
+                <?php endif; ?>
             </button>
 
             <button class="userAccountButton" id="userProfileLogoutButton" onmouseout="changeLogoutIcon('_images/white-logout-icon.png')" onmouseover="changeLogoutIcon('_images/blue-logout-icon.png')">

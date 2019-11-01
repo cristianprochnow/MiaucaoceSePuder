@@ -1,5 +1,8 @@
 <?php
-    require_once('_settings/check.php');
+    session_start();
+
+    require_once('_settings/config.php');
+    require_once('_settings/functions.php');
 ?>
 
 <!DOCTYPE html>

@@ -1,9 +1,8 @@
 <?php
-    // inicia a sessão
     session_start();
 
-    require_once("_settings/config.php");
-    require_once("_settings/functions.php");
+    require_once('_settings/config.php');
+    require_once('_settings/functions.php');
 ?>
 
 <!DOCTYPE html>
