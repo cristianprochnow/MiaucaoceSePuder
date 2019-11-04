@@ -14,9 +14,12 @@
             return "<div class='alert-box'> $mensagemDeAlerta </div>";
         }
 
-        // mensagem de erro
         public function errorMessage($mensagemDeAlerta) {
             return "<div class='error-box'> $mensagemDeAlerta </div>";
+        }
+
+        public function errorMessageAdPage($mensagemDeAlerta) {
+            return "<div class='error-box-ad-page'> $mensagemDeAlerta </div>";
         }
     }
 ?>

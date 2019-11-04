@@ -4,6 +4,10 @@
     require_once('_settings/config.php');
     require_once('_settings/functions.php');
     require_once('_settings/check.php');
+
+    require_once('_class/Autenticacao.php');
+    require_once('_class/Alertas.php');
+    require_once('_class/Anuncio.php');
 ?>
 
 <!DOCTYPE html>
@@ -57,13 +61,28 @@
         <div class="bordaImagemHome">
             <p> Anunciar </p>
 
-            <div id="listraImagemPrincipal">
-                <!--<img src="_images/faixaFinaAzulMedia.png">-->
-            </div>
+            <div id="listraImagemPrincipal"></div>
         </div>
     </div>
 
-    <form method="POST" id="formularioAnunciar" action="anuncioUserMessage.php">
+    <?php
+        try{
+            if (isset($_POST['submit'])) {
+                $announce = new Anuncio();
+                $alert = new Alertas();
+    
+                if (empty($_POST['adUsername']) || empty($_POST['adPhone']) || empty($_POST['adEmail']) || empty($_POST['adState']) || empty($_POST['adCity']) || empty($_POST['adAnimalType'])) {
+                    print $alert -> errorMessageAdPage('Campos com * são de preenchimento obrigatório.');
+                } elseif ($resultOfVerification['qtd_usuario'] > 0) { 
+                    print $alert -> errorMessageAdPage('Este nome de usuário já existe. Por favor, selecione outro.');
+                }
+            }
+        } catch(PDOException $error) {
+            print 'Conexão falhou! ' . $error -> getMessage();
+        }
+    ?>
+
+    <form method="POST" id="formularioAnunciar" action=<?php print $_SERVER['PHP_SELF'] ?>>
         <fieldset class="formContato">
             <div class="tituloForm">
                 <p>Contato</p>
@@ -71,17 +90,17 @@
 
             <p class="itensFormAnunciar">
                 <label for="usuarioNome">Nome Completo*:</label>
-                <input class="anunciarInput" id="usuarioNome" name="adUsername" type="text" aria-placeholder="Nome Completo" placeholder="Nome Completo*" required>
+                <input class="anunciarInput" id="usuarioNome" name="adUsername" type="text" aria-placeholder="Nome Completo" placeholder="Nome Completo*">
             </p>
 
             <p class="itensFormAnunciar">
                 <label for="usuarioTel">Número de Telefone/Celular:</label>
-                <input class="anunciarInput" id="usuarioTel" name="adPhone" type="number" min="0" aria-placeholder="Telefone/Celular" placeholder="Número de Telefone/Celular*" required>
+                <input class="anunciarInput" id="usuarioTel" name="adPhone" type="number" min="0" aria-placeholder="Telefone/Celular" placeholder="Número de Telefone/Celular*">
             </p>
 
             <p class="itensFormAnunciar">
                 <label for="usuarioEmail">E-mail</label>
-                <input class="anunciarInput" id="usuarioEmail" name="adEmail" type="email" aria-placeholder="E-mail" placeholder="E-mail">
+                <input class="anunciarInput" id="usuarioEmail" name="adEmail" type="email" aria-placeholder="E-mail" placeholder="E-mail*">
             </p>
         </fieldset>
 
@@ -92,41 +111,56 @@
 
             <p class="itensFormLocalizacao">
                 <label for="usuarioEstado">Estado:</label>
-                <input class="localizacaoInput" id="usuarioEstado" name="adState" type="text" list="estados" aria-placeholder="Estado em que o animal localiza-se" placeholder="Estado em que o animal localiza-se*" list="estados" required>
+                <input class="localizacaoInput" id="usuarioEstado" name="adState" type="text" list="estados" aria-placeholder="Estado em que o animal localiza-se" placeholder="Estado em que o animal localiza-se*" list="estados">
             </p>
 
             <datalist id="estados">
-                <option value="AM">Amazonas (AM)</option>
-                <option value="RR">Roraima (RR)</option>
-                <option value="AP">Amapá (AP)</option>
-                <option value="PA">Pará (PA)</option>
-                <option value="TO">Tocantins (TO)</option>
-                <option value="RO">Rondônia (RO)</option>
-                <option value="AC">Acre (AC)</option>
-                <option value="MA">Maranhão (MA)</option>
-                <option value="PI">Piauí (PI)</option>
-                <option value="CE">Ceará (CE)</option>
-                <option value="RS">Rio Grande do Norte (RN)</option>
-                <option value="PE">Pernambuco (PE)</option>
-                <option value="PB">Paraíba (PB)</option>
-                <option value="SE">Sergipe (SE)</option>
-                <option value="AL">Alagoas (AL)</option>
-                <option value="BA">Bahia (BA)</option>
-                <option value="MT">Mato Grosso (MT)</option>
-                <option value="MS">Mato Grosso do Sul (MS)</option>
-                <option value="GO">Goiás (GO)</option>
-                <option value="RJ">Rio de Janeiro (RJ)</option>
-                <option value="SP">São Paulo (SP)</option>
-                <option value="MG">Minas Gerais (MG)</option>
-                <option value="ES">Espírito Santo (ES)</option>
-                <option value="PR">Paraná (PR)</option>
-                <option value="SC">Santa Catarina (SC)</option>
-                <option value="RS">Rio Grande do Sul (RS)</option>
+                <optgroup label="Região Norte">
+                    <option>Acre</option>
+                    <option>Amapá</option>
+                    <option>Amazonas</option>
+                    <option>Pará</option>
+                    <option>Rondônia</option>
+                    <option>Roraima</option>
+                    <option>Tocantins</option>
+                </optgroup>
+
+                <optgroup label="Região Nordeste">
+                    <option>Alagoas</option>
+                    <option>Bahia</option>
+                    <option>Ceará</option>
+                    <option>Maranhão</option>
+                    <option>Paraíba</option>
+                    <option>Pernambuco</option>
+                    <option>Piauí</option>
+                    <option>Rio Grande do Norte</option>
+                    <option>Sergipe</option>
+                </optgroup>
+
+                <optgroup label="Região Centro-Oeste">
+                    <option>Goiás</option>
+                    <option>Mato Grosso</option>
+                    <option>Mato Grosso do Sul</option>
+                    <option>Distrito Federal</option>
+                </optgroup>
+
+                <optgroup label="Região Sudeste">
+                    <option>Espírito Santo</option>
+                    <option>Minas Gerais</option>
+                    <option>São Paulo</option>
+                    <option>Rio de Janeiro</option>
+                </optgroup>
+
+                <optgroup label="Região Nordeste">
+                    <option>Paraná</option>
+                    <option>Rio Grande do Sul</option>
+                    <option>Santa Catarina</option>
+                </optgroup>
             </datalist>
 
             <p class="itensFormLocalizacao">
                 <label for="usuarioCidade">Cidade:</label>
-                <input class="localizacaoInput" id="usuarioCidade" name="adCity" type="text" aria-placeholder="Cidade em que o animal localiza-se" placeholder="Cidade em que o animal localiza-se*" required>
+                <input class="localizacaoInput" id="usuarioCidade" name="adCity" type="text" aria-placeholder="Cidade em que o animal localiza-se" placeholder="Cidade em que o animal localiza-se*">
             </p>
         </fieldset>
 
@@ -142,7 +176,7 @@
 
             <p class="itensFormAnimal">
                 <label for="animalTipo">Tipo do animal</label>
-                <input class="animalInput" id="animalTipo" name="adAnimalType" type="text" aria-placeholder="Tipo" placeholder="Tipo*" list="tipo" required>
+                <input class="animalInput" id="animalTipo" name="adAnimalType" type="text" aria-placeholder="Tipo" placeholder="Tipo*" list="tipo">
 
                 <datalist id="tipo">
                         <option>Gato</option>
@@ -153,7 +187,7 @@
             <p class="itensSelectFormAnimal">
                 <span class="esquerda">
                         <label for="animalSituacao">Situação do Animal</label>
-                        <select class="itensSelecionarInput" id="animalSituacao" name="adAnimalSituation" required>
+                        <select class="itensSelecionarInput" id="animalSituacao" name="adAnimalSituation">
                             <optgroup class="opcoesSelect" label="Situação do Animal" required>
                                 <option value="Achado">Achado</option>
                                 <option value="Perdido">Perdido</option>
@@ -163,7 +197,7 @@
 
                 <span class="direita">
                         <label for="animalIdade">Idade</label>
-                        <select class="itensSelecionarInput" id="animalIdade" name="adAnimalAge" required>
+                        <select class="itensSelecionarInput" id="animalIdade" name="adAnimalAge">
                             <optgroup class="opcoesSelect" label="Idade" required>
                                 <option value="Adulto">Adulto</option>
                                 <option value="Filhote">Filhote</option>
@@ -175,7 +209,7 @@
             <p class="itensSelectFormAnimal">
                 <span class="esquerda">
                     <label for="animalPelagem">Pelagem</label>
-                    <select class="itensSelecionarInput" id="animalPelagem" name="adAnimalCoat" required>
+                    <select class="itensSelecionarInput" id="animalPelagem" name="adAnimalCoat">
                         <optgroup class="opcoesSelect" label="Pelagem">
                             <option value="Curto">Curta</option>
                             <option value="Média">Média</option>
@@ -186,7 +220,7 @@
 
                 <span class="direita">
                     <label for="animalPorte">Porte</label>
-                    <select class="itensSelecionarInput" id="animalPorte" name="adAnimalSize" required>
+                    <select class="itensSelecionarInput" id="animalPorte" name="adAnimalSize">
                         <optgroup class="opcoesSelect" label="Porte">
                             <option value="Grande">Grande</option>
                             <option value="Médio">Médio</option>
@@ -199,7 +233,7 @@
             <p class="itensSelectFormAnimal">
                 <span class="esquerda">
                     <label for="animalRaca">Raça</label>
-                    <select class="itensSelecionarInput" id="animalRaca" name="adAnimalBreed" required>
+                    <select class="itensSelecionarInput" id="animalRaca" name="adAnimalBreed">
                         <optgroup class="opcoesSelect" label="Raça">
                             <option value="Com raça">Com Raça</option>
                             <option value="Sem raça">Sem Raça</option>
@@ -209,7 +243,7 @@
 
                 <span class="direita">
                     <label for="animalSexo">Sexo</label>
-                    <select class="itensSelecionarInput" id="animalSexo" name="adAnimalSex" required>
+                    <select class="itensSelecionarInput" id="animalSexo" name="adAnimalSex">
                         <optgroup class="opcoesSelect" label="Sexo">
                             <option value="Macho">Macho</option>
                             <option value="Fêmea">Fêmea</option>
@@ -220,10 +254,10 @@
 
             <p class="caixasTextoForm">
                 <label for="animalDescricao">Descrição do anúncio...</label>
-                <textarea class="caixaTextoAnimal" id="animalDescricao" name="adAnimalDescription" cols="20" rows="10" aria-placeholder="Descrição do Anúncio" placeholder="Descrição do Anúncio..." max="3000"></textarea>
+                <textarea class="caixaTextoAnimal" id="animalDescricao" name="adAnimalDescription" cols="20" rows="10" aria-placeholder="Descrição do Anúncio" placeholder="Descrição do Anúncio..."></textarea>
 
                 <label for="animalCaracteristicas">Características do Mascote...</label>
-                <textarea class="caixaTextoAnimal" id="animalCaracteristicas" name="adAnimalFeature" cols="20" rows="10" aria-placeholder="Características do Mascote" placeholder="Características do Mascote..." required max="3000"></textarea>
+                <textarea class="caixaTextoAnimal" id="animalCaracteristicas" name="adAnimalFeature" cols="20" rows="10" aria-placeholder="Características do Mascote" placeholder="Características do Mascote..."></textarea>
             </p>
         </fieldset>
 
@@ -235,17 +269,11 @@
             <p class="itensFormImagens" id="imagensEsquerda">
                 <label for="imagem1">Foto do animal:</label>
                 <input type="file" class="imageInput" id="imagem1" name="adAnimalPicture#1" aria-placeholder="Imagem do Animal" placeholder="Imagem do Animal">
-
-                <!--<label for="imagem2">Foto do animal:</label>
-                <input type="file" class="imageInput" id="imagem2" name="adAnimalPicture#2" aria-placeholder="Imagem do Animal" placeholder="Imagem do Animal">-->
             </p>
 
             <p class="itensFormImagens" id="imagensDireita">
                 <label for="imagem3">Foto do animal:</label>
                 <input type="file" class="imageInput" id="imagem3" name="adAnimalPicture#3" aria-placeholder="Imagem do Animal" placeholder="Imagem do Animal">
-
-                <!--<label for="imagem4">Foto do animal:</label>
-                <input type="file" class="imageInput" id="imagem4" name="adAnimalPicture#4" aria-placeholder="Imagem do Animal" placeholder="Imagem do Animal">-->
             </p>
         </fieldset>
 
@@ -256,16 +284,14 @@
                 </span>
 
                 <span class="right">
-                    <input type="submit" class="formButtons" id="botaoEnviar" aria-placeholder="Anunciar" placeholder="Anunciar">
+                    <input type="submit" name="submit" value="Submit" class="formButtons" id="botaoEnviar" aria-placeholder="Anunciar" placeholder="Anunciar">
                 </span>
             </div>
         </fieldset>
     </form>
 
     <div class="rodape">
-        <div class="listrasRodape">
-            <!--<img src="_images/faixaFinaAzulMedia.png">-->
-        </div>
+        <div class="listrasRodape"></div>
 
         <div class="logoEsquerdaRodape">
             <a href="anunciar.php#cabecalho">

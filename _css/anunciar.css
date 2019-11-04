@@ -361,3 +361,20 @@ input.formButtons:hover {
     background-color: #0a2a5b;
     color: #d6d6d6;
 }
+
+/* AD PAGE */
+
+.error-box-ad-page {
+    width: 780px;
+    min-height: 10px;
+    padding: 10px;
+    line-height: 20px;
+    text-align: justify;
+    font-weight: bolder;
+    font-size: 14px;
+    margin: 30px auto -20px auto;
+    background-color: rgb(255, 186, 179);
+    color: #BF1300;
+    border: solid 1px #BF1300;
+    border-radius: 3px;
+}
