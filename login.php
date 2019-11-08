@@ -20,7 +20,6 @@
 
         <?php
             require_once('_settings/config.php');
-            require_once('_class/Autenticacao.php');
             require_once('_class/Login.php');
             require_once('_class/Alertas.php');
 

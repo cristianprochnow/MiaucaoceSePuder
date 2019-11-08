@@ -1,4 +1,6 @@
 <?php
+    require_once('Autenticacao.php');
+
     class Alertas extends Autenticacao {
         private $mensagemDeAlerta;
 

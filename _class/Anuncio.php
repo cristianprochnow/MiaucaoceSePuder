@@ -1,4 +1,6 @@
 <?php
+    require_once('Autenticacao.php');
+
     class Anuncio extends Autenticacao {
         public function higienizarDados($dadoDoFormulario) {
             if (isset($dadoDoFormulario)) {
