@@ -11,8 +11,7 @@ usuario_nome_completo VARCHAR(200),
 usuario_telefone VARCHAR(80),
 usuario_estado VARCHAR(200),
 usuario_cidade VARCHAR(200),
-usuario_email VARCHAR(200),
-usuario_foto_perfil LONGBLOB
+usuario_email VARCHAR(200)
 );
 
 CREATE TABLE anuncio

@@ -55,7 +55,7 @@
                         } elseif ($register -> contarCaracteresDaStringInserida($_POST['registerEmail']) > 200) {
                             print $alert -> errorMessage('Número inválido de caracteres. O campo E-mail pode conter no máximo 200 caracteres.');
                         } else {
-                            $query = 'INSERT INTO usuario SET usuario_nickname=:nickname, usuario_senha=:senha, usuario_nome_completo=:nomeCompleto, usuario_email=:email, usuario_telefone=:telefone, usuario_estado=:estado, usuario_cidade=:cidade, usuario_foto_perfil=:fotoPerfil';
+                            $query = 'INSERT INTO usuario SET usuario_nickname=:nickname, usuario_senha=:senha, usuario_nome_completo=:nomeCompleto, usuario_email=:email, usuario_telefone=:telefone, usuario_estado=:estado, usuario_cidade=:cidade';
 
                             $submitData = $connection -> prepare($query);
 
@@ -66,7 +66,6 @@
                             $submitData -> bindValue(':estado', $register -> higienizarDados($_POST['registerEstado']));
                             $submitData -> bindValue(':cidade', $register -> higienizarDados($_POST['registerCidade']));
                             $submitData -> bindValue(':email', $register -> higienizarDados($_POST['registerEmail']));
-                            $submitData -> bindValue(':fotoPerfil', $register -> higienizarDados($_POST['registerPicture']));
 
                             if ($submitData -> execute()) {
                                 print $alert -> successMessage('Registro salvo com sucesso!');
@@ -167,11 +166,6 @@
                     <p class="UserLogin">
                         <label for="userCidade">Cidade*</label>
                         <input class="userLogin" id="userCidade" name="registerCidade" type="text" aria-label="Cidade" placeholder="Cidade*">
-                    </p>
-
-                    <p class="UserLogin">
-                        <label for="userPicture">Foto de Perfil</label>
-                        <input class="userLogin" id="userPicture" name="registerPicture" type="file" aria-label="Insira uma foto de perfil" placeholder="Foto de perfil">
                     </p>
 
                     <input type="submit" value="Cadastrar" name="register" class="enterButton">

@@ -17,19 +17,31 @@
 </head>
 
 <body>
-    <div id="listraTopoSite">
-        <!--<img id="listraTopoSite" src="_images/faixaFinaAzul.png">-->
-    </div>
+    <div id="listraTopoSite"></div>
+
+    <a class="back-link" href="index.php"><img src="_images/icone-voltar-30x30.png"></a>
+
+    <?php
+        require_once('_settings/config.php');
+        require_once('_settings/check.php');
+
+        try {
+
+            $query = 'SELECT * FROM usuario WHERE cod_usuario=:codUsuario';
+            $selectData = $connection -> prepare($query);
+            $selectData -> bindValue(':codUsuario', $_SESSION['codUsuario']);
+            $selectData -> execute();
+
+            $userData = $selectData -> fetch(PDO::FETCH_ASSOC);
+    ?>
 
     <div class="corpoTotalProfile">
 
         <div id="caracteristicasTopicosGeraisAnimal" class="itensPerfilAnimal">
             <div class="cabecalhoProfile">
                 <figure class="fotoPerfilAnimal">
-                    <img src="_images/1280x720_7.jpg">
-
                     <figcaption class="nomeAnimal">
-                        <h1>Godobertozin</h1>
+                        <h1><?php print $userData['usuario_nome_completo']; ?></h1>
                     </figcaption>
                 </figure>
             </div>
@@ -38,27 +50,33 @@
                 <div class="titulosItens">
                     <p>Informações do Usuário</p>
 
-                    <div class="listras">
-                        <!--<img src="_images/faixaFinaAzulMedia.png">-->
-                    </div>
+                    <div class="listras"></div>
                 </div>
 
                 <div id="topicosDeCaracteristicas" class="conteudoItens">
                     <div class="topicos" id="topicosEsquerda">
-                        <p><b>Nome Completo: </b>Godoberto Anastácio de Souza Moraes</p>
-                        <p><b>Telefone: </b>(47) 3437-1234</p>
-                        <p><b>Estado: </b>Santa Catarina</p>
+                        <p><b>Usuário: </b><?php print $userData['usuario_nickname']; ?></p>
+                        <p><b>Telefone: </b><?php print $userData['usuario_telefone']; ?></p>
+                        <p><b>Estado: </b><?php print $userData['usuario_estado']; ?></p>
                     </div>
 
                     <div class="topicos" id="topicosDireita">
-                        <p><b>E-mail: </b>godobertozin@gmail.com</p>
-                        <p><b>Celular: </b>(47) 9 1234-5678</p>
-                        <p><b>Cidade: </b> Chuville</p>
+                        <p><b>E-mail: </b><?php print $userData['usuario_email']; ?></p>
+                        <p><b>Celular: </b><?php print $userData['usuario_telefone']; ?></p>
+                        <p><b>Cidade: </b><?php print $userData['usuario_cidade']; ?></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <?php
+        } catch (PDOException $error) {
+
+            print 'Conexão falhou!' . $error -> getMessage();
+
+        }
+    ?>
 
     <div class="rodape">
         <div class="listrasRodape">

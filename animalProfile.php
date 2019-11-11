@@ -17,9 +17,9 @@
 </head>
 
 <body>
-    <div id="listraTopoSite">
-        <!--<img id="listraTopoSite" src="_images/faixaFinaAzul.png">-->
-    </div>
+    <div id="listraTopoSite"></div>
+
+    <a class="back-link" href="index.php"><img src="_images/icone-voltar-30x30.png"></a>
 
     <div class="corpoTotalProfile">
 

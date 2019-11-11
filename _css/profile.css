@@ -18,6 +18,15 @@ div.corpoTotalProfile {
     margin: 55px auto 55px auto;
 }
 
+/* FORMATAÇÃO DO BOTÃO PARA VOLTAR PARA A PÁGINA PRINCIPAL */
+
+.back-link {
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 5px;
+}
+
 
 /* Formatação do cabeçalho do profile */
 
@@ -35,12 +44,13 @@ div.cabecalhoProfile {
 }
 
 figure.fotoPerfilAnimal {
-    width: 45%;
+    width: %;
     height: 100%;
     margin: 0 auto 30px auto;
 }
 
-figure.fotoPerfilAnimal img {
+figure.fotoPerfilAnimal span {
+    text-align: center;
     width: 100%;
     height: 100%;
 }
@@ -50,10 +60,11 @@ figcaption.nomeAnimal {
 }
 
 figcaption.nomeAnimal h1 {
+    overflow: auto;
     font-size: 20pt;
     color: #aaaaaa;
     font-weight: bolder;
-    padding: 0 0 20px 0;
+    padding: 10px 0 10px 0;
 }
 
 
