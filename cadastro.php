@@ -12,9 +12,11 @@
 
     <body>
         <div class="loginPage">
+            <a href="login.php">
             <div class="imageLogo">
                     <img id="headerImage" src="_images/logomarcaPequena.png">
             </div>
+            </a>
 
             <?php
                 require_once('_settings/config.php');
