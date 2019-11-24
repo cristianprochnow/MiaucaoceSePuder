@@ -68,14 +68,25 @@
                 $alert = new Alertas();
     
                 if (empty($_POST['adUsername']) || empty($_POST['adPhone']) || empty($_POST['adEmail']) || empty($_POST['adState']) || empty($_POST['adCity']) || empty($_POST['adAnimalType'])) {
+                    
                     print $alert -> errorMessageAdPage('Campos com * são de preenchimento obrigatório.');
-                } elseif ($resultOfVerification['qtd_usuario'] > 0) { 
-                    print $alert -> errorMessageAdPage('Este nome de usuário já existe. Por favor, selecione outro.');
+
+                } elseif ($announce -> contarCaracteresDaStringInserida($_POST['adUsername']) > 200) {
+
+                    print $alert -> errorMessageAdPage('Número limite de caracteres excedido. O campo Nome Completo pode ter no máximo 200 caracteres.');
+
+                } elseif ($announce -> contarCaracteresDaStringInserida($_POST['adUsername']) > 200) {
+
+                    print $alert -> errorMessageAdPage('Número limite de caracteres excedido. O campo Nome Completo pode ter no máximo 200 caracteres.');
+
                 }
             }
         } catch(PDOException $error) {
+        
             print 'Conexão falhou! ' . $error -> getMessage();
+        
         }
+
     ?>
 
     <form method="POST" id="formularioAnunciar" action=<?php print $_SERVER['PHP_SELF'] ?>>
@@ -280,7 +291,7 @@
                 </span>
 
                 <span class="right">
-                    <input type="submit" name="submit" value="Submit" class="formButtons" id="botaoEnviar" aria-placeholder="Anunciar" placeholder="Anunciar">
+                    <input type="submit" name="submit" value="Enviar" class="formButtons" id="botaoEnviar" aria-placeholder="Anunciar" placeholder="Anunciar">
                 </span>
             </div>
         </fieldset>
