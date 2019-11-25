@@ -1,7 +1,7 @@
 <?php
     session_start();
     
-    require_once('_settings/check.php');
+    require_once('settings/check.php');
 ?>
 
 <!DOCTYPE html>
@@ -10,20 +10,20 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="_css/profile.css">
-    <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="css/profile.css">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <title>MiauCãoce se Puder</title>
-    <link rel="icon" href="_images/logomarcaPreta.png" type="image/x-icon">
+    <link rel="icon" href="images/logomarcaPreta.png" type="image/x-icon">
 </head>
 
 <body>
     <div id="listraTopoSite"></div>
 
-    <a class="back-link" href="index.php"><img src="_images/icone-voltar-30x30.png"></a>
+    <a class="back-link" href="index.php"><img src="images/icone-voltar-30x30.png"></a>
 
     <?php
-        require_once('_settings/config.php');
-        require_once('_settings/check.php');
+        require_once('settings/config.php');
+        require_once('settings/check.php');
 
         try {
 
@@ -79,13 +79,11 @@
     ?>
 
     <div class="rodape">
-        <div class="listrasRodape">
-            <!--<img src="_images/faixaFinaAzulMedia.png">-->
-        </div>
+        <div class="listrasRodape"></div>
 
         <div class="logoEsquerdaRodape">
             <a href="index.php">
-                <img src="_images/logomarcaQuaseNormal.png">
+                <img src="images/logomarcaQuaseNormal.png">
             </a>
         </div>
 

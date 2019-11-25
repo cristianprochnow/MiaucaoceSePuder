@@ -1,8 +1,8 @@
 <?php
     session_start();
 
-    require_once('_settings/config.php');
-    require_once('_settings/functions.php');
+    require_once('settings/config.php');
+    require_once('settings/functions.php');
 ?>
 
 <!DOCTYPE html>
@@ -11,17 +11,17 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <title>MiauCãoce se Puder</title>
-    <link rel="icon" href="_images/logomarcaPreta.png" type="image/x-icon">
+    <link rel="icon" href="images/logomarcaPreta.png" type="image/x-icon">
 
-    <script type="text/javascript" src="_javascript/functions.js"></script>
+    <script type="text/javascript" src="javascript/functions.js"></script>
 </head>
 
 <body>
     <div class="interface">
         <header id="cabecalho">
-            <img id="cabecalhoLogo" src="_images/logomarcaMedia.png">
+            <img id="cabecalhoLogo" src="images/logomarcaMedia.png">
 
             <div id="userInteractingBox">
                 <button class="userAccountButton" id="userProfileVisualizationButton">
@@ -32,8 +32,8 @@
                     <?php endif; ?>
                 </button>
 
-                <button class="userAccountButton" id="userProfileLogoutButton" onmouseout="changeLogoutIcon('_images/white-logout-icon.png')" onmouseover="changeLogoutIcon('_images/blue-logout-icon.png')">
-                    <a href="_settings/logout.php" id="logoutLink" class="accountLinks"><img id="logout-icon" src="_images/white-logout-icon.png"></a>
+                <button class="userAccountButton" id="userProfileLogoutButton" onmouseout="changeLogoutIcon('images/white-logout-icon.png')" onmouseover="changeLogoutIcon('images/blue-logout-icon.png')">
+                    <a href="settings/logout.php" id="logoutLink" class="accountLinks"><img id="logout-icon" src="images/white-logout-icon.png"></a>
                 </button>
             </div>
 
@@ -51,14 +51,12 @@
 
         <div class="corpoHome">
             <div class="imagemHome">
-                <img src="_images/900x340_2.jpg">
+                <img src="images/900x340_2.jpg">
             </div>
             <div class="bordaImagemHome">
                 <p> Bem-vindo! </p>
 
-                <div id="listraImagemPrincipal">
-                    <!--<img src="_images/faixaFinaAzulMedia.png">-->
-                </div>
+                <div id="listraImagemPrincipal"></div>
             </div>
         </div>
 
@@ -66,7 +64,7 @@
             <div class="conjuntoBoxCima">
                 <div class="informationBox">
                     <figure class="informationFigure">
-                        <img src="_images/informationIcon.png">
+                        <img src="images/informationIcon.png">
 
                         <figcaption class="legendaInformationFigure">
                             <h1>Anuncie</h1>
@@ -84,7 +82,7 @@
 
                 <div class="adotarBox">
                     <figure class="adotarFigure">
-                        <img src="_images/heartIcon.png">
+                        <img src="images/heartIcon.png">
 
                         <figcaption class="legendaAdotarFigure">
                             <h1>Reencãotre</h1>
@@ -104,7 +102,7 @@
             <div class="conjuntoBoxBaixo">
                 <div class="cadastroBox">
                     <figure class="cadastroFigure">
-                        <img src="_images/contactIcon.png">
+                        <img src="images/contactIcon.png">
 
                         <figcaption class="legendaCadastroFigure">
                             <h1>Cãodastre-se</h1>
@@ -122,7 +120,7 @@
 
                 <div class="contactBox">
                     <figure class="contactFigure">
-                        <img src="_images/contactIconCorpo.png">
+                        <img src="images/contactIconCorpo.png">
 
                         <figcaption class="legendaContactFigure">
                             <h1>Cãotato</h1>
@@ -141,13 +139,11 @@
         </div>
 
         <div class="rodape">
-            <div class="listrasRodape">
-                <!--<img src="_images/faixaFinaAzulMedia.png">-->
-            </div>
+            <div class="listrasRodape"></div>
 
             <div class="logoEsquerdaRodape">
                 <a href="index.php#cabecalho">
-                    <img src="_images/logomarcaQuaseNormal.png">
+                    <img src="images/logomarcaQuaseNormal.png">
                 </a>
             </div>
 

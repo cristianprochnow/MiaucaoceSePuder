@@ -5,23 +5,23 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="_css/login.css">
-        <link rel="icon" href="_images/logomarcaPreta.png" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
+        <link rel="icon" href="images/logomarcaPreta.png" type="image/x-icon">
         <title>MiauCãoce se Puder</title>
     </head>
 
     <body>
         <div class="loginPage">
             <a href="login.php">
-            <div class="imageLogo">
-                    <img id="headerImage" src="_images/logomarcaPequena.png">
-            </div>
+                <div class="imageLogo">
+                    <img id="headerImage" src="images/logomarcaPequena.png">
+                </div>
             </a>
 
             <?php
-                require_once('_settings/config.php');
-                require_once('_class/Cadastro.php');
-                require_once('_class/Alertas.php');
+                require_once('settings/config.php');
+                require_once('class/Cadastro.php');
+                require_once('class/Alertas.php');
 
                 try {
                     if (isset($_POST['register'])) {

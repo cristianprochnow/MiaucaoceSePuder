@@ -23,5 +23,9 @@
         public function errorMessageAdPage($mensagemDeAlerta) {
             return "<div class='error-box-ad-page'> $mensagemDeAlerta </div>";
         }
+
+        public function successMessageAdPage($mensagemDeAlerta) {
+            return "<div class='success-box-ad-page'> $mensagemDeAlerta </div>";
+        }
     }
 ?>

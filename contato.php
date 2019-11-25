@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require_once('_settings/check.php');
+    require_once('settings/check.php');
 ?>
 
 <!DOCTYPE html>
@@ -10,17 +10,17 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="_css/contato.css">
-    <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="css/contato.css">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <title>MiauCãoce se Puder</title>
-    <link rel="icon" href="_images/logomarcaPreta.png" type="image/x-icon">
+    <link rel="icon" href="images/logomarcaPreta.png" type="image/x-icon">
 
-    <script type="text/javascript" src="_javascript/functions.js"></script>
+    <script type="text/javascript" src="javascript/functions.js"></script>
 </head>
 
 <body>
     <header id="cabecalho">
-        <img id="cabecalhoLogo" src="_images/logomarcaMedia.png">
+        <img id="cabecalhoLogo" src="images/logomarcaMedia.png">
 
         <div id="userInteractingBox">
             <button class="userAccountButton" id="userProfileVisualizationButton">
@@ -31,8 +31,8 @@
                 <?php endif; ?>
             </button>
 
-            <button class="userAccountButton" id="userProfileLogoutButton" onmouseout="changeLogoutIcon('_images/white-logout-icon.png')" onmouseover="changeLogoutIcon('_images/blue-logout-icon.png')">
-                <a href="_settings/logout.php" id="logoutLink" class="accountLinks"><img id="logout-icon" src="_images/white-logout-icon.png"></a>
+            <button class="userAccountButton" id="userProfileLogoutButton" onmouseout="changeLogoutIcon('images/white-logout-icon.png')" onmouseover="changeLogoutIcon('images/blue-logout-icon.png')">
+                <a href="settings/logout.php" id="logoutLink" class="accountLinks"><img id="logout-icon" src="images/white-logout-icon.png"></a>
             </button>
         </div>
 
@@ -50,7 +50,7 @@
 
     <div class="corpoHome">
         <div class="imagemHome">
-            <img src="_images/900x340_9.jpg">
+            <img src="images/900x340_9.jpg">
         </div>
         <div class="bordaImagemHome">
             <p> Contato </p>
@@ -172,7 +172,7 @@
 
         <div class="logoEsquerdaRodape">
             <a href="contato.php#cabecalho">
-                <img src="_images/logomarcaQuaseNormal.png">
+                <img src="images/logomarcaQuaseNormal.png">
             </a>
         </div>
 

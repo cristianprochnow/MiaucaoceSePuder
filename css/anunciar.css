@@ -378,3 +378,18 @@ input.formButtons:hover {
     border: solid 1px #BF1300;
     border-radius: 3px;
 }
+
+.success-box-ad-page {
+    width: 780px;
+    min-height: 10px;
+    padding: 10px;
+    line-height: 20px;
+    text-align: justify;
+    font-weight: bolder;
+    font-size: 14px;
+    margin: 30px auto -20px auto;
+    background-color: rgb(148, 216, 147);
+    color: #2B802A;
+    border: solid 1px #2B802A;
+    border-radius: 3px;
+}

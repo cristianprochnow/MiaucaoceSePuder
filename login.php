@@ -5,23 +5,23 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="_css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
     <title>MiauCãoce se Puder</title>
-    <link rel="icon" href="_images/logomarcaPreta.png" type="image/x-icon">
+    <link rel="icon" href="images/logomarcaPreta.png" type="image/x-icon">
 </head>
 
 <body>
     <div class="loginPage">
         <div class="imageLogo">
             <a href="index.php">
-                <img id="headerImage" src="_images/logomarcaPequena.png">
+                <img id="headerImage" src="images/logomarcaPequena.png">
             </a>
         </div>
 
         <?php
-            require_once('_settings/config.php');
-            require_once('_class/Login.php');
-            require_once('_class/Alertas.php');
+            require_once('settings/config.php');
+            require_once('class/Login.php');
+            require_once('class/Alertas.php');
 
             if (isset($_POST['login'])) {
                 $login = new Login();

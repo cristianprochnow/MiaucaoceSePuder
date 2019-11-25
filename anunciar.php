@@ -1,9 +1,9 @@
 <?php
     session_start();
 
-    require_once('_settings/check.php');
-    require_once('_class/Alertas.php');
-    require_once('_class/Anuncio.php');
+    require_once('settings/check.php');
+    require_once('class/Alertas.php');
+    require_once('class/Anuncio.php');
 ?>
 
 <!DOCTYPE html>
@@ -12,17 +12,17 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="_css/anunciar.css">
-    <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="css/anunciar.css">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <title>MiauCãoce se Puder</title>
     <link rel="icon" href="_images/logomarcaPreta.png" type="image/x-icon">
 
-    <script type="text/javascript" src="_javascript/functions.js"></script>
+    <script type="text/javascript" src="javascript/functions.js"></script>
 </head>
 
 <body>
     <header id="cabecalho">
-        <img id="cabecalhoLogo" src="_images/logomarcaMedia.png">
+        <img id="cabecalhoLogo" src="images/logomarcaMedia.png">
 
         <div id="userInteractingBox">
             <button class="userAccountButton" id="userProfileVisualizationButton">
@@ -33,8 +33,8 @@
                 <?php endif; ?>
             </button>
 
-            <button class="userAccountButton" id="userProfileLogoutButton" onmouseout="changeLogoutIcon('_images/white-logout-icon.png')" onmouseover="changeLogoutIcon('_images/blue-logout-icon.png')">
-                <a href="_settings/logout.php" id="logoutLink" class="accountLinks"><img id="logout-icon" src="_images/white-logout-icon.png"></a>
+            <button class="userAccountButton" id="userProfileLogoutButton" onmouseout="changeLogoutIcon('images/white-logout-icon.png')" onmouseover="changeLogoutIcon('images/blue-logout-icon.png')">
+                <a href="_settings/logout.php" id="logoutLink" class="accountLinks"><img id="logout-icon" src="images/white-logout-icon.png"></a>
             </button>
         </div>
 
@@ -52,7 +52,7 @@
 
     <div class="corpoHome">
         <div class="imagemHome">
-            <img src="_images/900x340_3.jpg">
+            <img src="images/900x340_3.jpg">
         </div>
         <div class="bordaImagemHome">
             <p> Anunciar </p>
@@ -75,9 +75,92 @@
 
                     print $alert -> errorMessageAdPage('Número limite de caracteres excedido. O campo Nome Completo pode ter no máximo 200 caracteres.');
 
-                } elseif ($announce -> contarCaracteresDaStringInserida($_POST['adUsername']) > 200) {
+                } elseif ($announce -> contarCaracteresDaStringInserida($_POST['adPhone']) > 80) {
 
-                    print $alert -> errorMessageAdPage('Número limite de caracteres excedido. O campo Nome Completo pode ter no máximo 200 caracteres.');
+                    print $alert -> errorMessageAdPage('Número limite de caracteres excedido. O campo Telefone pode ter no máximo 80 caracteres.');
+
+                } elseif ($announce -> contarCaracteresDaStringInserida($_POST['adEmail']) > 200) {
+
+                    print $alert -> errorMessageAdPage('Número limite de caracteres excedido. O campo E-mail pode ter no máximo 200 caracteres.');
+
+                } elseif ($announce -> contarCaracteresDaStringInserida($_POST['adState']) > 200) {
+
+                    print $alert -> errorMessageAdPage('Número limite de caracteres excedido. O campo Estado pode ter no máximo 200 caracteres.');
+
+                } elseif ($announce -> contarCaracteresDaStringInserida($_POST['adCity']) > 200) {
+
+                    print $alert -> errorMessageAdPage('Número limite de caracteres excedido. O campo Cidade pode ter no máximo 200 caracteres.');
+
+                } elseif ($announce -> contarCaracteresDaStringInserida($_POST['adAnimalName']) > 200) {
+
+                    print $alert -> errorMessageAdPage('Número limite de caracteres excedido. O campo Nome do Mascote pode ter no máximo 200 caracteres.');
+
+                } elseif ($announce -> contarCaracteresDaStringInserida($_POST['adAnimalType']) > 200) {
+
+                    print $alert -> errorMessageAdPage('Número limite de caracteres excedido. O campo Tipo pode ter no máximo 100 caracteres.');
+
+                } elseif ($announce -> contarCaracteresDaStringInserida($_POST['adAnimalFeature']) > 600) {
+
+                    print $alert -> errorMessageAdPage('Número limite de caracteres excedido. O campo Descrição do Anúncio pode ter no máximo 200 caracteres.');
+
+                } elseif ($announce -> contarCaracteresDaStringInserida($_POST['adAnimalDescription']) > 600) {
+
+                    print $alert -> errorMessageAdPage('Número limite de caracteres excedido. O campo Características do Mascote pode ter no máximo 200 caracteres.');
+
+                } else {
+
+                    $query = 'INSERT INTO anuncio SET anuncio_nome_completo=:nomeCompleto, anuncio_numero_telefone=:telefone, anuncio_email_contato=:email, anuncio_estado_local_animal=:estado, anuncio_cidade_local_animal=:cidade, anuncio_desc=:descricao, anuncio_cod_usuario=:cod_usuario'; 
+
+                    $submitData = $connection -> prepare($query);
+
+                    $submitData -> bindValue(':nomeCompleto', $announce -> higienizarDados($_POST['adUsername']));
+                    $submitData -> bindValue(':telefone', $announce -> higienizarDados($_POST['adPhone']));
+                    $submitData -> bindValue(':email', $announce -> higienizarDados($_POST['adEmail']));
+                    $submitData -> bindValue(':estado', $announce -> higienizarDados($_POST['adState']));
+                    $submitData -> bindValue(':cidade', $announce -> higienizarDados($_POST['adCity']));
+                    $submitData -> bindValue(':descricao', $announce -> higienizarDados($_POST['adAnimalDescription']));
+                    $submitData -> bindValue(':cod_usuario', $_SESSION['codUsuario']);
+
+                    if ($submitData -> execute()) {
+
+                        $queryCodAnuncio = 'SELECT cod_anuncio FROM anuncio WHERE anuncio_cod_usuario=:cod_usuario';
+
+                        $submitData = $connection -> prepare($queryCodAnuncio);
+                        $submitData -> bindValue(':cod_usuario', $_SESSION['codUsuario']);
+                        $submitData -> execute();
+                        $codSelected = $submitData -> fetch(PDO::FETCH_ASSOC);
+
+
+                        $queryAnimal = 'INSERT INTO animal SET animal_nome=:nomeAnimal, animal_tipo=:tipoAnimal,  animal_raca=:racaAnimal, animal_sexo=:sexoAnimal, animal_porte=:porteAnimal, animal_idade=:idadeAnimal, animal_pelagem=:pelagemAnimal, animal_foto_1=:foto1, animal_foto_2=:foto2, animal_desc=:descricaoAnimal, animal_cod_usuario=:codUserAnimal, animal_cod_anuncio=:codAnuncioAnimal';
+
+                        $submitData = $connection -> prepare($queryAnimal);
+
+
+                        $submitData -> bindValue(':nomeAnimal', $announce -> higienizarDados($_POST['adAnimalName']));
+                        $submitData -> bindValue(':tipoAnimal', $announce -> higienizarDados($_POST['adAnimalType']));
+                        $submitData -> bindValue(':racaAnimal', $announce -> higienizarDados($_POST['adAnimalBreed']));
+                        $submitData -> bindValue(':sexoAnimal', $announce -> higienizarDados($_POST['adAnimalSex']));
+                        $submitData -> bindValue(':porteAnimal', $announce -> higienizarDados($_POST['adAnimalSize']));
+                        $submitData -> bindValue(':idadeAnimal', $announce -> higienizarDados($_POST['adAnimalAge']));
+                        $submitData -> bindValue(':pelagemAnimal', $announce -> higienizarDados($_POST['adAnimalCoat']));
+                        $submitData -> bindValue(':foto1', $_POST['adAnimalPicture#1']);
+                        $submitData -> bindValue(':foto2', $_POST['adAnimalPicture#3']);
+                        $submitData -> bindValue(':descricaoAnimal', $announce -> higienizarDados($_POST['adAnimalFeature']));
+                        $submitData -> bindValue(':codUserAnimal', $_SESSION['codUsuario']);
+                        $submitData -> bindValue(':codAnuncioAnimal', $codSelected['cod_anuncio']);
+
+                        
+                        if ($submitData -> execute()) {
+
+                            print $alert -> successMessageAdPage('Registro salvo com sucesso.');
+
+                        } else {
+                            
+                            print $alert -> errorMessageAdPage('Não foi possível efetuar o registro. Por favor, tente novamente mais tarde.');
+
+                        }
+
+                    }
 
                 }
             }
@@ -302,7 +385,7 @@
 
         <div class="logoEsquerdaRodape">
             <a href="anunciar.php#cabecalho">
-                <img src="_images/logomarcaQuaseNormal.png">
+                <img src="images/logomarcaQuaseNormal.png">
             </a>
         </div>
 

@@ -32,10 +32,11 @@ CREATE TABLE animal
 (
 cod_animal INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 animal_nome VARCHAR(200),
+animal_tipo VARCHAR(200),
 animal_raca VARCHAR(100),
 animal_sexo VARCHAR(100),
 animal_porte VARCHAR(100),
-animal_idade INT,
+animal_idade VARCHAR(100),
 animal_pelagem VARCHAR(100),
 animal_foto_1 longblob,
 animal_foto_2 longblob,

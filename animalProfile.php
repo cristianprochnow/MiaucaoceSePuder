@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require_once('_settings/config.php');
+    require_once('settings/config.php');
 ?>
 
 <!DOCTYPE html>
@@ -10,23 +10,23 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="_css/profile.css">
-    <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="css/profile.css">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <title>MiauCãoce se Puder</title>
-    <link rel="icon" href="_images/logomarcaPreta.png" type="image/x-icon">
+    <link rel="icon" href="images/logomarcaPreta.png" type="image/x-icon">
 </head>
 
 <body>
     <div id="listraTopoSite"></div>
 
-    <a class="back-link" href="index.php"><img src="_images/icone-voltar-30x30.png"></a>
+    <a class="back-link" href="index.php"><img src="images/icone-voltar-30x30.png"></a>
 
     <div class="corpoTotalProfile">
 
         <div id="caracteristicasTopicosGeraisAnimal" class="itensPerfilAnimal">
             <div class="cabecalhoProfile">
                 <figure class="fotoPerfilAnimal">
-                    <img src="_images/420x313.jpg">
+                    <img src="images/420x313.jpg">
 
                     <figcaption class="nomeAnimal">
                         <h1>Felisclevilson</h1>
@@ -65,9 +65,7 @@
             <div class="titulosItens">
                 <p>Descrição das Características Gerais do Animal</p>
 
-                <div class="listras">
-                    <!--<img src="_images/faixaFinaAzulMedia.png">-->
-                </div>
+                <div class="listras"></div>
             </div>
 
             <div class="textoCaixas" id="descricaoCaracteristicas">
@@ -91,9 +89,7 @@
             <div class="titulosItens">
                 <p>Descrição do Anúncio</p>
 
-                <div class="listras">
-                    <!--<img src="_images/faixaFinaAzulMedia.png">-->
-                </div>
+                <div class="listras"></div>
             </div>
 
             <div class="textoCaixas" id="descricaoDoAnuncio">
@@ -117,17 +113,15 @@
             <div class="titulosItens">
                 <p>Mais Imagens do Mascote</p>
 
-                <div class="listras">
-                    <!--<img src="_images/faixaFinaAzulMedia.png">-->
-                </div>
+                <div class="listras"></div>
             </div>
 
             <div id="fotosAnimal">
                 <ul>
-                    <li><img src="_images/1280x720_1.jpg"></li>
-                    <li><img src="_images/1280x360_1.jpg"></li>
-                    <li><img src="_images/960x360_5.jpg"></li>
-                    <li><img src="_images/860x320_7.jpg"></li>
+                    <li><img src="images/1280x720_1.jpg"></li>
+                    <li><img src="images/1280x360_1.jpg"></li>
+                    <li><img src="images/960x360_5.jpg"></li>
+                    <li><img src="images/860x320_7.jpg"></li>
                 </ul>
             </div>
         </div>
@@ -136,9 +130,7 @@
             <div class="titulosItens">
                 <p>Informações para Contato</p>
 
-                <div class="listras">
-                    <!--<img src="_images/faixaFinaAzulMedia.png">-->
-                </div>
+                <div class="listras"></div>
             </div>
 
             <div class="conteudoItens" id="contatoTopicos">
@@ -158,13 +150,11 @@
     </div>
 
     <div class="rodape">
-        <div class="listrasRodape">
-            <!--<img src="_images/faixaFinaAzulMedia.png">-->
-        </div>
+        <div class="listrasRodape"></div>
 
         <div class="logoEsquerdaRodape">
             <a href="animalProfile.php#listraTopoSite">
-                <img src="_images/logomarcaQuaseNormal.png">
+                <img src="images/logomarcaQuaseNormal.png">
             </a>
         </div>
 
