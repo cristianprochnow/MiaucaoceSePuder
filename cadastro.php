@@ -40,7 +40,7 @@
                             print $alert -> errorMessage('Campos com * são de preenchimento obrigatório.');
                         } elseif ($resultOfVerification['qtd_usuario'] > 0) { 
                             print $alert -> errorMessage('Este nome de usuário já existe. Por favor, selecione outro.');
-                        }elseif ($register -> contarCaracteresDaStringInserida($_POST['registerNickname']) > 80) {
+                        } elseif ($register -> contarCaracteresDaStringInserida($_POST['registerNickname']) > 80) {
                             print $alert -> errorMessage('Número inválido de caracteres. O campo Usuário pode conter no máximo 80 caracteres.');
                         } elseif ($register -> contarCaracteresDaStringInserida($_POST['registerTelefone']) > 80) {
                             print $alert -> errorMessage('Número inválido de caracteres. O campo Telefone pode conter no máximo 80 caracteres.'); 

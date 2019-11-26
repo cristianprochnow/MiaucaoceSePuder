@@ -5,10 +5,9 @@
 div.conteudoTotal {
     display: block;
     width: 899px;
-    min-height: 550px;
-    margin: 50px auto 50px auto;
+    height: 700px;
+    margin: 50px auto 0 auto;
     padding: 0;
-    margin-top: 50px;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -42,7 +41,7 @@ div.introForm p:hover {
 div.conteudoEsquerda {
     display: block;
     width: 460px;
-    min-height: 550px;
+    height: 550px;
     float: left;
 }
 
@@ -64,7 +63,7 @@ input.contatoInput {
     width: 440px;
     height: 40px;
     text-indent: 10px;
-    font-size: 12px;
+    font-size: 13px;
     transition: background-color 0.5s;
     font-family: 'Raleway', sans-serif;
 }
@@ -87,7 +86,7 @@ textarea#mensagem {
     transition: background-color 0.5s;
     padding: 10px;
     font-family: 'Raleway', sans-serif;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 textarea#mensagem:hover {
@@ -232,4 +231,37 @@ div.aviso p {
 
 div.aviso p:hover {
     color: #0e3475;
+}
+
+
+/* ALERT BOXES FORMATTING */
+
+.error-box-contact-page {
+    width: 420px;
+    min-height: 10px;
+    padding: 10px;
+    line-height: 20px;
+    text-align: justify;
+    font-weight: bolder;
+    font-size: 13px;
+    margin: 0 auto 30px auto;
+    background-color: rgb(255, 186, 179);
+    color: #BF1300;
+    border: solid 1px #BF1300;
+    border-radius: 3px;
+}
+
+.success-box-contact-page {
+    width: 420px;
+    min-height: 10px;
+    padding: 10px;
+    line-height: 20px;
+    text-align: justify;
+    font-weight: bolder;
+    font-size: 13px;
+    margin: 0 auto 30px auto;
+    background-color: rgb(148, 216, 147);
+    color: #2B802A;
+    border: solid 1px #2B802A;
+    border-radius: 3px;
 }

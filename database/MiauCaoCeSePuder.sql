@@ -48,15 +48,25 @@ animal_cod_anuncio INT NOT NULL,
 FOREIGN KEY (animal_cod_anuncio) REFERENCES anuncio(cod_anuncio)
 );
 
-create table contato
+CREATE TABLE contato
 (
-cod_contato INT NOT NULL auto_increment PRIMARY KEY,
+cod_contato INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 contato_nome_completo VARCHAR(200),
 contato_telefone VARCHAR(80),
 contato_email VARCHAR(200),
+contado_estado VARCHAR(200),
+contato_cidade VARCHAR(200),
 contato_assunto VARCHAR(300),
 contato_texto_mensagem VARCHAR(600),
 
 contato_cod_usuario INT NOT NULL,
 FOREIGN KEY (contato_cod_usuario) REFERENCES usuario(cod_usuario)
+);
+
+CREATE TABLE tipo_usuario 
+(
+cod_tipo INT(1),
+
+tipo_cod_usuario INT NOT NULL,
+FOREIGN KEY (tipo_cod_usuario) REFERENCES usuario(cod_usuario)
 );

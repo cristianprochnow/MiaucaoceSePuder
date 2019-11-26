@@ -27,5 +27,13 @@
         public function successMessageAdPage($mensagemDeAlerta) {
             return "<div class='success-box-ad-page'> $mensagemDeAlerta </div>";
         }
+
+        public function errorMessageContactPage($mensagemDeAlerta) {
+            return "<div class='error-box-contact-page'> $mensagemDeAlerta </div>";
+        }
+
+        public function successMessageContactPage($mensagemDeAlerta) {
+            return "<div class='success-box-contact-page'> $mensagemDeAlerta </div>";
+        }
     }
 ?>

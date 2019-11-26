@@ -55,90 +55,180 @@
         <div class="bordaImagemHome">
             <p> Contato </p>
 
-            <div id="listraImagemPrincipal">
-                <!--<img src="_images/faixaFinaAzulMedia.png">-->
-            </div>
+            <div id="listraImagemPrincipal"></div>
         </div>
     </div>
 
     <div class="conteudoTotal">
         <div class="conteudoEsquerda">
-            <form method="POST" action="contatoUserMessage.php">
+
+            <?php
+            
+                require_once('class/Contato.php');
+                require_once('class/Alertas.php');
+
+                if (isset($_POST['submit'])) {
+
+                    $contact = new Contato();
+                    $alert = new Alertas();
+
+                    if (empty($_POST['contactUsername']) || empty($_POST['contactUserPhone']) || empty($_POST['contactEmail']) || empty($_POST['contactUserState']) || empty($_POST['contactUserCity']) || empty($_POST['contactUserMessageTitle']) || empty($_POST['contactUserMessage'])) {
+
+                        print $alert -> errorMessageContactPage('Campos com * são de preenchimento obrigatório.');
+
+                    } elseif ($contact -> contarCaracteresDaStringInserida($_POST['contactUsername']) > 200) {
+
+                        print $alert -> errorMessageContactPage('O limite de caracteres inseridos no campo Nome Completo foi excedido. É suportado até 200 caracteres.');
+
+                    } elseif ($contact -> contarCaracteresDaStringInserida($_POST['contactUserPhone']) > 80) {
+
+                        print $alert -> errorMessageContactPage('O limite de caracteres inseridos no campo Telefone/Celular foi excedido. É suportado até 200 caracteres.');
+
+                    } elseif ($contact -> contarCaracteresDaStringInserida($_POST['contactEmail']) > 200) {
+
+                        print $alert -> errorMessageContactPage('O limite de caracteres inseridos no campo E-mail foi excedido. É suportado até 200 caracteres.');
+
+                    } elseif ($contact -> contarCaracteresDaStringInserida($_POST['contactUserState']) > 200) {
+
+                        print $alert -> errorMessageContactPage('O limite de caracteres inseridos no campo Estado foi excedido. É suportado até 200 caracteres.');
+
+                    } elseif ($contact -> contarCaracteresDaStringInserida($_POST['contactUserCity']) > 200) {
+
+                        print $alert -> errorMessageContactPage('O limite de caracteres inseridos no campo Cidade foi excedido. É suportado até 200 caracteres.');
+
+                    } elseif ($contact -> contarCaracteresDaStringInserida($_POST['contactUserMessageTitle']) > 300) {
+
+                        print $alert -> errorMessageContactPage('O limite de caracteres inseridos no campo Assunto da Mensagem foi excedido. É suportado até 300 caracteres.');
+
+                    } elseif ($contact -> contarCaracteresDaStringInserida($_POST['contactUserMessage']) > 600) {
+
+                        print $alert -> errorMessageContactPage('O limite de caracteres inseridos no campo Mensagem foi excedido. É suportado até 600 caracteres.');
+
+                    } else {
+                        
+                        $query = 'INSERT INTO contato SET contato_nome_completo=:nomeCompleto, contato_telefone=:telefone, contato_email=:email, contato_estado=:estado, contato_cidade=:cidade, contato_assunto=:assunto, contato_texto_mensagem=:mensagem, contato_cod_usuario=:codUsuario';
+
+                        
+                        $submitData = $connection -> prepare($query);
+
+
+                        $submitData -> bindValue(':nomeCompleto', $contact -> higienizarDados($_POST['contactUsername']));
+                        $submitData -> bindValue(':telefone', $contact -> higienizarDados($_POST['contactUserPhone']));
+                        $submitData -> bindValue(':email', $contact -> higienizarDados($_POST['contactEmail']));
+                        $submitData -> bindValue(':estado', $contact -> higienizarDados($_POST['contactUserState']));
+                        $submitData -> bindValue(':cidade', $contact -> higienizarDados($_POST['contactUserCity']));
+                        $submitData -> bindValue(':assunto', $contact -> higienizarDados($_POST['contactUserMessageTitle']));
+                        $submitData -> bindValue(':mensagem', $contact -> higienizarDados($_POST['contactUserMessage']));
+                        $submitData -> bindValue(':codUsuario', $_SESSION['codUsuario']);
+
+
+                        if ($submitData -> execute()) {
+
+                            print $alert -> successMessageContactPage('Registro salvo com sucesso. Agradecemos seu Feedback. Logo, logo, estaremos entrando em contato com você pelo e-mail anteriormente inserido.');
+
+                        } else {
+                            
+                            print $alert -> errorMessageContactPage('Erro ao efetuar o registro. Por favor, tente novamente mais tarde.');
+
+                        }
+
+                    }
+
+                }
+            
+            ?>
+
+            <form method="POST" action=<?php print $_SERVER['PHP_SELF']; ?>>
                 <div class="introForm">
                     <p>Nos dê seu Feedback:</p>
                 </div>
 
                 <p class="itensFormContato">
                     <label for="nomeCompleto">Nome Completo:</label>
-                    <input type="text" class="contatoInput" id="nomeCompleto" name="contactUsername" aria-placeholder="Nome Completo" placeholder="Nome Completo*" required>
+                    <input type="text" class="contatoInput" id="nomeCompleto" name="contactUsername" aria-placeholder="Nome Completo" placeholder="Nome Completo*">
                 </p>
 
                 <p class="itensFormContato">
                     <label for="numeroTel">Telefone/Celular</label>
-                    <input type="number" min="0" class="contatoInput" id="numeroTel" name="contactUserPhone" aria-placeholder="Telefone/Celular" placeholder="Telefone/Celular*" required>
+                    <input type="text" class="contatoInput" id="numeroTel" name="contactUserPhone" aria-placeholder="Telefone/Celular" placeholder="Telefone/Celular*">
                 </p>
 
                 <p class="itensFormContato">
                     <label for="email">E-mail</label>
-                    <input type="email" class="contatoInput" id="email" name="contactUserName" aria-placeholder="E-mail" placeholder="E-mail*" required>
+                    <input type="email" class="contatoInput" id="email" name="contactEmail" aria-placeholder="E-mail" placeholder="E-mail*">
                 </p>
 
                 <p class="itensFormContato">
                     <label for="estado">Estado:</label>
-                    <input class="contatoInput" id="estado" name="contactUserState" type="text" list="estados" aria-placeholder="Estado" placeholder="Estado*" required>
+                    <input class="contatoInput" id="estado" name="contactUserState" type="text" list="estados" aria-placeholder="Estado" placeholder="Estado*">
                 </p>
 
                 <datalist id="estados">
-                    <option value="AM">Amazonas (AM)</option>
-                    <option value="RR">Roraima (RR)</option>
-                    <option value="AP">Amapá (AP)</option>
-                    <option value="PA">Pará (PA)</option>
-                    <option value="TO">Tocantins (TO)</option>
-                    <option value="RO">Rondônia (RO)</option>
-                    <option value="AC">Acre (AC)</option>
-                    <option value="MA">Maranhão (MA)</option>
-                    <option value="PI">Piauí (PI)</option>
-                    <option value="CE">Ceará (CE)</option>
-                    <option value="RS">Rio Grande do Norte (RN)</option>
-                    <option value="PE">Pernambuco (PE)</option>
-                    <option value="PB">Paraíba (PB)</option>
-                    <option value="SE">Sergipe (SE)</option>
-                    <option value="AL">Alagoas (AL)</option>
-                    <option value="BA">Bahia (BA)</option>
-                    <option value="MT">Mato Grosso (MT)</option>
-                    <option value="MS">Mato Grosso do Sul (MS)</option>
-                    <option value="GO">Goiás (GO)</option>
-                    <option value="RJ">Rio de Janeiro (RJ)</option>
-                    <option value="SP">São Paulo (SP)</option>
-                    <option value="MG">Minas Gerais (MG)</option>
-                    <option value="ES">Espírito Santo (ES)</option>
-                    <option value="PR">Paraná (PR)</option>
-                    <option value="SC">Santa Catarina (SC)</option>
-                    <option value="RS">Rio Grande do Sul (RS)</option>
+                    <optgroup label="Região Norte">
+                        <option>Acre</option>
+                        <option>Amapá</option>
+                        <option>Amazonas</option>
+                        <option>Pará</option>
+                        <option>Rondônia</option>
+                        <option>Roraima</option>
+                        <option>Tocantins</option>
+                    </optgroup>
+
+                    <optgroup label="Região Nordeste">
+                        <option>Alagoas</option>
+                        <option>Bahia</option>
+                        <option>Ceará</option>
+                        <option>Maranhão</option>
+                        <option>Paraíba</option>
+                        <option>Pernambuco</option>
+                        <option>Piauí</option>
+                        <option>Rio Grande do Norte</option>
+                        <option>Sergipe</option>
+                    </optgroup>
+
+                    <optgroup label="Região Centro-Oeste">
+                        <option>Goiás</option>
+                        <option>Mato Grosso</option>
+                        <option>Mato Grosso do Sul</option>
+                        <option>Distrito Federal</option>
+                    </optgroup>
+
+                    <optgroup label="Região Sudeste">
+                        <option>Espírito Santo</option>
+                        <option>Minas Gerais</option>
+                        <option>São Paulo</option>
+                        <option>Rio de Janeiro</option>
+                    </optgroup>
+
+                    <optgroup label="Região Nordeste">
+                        <option>Paraná</option>
+                        <option>Rio Grande do Sul</option>
+                        <option>Santa Catarina</option>
+                    </optgroup>
                 </datalist>
 
                 <p class="itensFormContato">
                     <label for="cidade">Cidade:</label>
-                    <input class="contatoInput" id="cidade" name="contactUserCity" type="text" aria-placeholder="Cidade" placeholder="Cidade*" required>
+                    <input class="contatoInput" id="cidade" name="contactUserCity" type="text" aria-placeholder="Cidade" placeholder="Cidade*">
                 </p>
 
                 <p class="itensFormContato">
                     <label for="assuntoMensagem">Assunto:</label>
-                    <input type="text" class="contatoInput" id="assuntoMensagem" name="contactUserMessageTitle" aria-placeholder="Assunto" placeholder="Assunto da Mensagem*" required>
+                    <input type="text" class="contatoInput" id="assuntoMensagem" name="contactUserMessageTitle" aria-placeholder="Assunto" placeholder="Assunto da Mensagem*">
                 </p>
 
                 <p class="caixaTextoContato">
                     <label for="mensagem">Mensagem:</label>
-                    <textarea class="caixaTexto" id="mensagem" name="contactUserMessage" aria-placeholder="Mensagem" placeholder="Mensagem*" required></textarea>
+                    <textarea class="caixaTexto" id="mensagem" name="contactUserMessage" aria-placeholder="Mensagem" placeholder="Mensagem*"></textarea>
                 </p>
 
                 <div class="botoesForm">
                     <span class="botaoEsquerda">
-                        <input type="reset" class="botoesForm" id="botaoRedefinir" aria-placeholder="Redefinir" placeholder="Redefinir">
+                        <input type="reset" name="reset" class="botoesForm" id="botaoRedefinir" aria-placeholder="Redefinir" placeholder="Redefinir">
                     </span>
 
                     <span class="botaoDireita">
-                        <input type="submit" class="botoesForm" id="botaoEnviar" aria-placeholder="Enviar" placeholder="Enviar">
+                        <input type="submit" name="submit" class="botoesForm" id="botaoEnviar" aria-placeholder="Enviar" placeholder="Enviar">
                     </span>
                 </div>
             </form>
@@ -166,9 +256,7 @@
     </div>
 
     <div class="rodape">
-        <div class="listrasRodape">
-            <!--<img src="_images/faixaFinaAzulMedia.png">-->
-        </div>
+        <div class="listrasRodape"></div>
 
         <div class="logoEsquerdaRodape">
             <a href="contato.php#cabecalho">

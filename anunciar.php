@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="css/anunciar.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <title>MiauCãoce se Puder</title>
-    <link rel="icon" href="_images/logomarcaPreta.png" type="image/x-icon">
+    <link rel="icon" href="images/logomarcaPreta.png" type="image/x-icon">
 
     <script type="text/javascript" src="javascript/functions.js"></script>
 </head>
@@ -34,7 +34,7 @@
             </button>
 
             <button class="userAccountButton" id="userProfileLogoutButton" onmouseout="changeLogoutIcon('images/white-logout-icon.png')" onmouseover="changeLogoutIcon('images/blue-logout-icon.png')">
-                <a href="_settings/logout.php" id="logoutLink" class="accountLinks"><img id="logout-icon" src="images/white-logout-icon.png"></a>
+                <a href="settings/logout.php" id="logoutLink" class="accountLinks"><img id="logout-icon" src="images/white-logout-icon.png"></a>
             </button>
         </div>
 
