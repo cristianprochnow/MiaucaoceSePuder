@@ -10,6 +10,8 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="css/profile.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <title>MiauCãoce se Puder</title>
@@ -19,7 +21,7 @@
 <body>
     <div id="listraTopoSite"></div>
 
-    <a class="back-link" href="index.php"><img src="images/icone-voltar-30x30.png"></a>
+    <a class="back-link" href="index.php"><i class="material-icons">arrow_back</i></a>
 
     <?php
         require_once('settings/config.php');
@@ -41,16 +43,14 @@
             <div class="cabecalhoProfile">
                 <figure class="fotoPerfilAnimal">
                     <figcaption class="nomeAnimal">
-                        <h1><?php print $userData['usuario_nome_completo']; ?></h1>
+                        <h1><?php print $userData['usuario_nome_completo']; ?> &nbsp; <a alt="deletar perfil" href="delete.php"><i class="material-icons" title="Deletar Perfil">delete</i></a> </h1>
                     </figcaption>
                 </figure>
             </div>
 
             <div id="característicasGeraisAnimal">
                 <div class="titulosItens">
-                    <p>Informações do Usuário</p>
-
-                    <div class="listras"></div>
+                    <p>Informações do Usuário<a href="update.php"><i class="material-icons" title="Editar Perfil">edit</i></a> </p>
                 </div>
 
                 <div id="topicosDeCaracteristicas" class="conteudoItens">

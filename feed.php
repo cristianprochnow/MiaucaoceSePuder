@@ -25,7 +25,7 @@
         <img id="cabecalhoLogo" src="images/logomarcaMedia.png">
 
             <div id="userInteractingBox">
-                <button class="userAccountButton" id="userProfileVisualizationButton">
+                <button class="userAccountButton" id="userProfileVisualizationButton" title="Visualizar Perfil">
                     <?php if (isLoggedIn()): ?>
                         <a href="profile.php" id="profileViewLink" class="accountLinks">Olá, <?php print $_SESSION['nomeUsuario'] ?></a>
                     <?php else: ?>
@@ -33,8 +33,8 @@
                     <?php endif; ?>
                 </button>
 
-                <button class="userAccountButton" id="userProfileLogoutButton" onmouseout="changeLogoutIcon('images/white-logout-icon.png')" onmouseover="changeLogoutIcon('images/blue-logout-icon.png')">
-                    <a href="settings/logout.php" id="logoutLink" class="accountLinks"><img id="logout-icon" src="images/white-logout-icon.png"></a>
+                <button class="userAccountButton" id="userProfileLogoutButton" onmouseout="changeLogoutIcon('images/white-logout-icon.png')" onmouseover="changeLogoutIcon('images/blue-logout-icon.png')" title="Fazer Logout">
+                    <a href="settings/logout.php" id="logoutLink" class="accountLinks" title="Fazer Logout"><img id="logout-icon" src="images/white-logout-icon.png"></a>
                 </button>
             </div>
 

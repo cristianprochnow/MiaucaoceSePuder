@@ -5,7 +5,7 @@
 div.conteudoAnuncios {
     display: block;
     width: 899px;
-    min-height: 900px;
+    min-height: 400px;
     margin: 50px auto 30px auto;
 }
 
@@ -15,7 +15,7 @@ div.conteudoAnuncios {
 div.caixaCima {
     display: block;
     width: 899px;
-    height: 260px;
+    height: 70px;
     margin-bottom: 30px;
 }
 
@@ -25,7 +25,7 @@ div.caixaCima {
 div.caixaMeio {
     display: block;
     width: 899px;
-    height: 260px;
+    height: 70px;
     margin-bottom: 30px;
 }
 
@@ -35,7 +35,7 @@ div.caixaMeio {
 div.caixaBaixo {
     display: block;
     width: 899px;
-    height: 260px;
+    height: 70px;
     margin-bottom: 30px;
 }
 
@@ -45,8 +45,9 @@ div.caixaBaixo {
 div.box1 {
     display: block;
     width: 280px;
-    height: 190px;
+    height: 70px;
     float: left;
+    margin-top: 4px;
 }
 
 div.box1 figure {
@@ -86,7 +87,7 @@ div.box1 a {
 div.box2 {
     display: block;
     width: 280px;
-    height: 190px;
+    height: 70px;
     margin: auto;
 }
 
@@ -127,9 +128,9 @@ div.box2 a {
 div.box3 {
     display: block;
     width: 280px;
-    height: 190px;
+    height: 70px;
     float: right;
-    margin-top: -190px;
+    margin-top: -66px;
 }
 
 div.box3 figure {

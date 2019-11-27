@@ -10,6 +10,8 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="css/profile.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <title>MiauCãoce se Puder</title>
@@ -19,15 +21,13 @@
 <body>
     <div id="listraTopoSite"></div>
 
-    <a class="back-link" href="index.php"><img src="images/icone-voltar-30x30.png"></a>
+    <a class="back-link" href="index.php"><i class="material-icons">arrow_back</i></a>
 
     <div class="corpoTotalProfile">
 
         <div id="caracteristicasTopicosGeraisAnimal" class="itensPerfilAnimal">
             <div class="cabecalhoProfile">
                 <figure class="fotoPerfilAnimal">
-                    <img src="images/420x313.jpg">
-
                     <figcaption class="nomeAnimal">
                         <h1>Felisclevilson</h1>
                     </figcaption>
@@ -36,11 +36,7 @@
 
             <div id="característicasGeraisAnimal">
                 <div class="titulosItens">
-                    <p>Características Gerais do Animal</p>
-
-                    <div class="listras">
-                        <!--<img src="_images/faixaFinaAzulMedia.png">-->
-                    </div>
+                    <p>Informações do Usuário<a href="#"><i class="material-icons">edit</i></a> </p>
                 </div>
 
                 <div id="topicosDeCaracteristicas" class="conteudoItens">
@@ -63,9 +59,7 @@
 
         <div id="descricaoCaracteristicasAnimal" class="itensPerfilAnimal">
             <div class="titulosItens">
-                <p>Descrição das Características Gerais do Animal</p>
-
-                <div class="listras"></div>
+                <p>Descrição das Características Gerais do Animal<a href="#"><i class="material-icons">edit</i></a></p>
             </div>
 
             <div class="textoCaixas" id="descricaoCaracteristicas">
@@ -87,9 +81,7 @@
 
         <div id="descricaoDoAnuncioAnimal" class="itensPerfilAnimal">
             <div class="titulosItens">
-                <p>Descrição do Anúncio</p>
-
-                <div class="listras"></div>
+                <p>Descrição do Anúncio<a href="#"><i class="material-icons">edit</i></a></p>
             </div>
 
             <div class="textoCaixas" id="descricaoDoAnuncio">
@@ -111,9 +103,7 @@
 
         <div class="itensPerfilAnimal" id="maisFotosAnimal">
             <div class="titulosItens">
-                <p>Mais Imagens do Mascote</p>
-
-                <div class="listras"></div>
+                <p>Mais Imagens do Mascote<a href="#"><i class="material-icons">edit</i></a></p>
             </div>
 
             <div id="fotosAnimal">
@@ -128,9 +118,7 @@
 
         <div id="InformacoesContatoAnimal" class="itensPerfilAnimal">
             <div class="titulosItens">
-                <p>Informações para Contato</p>
-
-                <div class="listras"></div>
+                <p>Informações para Contato<a href="#"><i class="material-icons">edit</i></a></p>
             </div>
 
             <div class="conteudoItens" id="contatoTopicos">

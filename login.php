@@ -47,7 +47,7 @@
                         } else {
                             session_start();
 
-                            $_SESSION['isLogged'] = true;
+                            $_SESSION['isLogged'] = time();
                             $_SESSION['nomeUsuario'] = $user['usuario_nome_completo'];
                             $_SESSION['codUsuario'] = $user['cod_usuario'];
 
