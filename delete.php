@@ -38,19 +38,6 @@
                         } elseif (isset($_POST['yes-choice'])) {
                             
                             try {
-
-                                $sentenceOfUpdate = 'UPDATE anuncio, animal SET anuncio_cod_usuario=:anuncioCodUsuario, animal_cod_usuario=:animalCodUsuario WHERE anuncio_cod_usuario=cod_usuario AND cod_usuario=animal_cod_usuario AND cod_usuario=:codUsuario';
-                                $updateData = $connection -> prepare($sentenceOfUpdate);
-
-                                $codUsuario = $_SESSION['codUsuario'];
-                                $codDefault = 0;
-
-                                $updateData -> bindParam(':anuncioCodUsuario', $codDefault);
-                                $updateData -> bindParam(':animalCodUsuario', $codDefault);
-                                $updateData -> bindParam(':codUsuario', $codUsuario);
-
-                                $updateData -> execute();
-
                     
                                 $sentenceOfDelete = 'DELETE FROM usuario WHERE cod_usuario=:codUsuario';
                                 $deleteData = $connection -> prepare($sentenceOfDelete);
@@ -87,6 +74,7 @@
                     ?>
 
                     <h1>Tem certeza que deseja excluir sua conta?</h1>
+                    <h2 id="alert-message"><b>CUIDADO!</b> Ao deletar sua conta, todos os anúncios e mensagens de contato/feedback que foram feitas, também serão excluídas.</h2>
                 </div>
 
                 <form method="POST" action=<?php print $_SERVER['PHP_SELF']; ?> class="form-box">

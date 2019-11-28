@@ -96,9 +96,22 @@
     padding: 2%;
     font-size: 1.6vw;
     text-align: justify;
-    text-indent: 0.5vw;
     color: #BF1300;
     border: solid 1px #BF1300;
     background-color: rgb(255, 186, 179);
+
+}
+
+
+#alert-message {
+
+    width: 100%;
+    height: auto;
+    padding: 2%;
+    font-size: 1.6vw;
+    text-align: justify;
+    border: solid 1px rgb(255, 191, 0);
+    color: rgb(255, 191, 0);
+    background-color: rgb(255, 235, 176);
 
 }

@@ -206,9 +206,9 @@ p.mensagemCadastro a:hover {
     font-weight: bolder;
     font-size: 12px;
     margin: 30px auto -10px auto;
-    background-color: rgb(233, 209, 136);
-    color: #FFCD36;
-    border: solid 1px #FFCD36;
+    border: solid 1px rgb(255, 191, 0);
+    color: rgb(255, 191, 0);
+    background-color: rgb(255, 235, 176);
     border-radius: 3px;
 }
 
