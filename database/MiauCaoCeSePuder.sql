@@ -11,7 +11,8 @@ usuario_nome_completo VARCHAR(200),
 usuario_telefone VARCHAR(80),
 usuario_estado VARCHAR(200),
 usuario_cidade VARCHAR(200),
-usuario_email VARCHAR(200)
+usuario_email VARCHAR(200),
+usuario_tipo INT(1)
 );
 
 CREATE TABLE anuncio
@@ -42,10 +43,12 @@ animal_foto_1 longblob,
 animal_foto_2 longblob,
 animal_desc VARCHAR(600),
 
-animal_cod_usuario INT NOT NULL,
-FOREIGN KEY (animal_cod_usuario) REFERENCES usuario(cod_usuario),
+
 animal_cod_anuncio INT NOT NULL,
-FOREIGN KEY (animal_cod_anuncio) REFERENCES anuncio(cod_anuncio)
+FOREIGN KEY (animal_cod_anuncio) REFERENCES anuncio(cod_anuncio),
+
+animal_cod_usuario INT NOT NULL,
+FOREIGN KEY (animal_cod_usuario) REFERENCES usuario(cod_usuario)
 );
 
 CREATE TABLE contato
@@ -61,12 +64,4 @@ contato_texto_mensagem VARCHAR(600),
 
 contato_cod_usuario INT NOT NULL,
 FOREIGN KEY (contato_cod_usuario) REFERENCES usuario(cod_usuario)
-);
-
-CREATE TABLE tipo_usuario 
-(
-cod_tipo INT(1),
-
-tipo_cod_usuario INT NOT NULL,
-FOREIGN KEY (tipo_cod_usuario) REFERENCES usuario(cod_usuario)
 );
