@@ -14,7 +14,7 @@ CREATE TABLE usuario (
 	usuario_email VARCHAR(200),
 	usuario_tipo INT(1)
 
-);
+) ENGINE = InnoDB;
 
 CREATE TABLE anuncio (
 
@@ -33,7 +33,7 @@ CREATE TABLE anuncio (
 	ON UPDATE CASCADE
 	ON DELETE CASCADE
 
-);
+) ENGINE = InnoDB;
 
 CREATE TABLE animal (
 
@@ -65,7 +65,7 @@ CREATE TABLE animal (
 	ON UPDATE CASCADE
 	ON DELETE CASCADE
 
-);
+) ENGINE = InnoDB;
 
 CREATE TABLE contato (
 
@@ -85,4 +85,4 @@ CREATE TABLE contato (
 	ON UPDATE CASCADE
 	ON DELETE CASCADE
 
-);
+) ENGINE = InnoDB;

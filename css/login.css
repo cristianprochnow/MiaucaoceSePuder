@@ -158,7 +158,7 @@ p.mensagemCadastro a:hover {
 /* formatting the a, from the p */
 .link-login-from-register-page a {
     padding: 20px 95px 20px 95px;
-    font-size: 14px;
+    font-size: 12px;
     text-decoration: none;
     color: #c0c0c0;
     font-family: 'Raleway', sans-serif;

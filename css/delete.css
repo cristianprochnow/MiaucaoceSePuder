@@ -91,9 +91,10 @@
 
 #error-message {
 
-    width: 100%;
+    width: 90%;
     height: auto;
     padding: 2%;
+    margin: auto;
     font-size: 1.6vw;
     text-align: justify;
     color: #BF1300;
@@ -105,9 +106,10 @@
 
 #alert-message {
 
-    width: 100%;
+    width: 90%;
     height: auto;
     padding: 2%;
+    margin: auto;
     font-size: 1.6vw;
     text-align: justify;
     border: solid 1px rgb(255, 191, 0);

@@ -73,7 +73,7 @@
                             if ($submitData -> execute()) {
                                 print $alert -> successMessage('Registro salvo com sucesso!');
 
-                                print "<div class='link-login-from-register-page'><a href='login.php'>Fazer Login</a></div>";
+                                print "<div class='link-login-from-register-page'><a href='login.php'>Login</a></div>";
                             } else {
                                 print $alert -> errorMessage('Não foi possível efetuar o registro. Por favor, tente novamente mais tarde.');
                             }
