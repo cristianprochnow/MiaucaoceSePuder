@@ -2,6 +2,19 @@
     session_start();
 
     require_once('settings/config.php');
+    require_once('settings/functions.php');
+    require_once('class/Login.php');
+
+
+    if (isset($_GET['cod'])) {
+
+        $cod = $_GET['cod'];
+
+    } else {
+        
+        header('Location: feed.php');
+
+    }
 ?>
 
 <!DOCTYPE html>
@@ -25,116 +38,151 @@
 
         <div class="corpoTotalProfile">
 
-            <div id="caracteristicasTopicosGeraisAnimal" class="itensPerfilAnimal">
-                <div class="cabecalhoProfile">
-                    <figure class="fotoPerfilAnimal">
-                        <figcaption class="nomeAnimal">
-                            <h1>Felisclevilson</h1>
-                        </figcaption>
-                    </figure>
-                </div>
+                <?php
 
-                <div id="característicasGeraisAnimal">
-                    <div class="titulosItens">
-                        <p>Informações do Usuário<a href="#"><i class="material-icons">edit</i></a> </p>
-                    </div>
+                    $profile = new Login();
+                
+                    $selectSentence = 'SELECT * FROM animal WHERE cod_animal = :codAnimal';
+                    $selectData = $connection -> prepare($selectSentence);
+                    
+                    $codAnimal = $profile -> higienizarDados($cod);
+                    $selectData -> bindParam(':codAnimal', $codAnimal);
 
-                    <div id="topicosDeCaracteristicas" class="conteudoItens">
-                        <div class="topicos" id="topicosEsquerda">
-                            <p><b>Nome: </b>Felisclevilson</p>
-                            <p><b>Situação: </b>Perdido</p>
-                            <p><b>Pelagem: </b>Curta</p>
-                            <p><b>Porte: </b>Pequeno</p>
-                        </div>
+                    $selectData -> execute();
+                    $selectCount = $selectData -> rowCount();
 
-                        <div class="topicos" id="topicosDireita">
-                            <p><b>Tipo: </b>Esquilo</p>
-                            <p><b>Idade: </b> Adulto</p>
-                            <p><b>Sexo: </b> Macho</p>
-                            <p><b>Acerca de Raça: </b> Com raça</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div id="descricaoCaracteristicasAnimal" class="itensPerfilAnimal">
-                <div class="titulosItens">
-                    <p>Descrição das Características Gerais do Animal<a href="#"><i class="material-icons">edit</i></a></p>
-                </div>
+                    if ($selectCount > 0) {
 
-                <div class="textoCaixas" id="descricaoCaracteristicas">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris
-                        molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros
-                        sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare
-                        accumsan, blandit sed diamLorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend
-                        tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam
-                        mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu
-                        mauris, malesuada quis ornare accumsan, blandit sed diam.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt
-                        id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu
-                        diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies
-                        metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo
-                        lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio,
-                        elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit
-                        amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.</p>
-                </div>
-            </div>
+                        while ($row = $selectData -> fetch(PDO::FETCH_ASSOC)) {
 
-            <div id="descricaoDoAnuncioAnimal" class="itensPerfilAnimal">
-                <div class="titulosItens">
-                    <p>Descrição do Anúncio<a href="#"><i class="material-icons">edit</i></a></p>
-                </div>
+                            extract($row);
 
-                <div class="textoCaixas" id="descricaoDoAnuncio">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris
-                        molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros
-                        sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare
-                        accumsan, blandit sed diamLorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend
-                        tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam
-                        mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu
-                        mauris, malesuada quis ornare accumsan, blandit sed diam.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt
-                        id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu
-                        diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies
-                        metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo
-                        lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio,
-                        elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit
-                        amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.</p>
-                </div>
-            </div>
+                            ?>
+                            
+                                <div id="caracteristicasTopicosGeraisAnimal" class="itensPerfilAnimal">
+                                    <div class="cabecalhoProfile">
+                                        <figure class="fotoPerfilAnimal">
+                                            <figcaption class="nomeAnimal">
+                                                <h1><?php print $animal_nome; ?></h1>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
 
-            <div class="itensPerfilAnimal" id="maisFotosAnimal">
-                <div class="titulosItens">
-                    <p>Mais Imagens do Mascote<a href="#"><i class="material-icons">edit</i></a></p>
-                </div>
+                                    <div id="característicasGeraisAnimal">
+                                        <div class="titulosItens">
+                                            <p>Informações do Animal<i class="material-icons">pets</i> </p>
+                                        </div>
 
-                <div id="fotosAnimal">
-                    <ul>
-                        <li><img src="images/1280x720_1.jpg"></li>
-                        <li><img src="images/1280x360_1.jpg"></li>
-                        <li><img src="images/960x360_5.jpg"></li>
-                        <li><img src="images/860x320_7.jpg"></li>
-                    </ul>
-                </div>
-            </div>
+                                        <div id="topicosDeCaracteristicas" class="conteudoItens">
+                                            <div class="topicos" id="topicosEsquerda">
+                                                <p><b>Nome: </b> <?php print $animal_nome; ?> </p>
+                                                <p><b>Situação: </b> <?php print $animal_situacao; ?> </p>
+                                                <p><b>Pelagem: </b> <?php print $animal_pelagem; ?> </p>
+                                                <p><b>Porte: </b> <?php print $animal_porte; ?> </p>
+                                            </div>
 
-            <div id="InformacoesContatoAnimal" class="itensPerfilAnimal">
-                <div class="titulosItens">
-                    <p>Informações para Contato<a href="#"><i class="material-icons">edit</i></a></p>
-                </div>
+                                            <div class="topicos" id="topicosDireita">
+                                                <p><b>Tipo: </b> <?php print $animal_tipo; ?> </p>
+                                                <p><b>Idade: </b> <?php print $animal_idade; ?> </p>
+                                                <p><b>Sexo: </b> <?php print $animal_sexo; ?> </p>
+                                                <p><b>Acerca de Raça: </b> <?php print $animal_raca; ?> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                <div class="conteudoItens" id="contatoTopicos">
-                    <p id="NomeCompletoAnunciante"><b>Nome Completo: </b>Algum Caraí</p>
+                                <div id="descricaoCaracteristicasAnimal" class="itensPerfilAnimal">
+                                    <div class="titulosItens">
+                                        <p>Descrição das Características Gerais do Animal<i class="material-icons">comment</i></p>
+                                    </div>
 
-                    <div class="topicosEsquerda">
-                        <p><b>E-mail: </b>algum.carai@gmail.com</p>
-                        <p><b>Estado: </b>Santa Catarina (SC)</p>
-                    </div>
+                                    <div class="textoCaixas" id="descricaoCaracteristicas">
+                                        <p> <?php print $animal_desc; ?> </p>
+                                    </div>
+                                </div>
 
-                    <div class="topicosDireita">
-                        <p><b>Telefone/Celular: </b>(47) 9 1234-5678</p>
-                        <p><b>Cidade: </b>Chuville</p>
-                    </div>
-                </div>
-            </div>
+                            
+                            <?php
+
+                        }
+
+                    }
+
+                ?>
+
+
+                <?php
+
+                    $selectText = 'SELECT * FROM anuncio, animal WHERE cod_anuncio = animal_cod_anuncio AND cod_animal = :codAnimal';
+                    $selectAdData = $connection -> prepare($selectText);
+
+                    $codAnimal = $profile -> higienizarDados($cod);
+                    $selectAdData -> bindParam(':codAnimal', $codAnimal);
+
+                    $selectAdData -> execute();
+                    $dataCount = $selectAdData -> rowCount();
+
+
+                    if ($dataCount > 0) {
+
+                        while ($adRow = $selectAdData -> fetch(PDO::FETCH_ASSOC)) {
+
+                            extract($adRow);
+
+                            ?>
+                            
+                                <div id="descricaoDoAnuncioAnimal" class="itensPerfilAnimal">
+                                    <div class="titulosItens">
+                                        <p>Descrição do Anúncio<i class="material-icons">comment</i></p>
+                                    </div>
+
+                                    <div class="textoCaixas" id="descricaoDoAnuncio">
+                                        <p><?php print $anuncio_desc; ?></p>
+                                    </div>
+                                </div>
+
+                                <div class="itensPerfilAnimal" id="maisFotosAnimal">
+                                    <div class="titulosItens">
+                                        <p>Mais Imagens do Mascote<i class="material-icons">collections</i></p>
+                                    </div>
+
+                                    <div id="fotosAnimal">
+                                        <ul>
+                                            <li> <?php print $animal_foto_1; ?> </li>
+                                            <li> <?php print $animal_foto_2; ?> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div id="InformacoesContatoAnimal" class="itensPerfilAnimal">
+                                    <div class="titulosItens">
+                                        <p>Informações para Contato<i class="material-icons">call</i></p>
+                                    </div>
+
+                                    <div class="conteudoItens" id="contatoTopicos">
+                                        <p id="NomeCompletoAnunciante"><b>Nome Completo: </b> <?php print $anuncio_nome_completo; ?> </p>
+
+                                        <div class="topicosEsquerda">
+                                            <p><b>E-mail: </b> <?php print $anuncio_email_contato; ?> </p>
+                                            <p><b>Estado: </b> <?php print $anuncio_estado_local_animal; ?> </p>
+                                        </div>
+
+                                        <div class="topicosDireita">
+                                            <p><b>Telefone/Celular: </b> <?php print $anuncio_numero_telefone; ?> </p>
+                                            <p><b>Cidade: </b> <?php print $anuncio_cidade_local_animal; ?> </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <?php
+
+                        }
+
+                    }
+
+                ?>
+
         </div>
 
         <div class="rodape">

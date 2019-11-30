@@ -89,7 +89,7 @@
                                     <td id="button-cel">
                                         <div class="botaoVerMais">
                                             <button>
-                                                <a href="animalProfile.php">Visualizar</a>
+                                                <?php print "<a href='animalProfile.php?cod={$cod_animal}'>Visualizar</a>"; ?>
                                             </button>
                                         </div>
                                     </td>

@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 /* Formatação geral do corpo do site */
 
 html,
@@ -157,7 +158,7 @@ a.menuLink
 
 a.menuLink:hover
 {
-    color: #aaaaaa;
+    color: #686464;
 }
 
 
@@ -185,7 +186,7 @@ div.rodape
 
 div.copyright
 {
-    margin-top: 50px;
+    margin-top: 55px;
     text-align: center;
     background-color: #444444;
     padding-top: 3px;
@@ -210,7 +211,7 @@ div.menuRodape
     bottom: 200px;
     left: 170px;
     width: 400px;
-    font-size: 10pt;
+    font-size: 1vw;
     padding-top: 5px;
     font-family: 'Raleway', sans-serif;
 }
