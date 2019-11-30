@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="css/profile.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="css/feed.css" />
     <title>MiauCãoce se Puder</title>
     <link rel="icon" href="images/logomarcaPreta.png" type="image/x-icon">
 </head>
@@ -69,7 +70,6 @@
                 </div>
             </div>
         </div>
-    </div>
 
     <?php
         } catch (PDOException $error) {
@@ -78,6 +78,70 @@
 
         }
     ?>
+
+        <div class="titulosItens">
+            <p>Animais que cadastrou<i class="material-icons">pets</i> </p>
+        </div>
+
+
+        <div class="conteudoAnuncios">
+
+            <?php
+            
+                $query = 'SELECT * FROM animal WHERE animal_cod_usuario = :codUsuario ORDER BY cod_animal DESC';
+                $selectData = $connection -> prepare($query);
+
+                $codUsuario = $_SESSION['codUsuario'];
+                $selectData -> bindParam(':codUsuario', $codUsuario);
+
+                $selectData -> execute();
+                $numberOfRowsSelected = $selectData -> rowCount();
+
+
+                if ($numberOfRowsSelected > 0) {
+
+
+                    while ($row = $selectData -> fetch(PDO::FETCH_ASSOC)) {
+
+                        extract($row);
+
+                        ?>
+                        
+                            <div class="feed-data-box">
+                                <table class="feed-table">
+                                    <tr>
+                                        <td id="icons-box">
+                                            <?php print "<a href=''><i class='material-icons'>edit</i></a>"; ?>
+                                            <?php print "<a href='animalDelete.php?cod={$cod_animal}'><i class='material-icons'>delete</i></a>"; ?>
+                                        </td>
+                                        <td> <b><?php print $animal_tipo ?></b> </td>
+                                        <td id="animal-td"> <?php print $animal_nome ?> </td>
+                                        <td id="button-cel">
+                                            <div class="botaoVerMais">
+                                                <button>
+                                                    <?php print "<a href='animalProfile.php?cod={$cod_animal}'>Visualizar</a>"; ?>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        
+                        <?php
+
+                    }
+
+                } else {
+                    
+                    ?><h1 class="title-no-data">Nenhum animal cadastrado.</h1><?php
+
+                }
+            
+            ?>
+
+        </div>
+    </div>
+
 
     <div class="rodape">
         <div class="listrasRodape"></div>

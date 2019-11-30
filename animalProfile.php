@@ -34,7 +34,7 @@
     <body>
         <div id="listraTopoSite"></div>
 
-        <a class="back-link" href="index.php"><i class="material-icons">arrow_back</i></a>
+        <a class="back-link" href="feed.php"><i class="material-icons">arrow_back</i></a>
 
         <div class="corpoTotalProfile">
 

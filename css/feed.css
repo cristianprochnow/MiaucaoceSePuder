@@ -216,7 +216,7 @@ div.botaoVerMais a:hover {
 
     display: block;
     width: 860px;
-    height: 46px;
+    height: 60px;
     margin: 0 auto 20px auto;
     border-radius: 2px;
     background-color: #154da4;
@@ -254,7 +254,7 @@ div.botaoVerMais a:hover {
     display: block;
     width: 850px;
     height: 100%;
-    margin: auto;
+    margin: 7px auto 0 auto;
 
 }
 
@@ -266,6 +266,15 @@ div.botaoVerMais a:hover {
     margin: 0 auto 0 auto;
     text-align: center;
     color: #d6d6d6;
+
+}
+
+#icons-box {
+
+    display: block;
+    width: 5px;
+    margin-top: -5px;
+    float: left;
 
 }
 
