@@ -63,10 +63,59 @@
     </div>
 
     <div class="conteudoAnuncios">
+
+        <?php
+        
+            $query = 'SELECT * FROM animal ORDER BY cod_animal DESC';
+            $selectData = $connection -> prepare($query);
+            $selectData -> execute();
+            $numberOfRowsSelected = $selectData -> rowCount();
+
+
+            if ($numberOfRowsSelected > 0) {
+
+
+                while ($row = $selectData -> fetch(PDO::FETCH_ASSOC)) {
+
+                    extract($row);
+
+                    ?>
+                    
+                        <div class="feed-data-box">
+                            <table class="feed-table">
+                                <tr>
+                                    <td> <b><?php print $animal_tipo ?></b> </td>
+                                    <td id="animal-td"> <?php print $animal_nome ?> </td>
+                                    <td id="button-cel">
+                                        <div class="botaoVerMais">
+                                            <button>
+                                                <a href="animalProfile.php">Visualizar</a>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    
+                    <?php
+
+                }
+
+            } else {
+                
+                ?><h1 class="title-no-data">Nenhum animal cadastrado.</h1><?php
+
+            }
+        
+        ?>
+
+
+
+        <!--
         <div class="caixaCima">
             <div class="box1" id="box1Cima">
                 <figure>
-                    <!--<img src="images/280x208.jpg">-->
+                    <img src="images/280x208.jpg">
 
                     <figcaption>
                         <p><a href="animalProfile.php"> Visualizar este Anúncio... </a></p>
@@ -76,7 +125,7 @@
 
             <div class="box2" id="box2Cima">
                 <figure>
-                    <!--<img src="images/280x208.jpg">-->
+                    <img src="images/280x208.jpg">
 
                     <figcaption>
                         <p><a href="animalProfile.php"> Visualizar este Anúncio... </a></p>
@@ -86,7 +135,7 @@
 
             <div class="box3" id="box3Cima">
                 <figure>
-                    <!--<img src="images/280x208.jpg">-->
+                    <img src="images/280x208.jpg">
 
                     <figcaption>
                         <p><a href="animalProfile.php"> Visualizar este Anúncio... </a></p>
@@ -98,7 +147,7 @@
         <div class="caixaMeio">
             <div class="box1" id="box1Meio">
                 <figure>
-                    <!--<img src="images/280x208.jpg">-->
+                    <img src="images/280x208.jpg">
 
                     <figcaption>
                         <p><a href="animalProfile.php"> Visualizar este Anúncio... </a></p>
@@ -108,7 +157,7 @@
 
             <div class="box2" id="box2Meio">
                 <figure>
-                    <!--<img src="images/280x208.jpg">-->
+                    <img src="images/280x208.jpg">
 
                     <figcaption>
                         <p><a href="animalProfile.php"> Visualizar este Anúncio... </a></p>
@@ -118,7 +167,7 @@
 
             <div class="box3" id="box3Meio">
                 <figure>
-                    <!--<img src="images/280x208.jpg">-->
+                    <img src="images/280x208.jpg">
 
                     <figcaption>
                         <p><a href="animalProfile.php"> Visualizar este Anúncio... </a></p>
@@ -130,7 +179,7 @@
         <div class="caixaBaixo">
             <div class="box1" id="box1Baixo">
                 <figure>
-                    <!--<img src="images/1280x720_9.jpg">-->
+                    <img src="images/1280x720_9.jpg">
 
                     <figcaption>
                         <p><a href="animalProfile.php"> Visualizar este Anúncio... </a></p>
@@ -140,7 +189,7 @@
 
             <div class="box2" id="box2Baixo">
                 <figure>
-                    <!--<img src="images/1280x720_2.jpg">-->
+                    <img src="images/1280x720_2.jpg">
 
                     <figcaption>
                         <p><a href="animalProfile.php"> Visualizar este Anúncio... </a></p>
@@ -150,7 +199,7 @@
 
             <div class="box3" id="box3Baixo">
                 <figure>
-                    <!--<img src="images/1280x720_6.jpg">-->
+                    <img src="images/1280x720_6.jpg">
 
                     <figcaption>
                         <p><a href="animalProfile.php"> Visualizar este Anúncio... </a></p>
@@ -164,6 +213,7 @@
                 <a href="#">Ver mais</a>
             </button>
         </div>
+        -->
     </div>
 
     <div class="rodape">

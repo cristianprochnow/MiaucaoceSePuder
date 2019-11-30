@@ -123,10 +123,9 @@
 
                     if ($submitData -> execute()) {
 
-                        $queryCodAnuncio = 'SELECT cod_anuncio FROM anuncio WHERE anuncio_cod_usuario=:cod_usuario';
+                        $queryCodAnuncio = 'SELECT cod_anuncio FROM anuncio ORDER BY cod_anuncio DESC LIMIT 1';
 
-                        $submitData = $connection -> prepare($queryCodAnuncio);
-                        $submitData -> bindValue(':cod_usuario', $_SESSION['codUsuario']);
+                        $submitData = $connection -> prepare($queryCodAnuncio);;
                         $submitData -> execute();
                         $codSelected = $submitData -> fetch(PDO::FETCH_ASSOC);
 
