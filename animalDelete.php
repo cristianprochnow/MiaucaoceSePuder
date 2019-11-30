@@ -72,6 +72,8 @@
                             
                             
                                         if ($deleteData -> execute()) {
+
+                                            $_SESSION['codAnimal'] = null;
         
                                             header('Location: profile.php');
                             
