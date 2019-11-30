@@ -38,6 +38,7 @@ CREATE TABLE anuncio (
 CREATE TABLE animal (
 
 	cod_animal INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    animal_situacao VARCHAR(200),
 	animal_nome VARCHAR(200),
 	animal_tipo VARCHAR(200),
 	animal_raca VARCHAR(100),

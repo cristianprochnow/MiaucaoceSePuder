@@ -67,7 +67,7 @@
                 $announce = new Anuncio();
                 $alert = new Alertas();
     
-                if (empty($_POST['adUsername']) || empty($_POST['adPhone']) || empty($_POST['adEmail']) || empty($_POST['adState']) || empty($_POST['adCity']) || empty($_POST['adAnimalType'])) {
+                if (empty($_POST['adUsername']) || empty($_POST['adPhone']) || empty($_POST['adEmail']) || empty($_POST['adState']) || empty($_POST['adCity']) || empty($_POST['adAnimalType']) || empty($_POST['adAnimalFeature'])) {
                     
                     print $alert -> errorMessageAdPage('Campos com * são de preenchimento obrigatório.');
 
@@ -130,11 +130,12 @@
                         $codSelected = $submitData -> fetch(PDO::FETCH_ASSOC);
 
 
-                        $queryAnimal = 'INSERT INTO animal SET animal_nome=:nomeAnimal, animal_tipo=:tipoAnimal,  animal_raca=:racaAnimal, animal_sexo=:sexoAnimal, animal_porte=:porteAnimal, animal_idade=:idadeAnimal, animal_pelagem=:pelagemAnimal, animal_foto_1=:foto1, animal_foto_2=:foto2, animal_desc=:descricaoAnimal, animal_cod_usuario=:codUserAnimal, animal_cod_anuncio=:codAnuncioAnimal';
+                        $queryAnimal = 'INSERT INTO animal SET animal_situacao=:animalSituacao, animal_nome=:nomeAnimal, animal_tipo=:tipoAnimal,  animal_raca=:racaAnimal, animal_sexo=:sexoAnimal, animal_porte=:porteAnimal, animal_idade=:idadeAnimal, animal_pelagem=:pelagemAnimal, animal_foto_1=:foto1, animal_foto_2=:foto2, animal_desc=:descricaoAnimal, animal_cod_usuario=:codUserAnimal, animal_cod_anuncio=:codAnuncioAnimal';
 
                         $submitData = $connection -> prepare($queryAnimal);
 
 
+                        $submitData -> bindValue(':animalSituacao', $announce -> higienizarDados($_POST['adAnimalSituation']));
                         $submitData -> bindValue(':nomeAnimal', $announce -> higienizarDados($_POST['adAnimalName']));
                         $submitData -> bindValue(':tipoAnimal', $announce -> higienizarDados($_POST['adAnimalType']));
                         $submitData -> bindValue(':racaAnimal', $announce -> higienizarDados($_POST['adAnimalBreed']));
@@ -277,7 +278,7 @@
                 <span class="esquerda">
                         <label for="animalSituacao">Situação do Animal</label>
                         <select class="itensSelecionarInput" id="animalSituacao" name="adAnimalSituation">
-                            <optgroup class="opcoesSelect" label="Situação do Animal" required>
+                            <optgroup class="opcoesSelect" label="Situação do Animal">
                                 <option value="Achado">Achado</option>
                                 <option value="Perdido">Perdido</option>
                             </optgroup>
@@ -346,7 +347,7 @@
                 <textarea class="caixaTextoAnimal" id="animalDescricao" name="adAnimalDescription" cols="20" rows="10" aria-placeholder="Descrição do Anúncio" placeholder="Descrição do Anúncio..."></textarea>
 
                 <label for="animalCaracteristicas">Características do Mascote...</label>
-                <textarea class="caixaTextoAnimal" id="animalCaracteristicas" name="adAnimalFeature" cols="20" rows="10" aria-placeholder="Características do Mascote" placeholder="Características do Mascote..."></textarea>
+                <textarea class="caixaTextoAnimal" id="animalCaracteristicas" name="adAnimalFeature" cols="20" rows="10" aria-placeholder="Características do Mascote" placeholder="Características do Mascote...*"></textarea>
             </p>
         </fieldset>
 
