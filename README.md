@@ -1,4 +1,4 @@
-# Miaucãoce se Puder
+# MiauCãoce se Puder
 
 **Projeto de TCC do segundo ano.**
 
