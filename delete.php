@@ -52,9 +52,6 @@
                                     $_SESSION['isLogged'] = false;
 
                                     header('Location: index.php');
-
-
-                                    exit;
                     
                                 } else {
                                 

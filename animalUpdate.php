@@ -142,6 +142,8 @@
                         
                         if ($submitData -> execute()) {
 
+                            $_SESSION['codAnimal'] = null;
+
                             header('Location: profile.php');
 
                         } else {
