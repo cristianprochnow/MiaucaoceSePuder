@@ -9,3 +9,13 @@ Com este projeto, visamos apenas proporcionar um portal que possibilite uma comu
 <br /> <br />
 
 <img src="https://user-images.githubusercontent.com/48127848/69908506-b7ba1000-13c9-11ea-8627-6bfc721394fa.png" />
+
+<style>
+
+  img {
+  
+    margin: auto;
+  
+  }
+
+</style>
