@@ -124,7 +124,7 @@
 
                         if ($submitData -> execute()) {
 
-                            print $alert -> successMessageContactPage('Registro salvo com sucesso. Agradecemos seu Feedback. Logo, logo, estaremos entrando em contato com você pelo e-mail anteriormente inserido.');
+                            print $alert -> successMessageContactPage('Registro salvo com sucesso. Agradecemos seu Feedback. Logo, logo, entraremos em contato com você pelo e-mail anteriormente inserido.');
 
                         } else {
                             
