@@ -1,6 +1,4 @@
-<img src="https://user-images.githubusercontent.com/48127848/69908506-b7ba1000-13c9-11ea-8627-6bfc721394fa.png" style="text-align: center;" />
-
-# MiauCãoce se Puder ![logomarcaPequena](https://user-images.githubusercontent.com/48127848/69908487-585c0000-13c9-11ea-9157-e106508ebd01.png)
+# MiauCãoce se Puder <img src="https://user-images.githubusercontent.com/48127848/69908506-b7ba1000-13c9-11ea-8627-6bfc721394fa.png" height="50" width="50" />
 
 
 **Projeto de TCC do segundo ano.**
