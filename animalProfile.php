@@ -94,7 +94,7 @@
 
                                 <div id="descricaoCaracteristicasAnimal" class="itensPerfilAnimal">
                                     <div class="titulosItens">
-                                        <p>Descrição das Características Gerais do Animal<i class="material-icons">comment</i></p>
+                                        <p>Descrição das Características Gerais do Animal<i class="material-icons">mail_outline</i></p>
                                     </div>
 
                                     <div class="textoCaixas" id="descricaoCaracteristicas">
@@ -134,7 +134,7 @@
                             
                                 <div id="descricaoDoAnuncioAnimal" class="itensPerfilAnimal">
                                     <div class="titulosItens">
-                                        <p>Descrição do Anúncio<i class="material-icons">comment</i></p>
+                                        <p>Descrição do Anúncio<i class="material-icons">email</i></p>
                                     </div>
 
                                     <div class="textoCaixas" id="descricaoDoAnuncio">

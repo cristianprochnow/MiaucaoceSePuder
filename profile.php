@@ -111,8 +111,8 @@
                                 <table class="feed-table">
                                     <tr>
                                         <td id="icons-box">
-                                            <?php print "<a href=''><i class='material-icons'>edit</i></a>"; ?>
-                                            <?php print "<a href='animalDelete.php?cod={$cod_animal}'><i class='material-icons'>delete</i></a>"; ?>
+                                            <?php print "<a href='animalUpdate.php?cod={$cod_animal}'><i class='material-icons' title='Atualizar Informações do Animal'>edit</i></a>"; ?>
+                                            <?php print "<a href='animalDelete.php?cod={$cod_animal}'><i class='material-icons' title='Deletar Animal Anunciado'>delete</i></a>"; ?>
                                         </td>
                                         <td> <b><?php print $animal_tipo ?></b> </td>
                                         <td id="animal-td"> <?php print $animal_nome ?> </td>

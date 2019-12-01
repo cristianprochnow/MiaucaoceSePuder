@@ -253,9 +253,10 @@ div.imagemHome
 
 div.bordaImagemHome
 {
+    display: block;
     width: 900px;
     height: 60px;
-    display: block;
+    margin: auto;
     background-color: #aaaaaa;
     margin-top: -20px;
 }

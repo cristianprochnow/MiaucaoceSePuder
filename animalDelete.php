@@ -11,7 +11,7 @@
 
     } else {
         
-        header('Location: feed.php');
+        header('Location: profile.php');
 
     }
 
