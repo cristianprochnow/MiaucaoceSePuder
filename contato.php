@@ -209,8 +209,39 @@
 
                 <p class="itensFormContato">
                     <label for="cidade">Cidade:</label>
-                    <input class="contatoInput" id="cidade" name="contactUserCity" type="text" aria-placeholder="Cidade" placeholder="Cidade*">
+                    <input class="contatoInput" id="cidade" name="contactUserCity" type="text" aria-placeholder="Cidade" placeholder="Cidade*" list="cidades">
                 </p>
+
+                <datalist id="cidades">
+
+                    <?php
+                                
+                        try {
+
+                            $query = 'SELECT contato_cidade FROM contato';
+                            $selectData = $connection -> prepare($query);
+                            $selectData -> execute();
+                            
+                            while ($cities = $selectData -> fetch(PDO::FETCH_ASSOC)) {
+
+                                extract($cities);
+
+
+                                print "<option>{$contato_cidade}</option>";
+
+                            }
+
+
+                        } catch (PDOException $error) {
+
+                            print 'Conexão falhou!' . $error -> getMessage();
+
+                        }
+
+                    ?>
+                
+                </datalist>
+
 
                 <p class="itensFormContato">
                     <label for="assuntoMensagem">Assunto:</label>

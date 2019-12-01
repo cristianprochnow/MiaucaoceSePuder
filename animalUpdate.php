@@ -241,8 +241,39 @@
 
             <p class="itensFormLocalizacao">
                 <label for="usuarioCidade">Cidade:</label>
-                <input class="localizacaoInput" id="usuarioCidade" name="adCity" type="text" aria-placeholder="Cidade em que o animal localiza-se" placeholder="Cidade em que o animal localiza-se*">
+                <input class="localizacaoInput" id="usuarioCidade" name="adCity" type="text" aria-placeholder="Cidade em que o animal localiza-se" placeholder="Cidade em que o animal localiza-se*" list="cidades">
             </p>
+
+            <datalist id="cidades">
+
+                <?php
+                            
+                    try {
+
+                        $query = 'SELECT anuncio_cidade_local_animal FROM anuncio';
+                        $selectData = $connection -> prepare($query);
+                        $selectData -> execute();
+                        
+                        while ($cities = $selectData -> fetch(PDO::FETCH_ASSOC)) {
+
+                            extract($cities);
+
+
+                            print "<option>{$anuncio_cidade_local_animal}</option>";
+
+                        }
+
+
+                    } catch (PDOException $error) {
+
+                        print 'Conexão falhou!' . $error -> getMessage();
+
+                    }
+
+                ?>
+            
+            </datalist>
+
         </fieldset>
 
         <fieldset class="formAnimal">

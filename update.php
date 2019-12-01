@@ -179,20 +179,24 @@
                         <input class="userLogin" id="userCidade" name="registerCidade" type="text" aria-label="Cidade" placeholder="Cidade*" list="cidades">
 
                         <datalist id="cidades">
+
                             <?php
                             
                                 try {
 
-                                    $query = 'SELECT contato_cidade FROM contato';
+                                    $query = 'SELECT usuario_cidade FROM usuario';
                                     $selectData = $connection -> prepare($query);
                                     $selectData -> execute();
-                                    $cities = $selectData -> fetch(PDO::FETCH_ASSOC);
+                                    
+                                    while ($cities = $selectData -> fetch(PDO::FETCH_ASSOC)) {
 
-                                    foreach ($cities as $row) {
+                                        extract($cities);
 
-                                        print '<option>' . $row['usuario_cidade'] . '</option>';
+
+                                        print "<option>{$usuario_cidade}</option>";
 
                                     }
+
 
                                 } catch (PDOException $error) {
 
@@ -201,6 +205,7 @@
                                 }
                             
                             ?>
+                            
                         </datalist>
                     </p>
 
