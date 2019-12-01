@@ -1,4 +1,4 @@
-# MiauCãoce se Puder <img src="https://user-images.githubusercontent.com/48127848/69908506-b7ba1000-13c9-11ea-8627-6bfc721394fa.png" height="40" width="60" />
+# MiauCãoce se Puder <img src="https://user-images.githubusercontent.com/48127848/69908506-b7ba1000-13c9-11ea-8627-6bfc721394fa.png" height="30" width="40" />
 
 
 **Projeto de TCC do segundo ano.**
