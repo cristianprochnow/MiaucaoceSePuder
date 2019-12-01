@@ -84,8 +84,8 @@
                         <div class="feed-data-box">
                             <table class="feed-table">
                                 <tr>
-                                    <td> <b><?php print $animal_tipo ?></b> </td>
-                                    <td id="animal-td"> <?php print $animal_nome ?> </td>
+                                    <td> <b><?php print $animal_situacao ?></b> </td>
+                                    <td id="animal-td"> <?php print $animal_tipo ?> </td>
                                     <td id="button-cel">
                                         <div class="botaoVerMais">
                                             <button>

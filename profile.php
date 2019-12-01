@@ -114,8 +114,8 @@
                                             <?php print "<a href='animalUpdate.php?cod={$cod_animal}'><i class='material-icons' title='Atualizar Informações do Animal'>edit</i></a>"; ?>
                                             <?php print "<a href='animalDelete.php?cod={$cod_animal}'><i class='material-icons' title='Deletar Animal Anunciado'>delete</i></a>"; ?>
                                         </td>
-                                        <td> <b><?php print $animal_tipo ?></b> </td>
-                                        <td id="animal-td"> <?php print $animal_nome ?> </td>
+                                        <td> <b><?php print $animal_situacao ?></b> </td>
+                                        <td id="animal-td"> <?php print $animal_tipo ?> </td>
                                         <td id="button-cel">
                                             <div class="botaoVerMais">
                                                 <button>
