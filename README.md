@@ -1,3 +1,5 @@
+![logomarca](https://user-images.githubusercontent.com/48127848/69908479-1df26300-13c9-11ea-9676-a83644f0c61f.png)
+
 # MiauCãoce se Puder
 
 **Projeto de TCC do segundo ano.**
