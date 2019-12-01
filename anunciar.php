@@ -300,8 +300,32 @@
                 <input class="animalInput" id="animalTipo" name="adAnimalType" type="text" aria-placeholder="Tipo" placeholder="Tipo*" list="tipo">
 
                 <datalist id="tipo">
-                        <option>Gato</option>
-                        <option>Cachorro</option>
+                        
+                    <?php
+                    
+                        try {
+
+                            $typeQuery = 'SELECT animal_tipo FROM animal';
+                            $typeSelect = $connection -> prepare($typeQuery);
+                            $typeSelect -> execute();
+
+                            while ($typeRow = $typeSelect -> fetch(PDO::FETCH_ASSOC)) {
+
+                                extract($typeRow);
+
+                                print "<option>{$animal_tipo}</option>";
+
+                            }
+
+
+                        } catch (PDOException $error) {
+
+                            print 'Conexão falhou!' . $error -> getMessage();
+
+                        }
+                    
+                    ?>
+
                 </datalist>
             </p>
 
