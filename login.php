@@ -31,7 +31,7 @@
                     print $alert -> errorMessage('Campos Usuário e Senha são de preenchimento obrigatório.');
                 } else {
                     try {
-                        $query = 'SELECT cod_usuario, usuario_nome_completo FROM usuario WHERE usuario_nickname=:nickname AND usuario_senha=:senha';
+                        $query = 'SELECT cod_usuario, usuario_nome_completo, usuario_tipo FROM usuario WHERE usuario_nickname=:nickname AND usuario_senha=:senha';
 
                         $submitData = $connection -> prepare($query);
 
@@ -51,7 +51,17 @@
                             $_SESSION['nomeUsuario'] = $user['usuario_nome_completo'];
                             $_SESSION['codUsuario'] = $user['cod_usuario'];
 
-                            header('Location: index.php');
+
+                            if ($user['usuario_tipo'] == 1) {
+
+                                header('Location: private/rootPage.php');
+
+                            } else {
+                                
+                                header('Location: index.php');
+
+                            }
+
                         }
                     } catch (PDOException $error) {
                         print 'Conexão falhou!' . $error -> getMessage();
