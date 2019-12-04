@@ -1,8 +1,6 @@
 <?php
     session_start();
 
-    require_once('settings/config.php');
-    require_once('settings/functions.php');
     require_once('settings/check.php');
 
 

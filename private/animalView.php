@@ -1,9 +1,7 @@
 <?php
     session_start();
 
-    require_once('settings/config.php');
-    require_once('settings/functions.php');
-    require_once('../class/Login.php');
+    require_once('settings/check.php');
 
 
     if (isset($_GET['cod'])) {
@@ -39,13 +37,11 @@
         <div class="corpoTotalProfile">
 
                 <?php
-
-                    $profile = new Login();
                 
                     $selectSentence = 'SELECT * FROM animal WHERE cod_animal = :codAnimal';
                     $selectData = $connection -> prepare($selectSentence);
                     
-                    $codAnimal = $profile -> higienizarDados($cod);
+                    $codAnimal = trim(strip_tags(htmlspecialchars($cod)));
                     $selectData -> bindParam(':codAnimal', $codAnimal);
 
                     $selectData -> execute();
@@ -117,7 +113,7 @@
                     $selectText = 'SELECT * FROM anuncio, animal WHERE cod_anuncio = animal_cod_anuncio AND cod_animal = :codAnimal';
                     $selectAdData = $connection -> prepare($selectText);
 
-                    $codAnimal = $profile -> higienizarDados($cod);
+                    $codAnimal = trim(strip_tags(htmlspecialchars($cod)));
                     $selectAdData -> bindParam(':codAnimal', $codAnimal);
 
                     $selectAdData -> execute();
