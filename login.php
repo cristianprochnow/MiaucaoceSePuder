@@ -51,16 +51,7 @@
                             $_SESSION['nomeUsuario'] = $user['usuario_nome_completo'];
                             $_SESSION['codUsuario'] = $user['cod_usuario'];
 
-
-                            if ($user['usuario_tipo'] == 1) {
-
-                                header('Location: private/rootPage.php');
-
-                            } else {
-                                
-                                header('Location: index.php');
-
-                            }
+                            header('Location: index.php');
 
                         }
                     } catch (PDOException $error) {

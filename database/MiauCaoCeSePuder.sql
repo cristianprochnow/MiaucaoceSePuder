@@ -28,6 +28,7 @@ CREATE TABLE anuncio (
 
 
 	anuncio_cod_usuario INT NOT NULL,
+    CONSTRAINT fk_anuncio_cod_usuario 
 	FOREIGN KEY (anuncio_cod_usuario) 
 	REFERENCES usuario(cod_usuario)
 	ON UPDATE CASCADE

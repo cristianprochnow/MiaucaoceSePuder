@@ -2,7 +2,7 @@
 
     session_start();
 
-    require_once('../settings/check.php');
+    require_once('settings/check.php');
 
 ?>
 
@@ -31,6 +31,61 @@
                     <li> <a href="../settings/logout.php" id="logout-link"> <i class="material-icons">input</i> Sair</a> </li>
                 </ul>
             </nav>
+
+            <div class="data-box">
+
+                    <?php
+                    
+                        try {
+
+                            $query = 'SELECT * FROM animal';
+                            $selectData = $connection -> prepare($query);
+                            $selectData -> execute();
+                            $userAmount = $selectData -> rowCount();
+
+
+                            if ($userAmount > 0) {
+
+                                while ($row = $selectData -> fetch(PDO::FETCH_ASSOC)) {
+
+                                    extract($row);
+
+                                    ?>
+                                    
+                                        <table class="data-table-box">
+                                            <tr>
+                                                <td> <p><?php print $animal_situacao; ?></p> </td>
+                                                <td id="email-box"> <p><?php print $animal_tipo; ?></p> </td>
+                                                <td id="icons-box">
+                                                    
+                                                    <?php
+                                                        print "<a href='animalView.php?cod={$cod_animal}'><i class='material-icons'>visibility</i></a>";
+                                                        print "<a href='animalDelete.php?cod={$cod_animal}'><i class='material-icons'>delete</i></a>";
+                                                    ?>
+
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    
+                                    <?php
+
+                                }
+
+                            } else {
+                                
+                                print "<p id='no-data-title'>Nenhum usuário cadastrado.</p>";
+                                
+                            }
+
+                        } catch (PDOException $error) {
+
+                            print 'Conexão falhou! ' . $error -> getMessage();
+
+                        }
+                    
+                    ?>
+
+            </div>
         </div>
     </body>
 </html>

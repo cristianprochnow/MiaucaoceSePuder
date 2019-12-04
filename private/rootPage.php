@@ -2,7 +2,7 @@
 
     session_start();
 
-    require_once('../settings/check.php');
+    require_once('settings/check.php');
 
 ?>
 
@@ -27,7 +27,7 @@
                 <ul>
                     <li> <a href="rootPageUsers.php"> <i class="material-icons">account_box</i> Usuários</a> </li>
                     <li> <a href="rootPageAnnouncements.php"> <i class="material-icons">announcement</i> Anúncios</a> </li>
-                    <li> <a href="rootPageContacts.php"> <i class="material-icons">all_inbox</i> Feedback</a> </li>
+                    <li> <a href="rootPageContacts.php"> <i class="material-icons">inbox</i> Feedback</a> </li>
                     <li> <a href="../settings/logout.php" id="logout-link"> <i class="material-icons">input</i> Sair</a> </li>
                 </ul>
             </nav>

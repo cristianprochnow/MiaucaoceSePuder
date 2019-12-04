@@ -61,7 +61,7 @@ html, body {
 }
 
 
-.main-content a {
+.main-content li a {
 
     padding: 10px 15px;
     font-size: 30px;
@@ -71,7 +71,7 @@ html, body {
 
 }
 
-.main-content a:hover {
+.main-content li a:hover {
 
     font-size: 35px;
     color: #154da4;
@@ -89,5 +89,103 @@ html, body {
 #logout-link:hover {
 
     color: #ff1717;
+
+}
+
+
+
+/* ============ DATA TABLE FORMATTING ============ */
+
+.data-box {
+
+    display: block;
+    width: 800px;
+    height: auto;
+    margin: 40px auto;
+
+}
+
+
+.data-table-box {
+
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin: 15px auto;
+    border-radius: 2px;
+    background-color: #154da4;
+
+}
+
+
+.data-table-box tr {
+
+    display: block;
+    width: 790px;
+    height: 100%;
+
+}
+
+
+#icons-box {
+
+    padding: 8px 3px;
+
+}
+
+
+#icons-box a {
+
+    padding: 3px;
+
+}
+
+
+#email-box {
+
+    padding: 13px 80px;
+    border-left: solid 3px #f6f6f6;
+
+}
+
+
+.data-table-box td {
+
+    display: inline-block;
+    width: 100px;
+    height: auto;
+    padding: 13px 155px;
+    text-align: center;
+
+}
+
+
+.data-table-box p {
+
+    width: auto;
+    font-size: 13px;
+    color: #f6f6f6;
+
+}
+
+
+.data-table-box a {
+
+    color: #f6f6f6;
+    transition: all 0.5s;
+
+}
+
+.data-table-box a:hover {
+
+    color: #000000;
+
+}
+
+
+#no-data-title {
+
+    font-size: 35px;
+    text-align: center;
 
 }

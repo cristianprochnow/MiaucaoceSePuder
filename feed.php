@@ -27,6 +27,36 @@
             <div id="userInteractingBox">
                 <button class="userAccountButton" id="userProfileVisualizationButton" title="Visualizar Perfil">
                     <?php if (isLoggedIn()): ?>
+
+                        <?php
+                        
+                            $queryTipoPerfil = 'SELECT usuario_tipo FROM usuario WHERE cod_usuario = :cod';
+                            $selectTipoPerfil = $connection -> prepare($queryTipoPerfil);
+
+                            $selectTipoPerfil -> bindValue(':cod', $_SESSION['codUsuario']);
+
+                            $selectTipoPerfil -> execute();
+
+
+                            while ($row = $selectTipoPerfil -> fetch(PDO::FETCH_ASSOC)) {
+
+                                extract($row);
+
+                            }
+
+
+                            if ($usuario_tipo == 1) {
+
+                                ?>
+                                
+                                    <a href="private/rootPage.php" id="profileViewLink" class="accountLinks">Página do Administrador &nbsp; |</a>
+
+                                <?php
+
+                            }
+
+                        ?>
+
                         <a href="profile.php" id="profileViewLink" class="accountLinks">Olá, <?php print $_SESSION['nomeUsuario'] ?></a>
                     <?php else: ?>
                         <a href="login.php" id="profileViewLink" class="accountLinks">Olá, Visitante!</a>

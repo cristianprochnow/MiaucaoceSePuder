@@ -278,6 +278,21 @@ div.botaoVerMais a:hover {
 
 }
 
+
+#icons-box a {
+
+    color: #f6f6f6;
+    transition: all 0.5s;
+
+}
+
+#icons-box a:hover {
+
+    color: #000000;
+
+}
+
+
 #animal-td {
 
     border-left: 2px solid #d6d6d6;
