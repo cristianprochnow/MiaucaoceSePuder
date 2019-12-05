@@ -114,16 +114,16 @@ input#userPicture {
 /* Formatação da mensagem para cadastro no "rodapé" */
 
 p.mensagemCadastro {
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 5px;
     font-size: 14px;
 }
 
 p.mensagemCadastro a {
     text-decoration: none;
-    padding-top: 20px;
     color: #c0c0c0;
     transition: color 0.5s;
+    line-height: 20px;
     font-size: 14px;
 }
 

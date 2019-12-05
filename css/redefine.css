@@ -1,0 +1,311 @@
+@charset "UTF-8";
+
+
+
+/* ========= GENERAL FORMATTING ========== */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+}
+
+
+html, body {
+
+    font-family: 'Raleway', sans-serif;
+    background-color: #ebebeb;
+
+}
+
+
+.main-content {
+
+    display: block;
+    width: 85%;
+    height: auto;
+    margin: 10% auto;
+
+}
+
+
+
+/* =========== MAIN TITLE FORMATTING =========== */
+
+.title-box {
+
+    width: 95%;
+    height: auto;
+    margin: auto;
+    border-radius: 3px;
+    border: solid 1px #0e3475;
+    color: #0e3475;
+    background-color: #cddcf5;
+    
+}
+
+
+.title-box h1 {
+
+    padding: 20px;
+    font-size: 2.7vw;
+    text-align: center;
+
+}
+
+
+
+/* ============== HASH NUMBER FORMATTING ============== */
+
+.code-box {
+
+    display: block;
+    width: 80%;
+    height: auto;
+    margin: 40px auto;
+
+}
+
+
+.code-box p {
+
+    font-size: 2.5vw;
+    line-height: 2vw;
+    text-align: center;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+
+}
+
+
+
+/* =========== FORM FORMATTING =========== */
+
+.form-box {
+
+    display: block;
+    width: 50%;
+    height: auto;
+    margin: auto;
+
+}
+
+
+.form-box p {
+
+    width: auto;
+    height: auto;
+    text-align: center;
+
+}
+
+
+.submit-button {
+
+    width: 40%;
+    height: 50px;
+    border: transparent;
+    border-radius: 3px;
+    font-size: 1.5vw;
+    font-family: 'Raleway', sans-serif;
+    color: #f6f6f6;
+    background-color: #0e3475;
+    transition: all 0.5s;
+
+}
+
+.submit-button:hover {
+
+    color: #cddcf5;
+    background-color: #000000;
+
+}
+
+
+
+/* =========== REDEFINE FORM FORMATTING =========== */
+
+.cabecalho-form {
+
+    display: block;
+    width: 65%;
+    height: auto;
+    margin: auto;
+
+}
+
+
+.cabecalho-form h1 {
+
+    font-size: 2.8vw;
+    padding: 2vw;
+
+}
+
+
+.form-box-redefine {
+
+    display: block;
+    width: 65%;
+    height: auto;
+    margin: auto;
+
+}
+
+
+.form-box-redefine p {
+
+    width: 100%;
+    height: auto;
+    text-align: center;
+
+}
+
+
+.form-input-half {
+
+    width: 48%;
+    height: 3vw;
+    margin: 1vw 0;
+    border: transparent;
+    border-radius: 2px;
+    font-size: 1.2vw;
+    font-family: 'Raleway', sans-serif;
+    text-indent: 0.8vw;
+    transition: all 0.5s;
+
+}
+
+.form-input-half:hover {
+
+    background-color: #c0c0c0;
+
+}
+
+
+.form-input-total {
+
+    width: 96.5%;
+    height: 3vw;
+    margin: 0.5vw 0;
+    border: transparent;
+    border-radius: 2px;
+    font-size: 1.2vw;
+    font-family: 'Raleway', sans-serif;
+    text-indent: 8px;
+    transition: all 0.5s;
+
+}
+
+.form-input-total:hover {
+
+    background-color: #c0c0c0;
+
+}
+
+
+#reset-button {
+
+    color: #BF1300;
+    background-color: #f6f6f6;
+    transition: all 0.5s;
+
+}
+
+#reset-button:hover {
+
+    color: #f6f6f6;
+    background-color: #BF1300;
+
+}
+
+
+#submit-button {
+
+    color: #0e3475;
+    background-color: #f6f6f6;
+    transition: all 0.5s;
+
+}
+
+#submit-button:hover {
+
+    color: #f6f6f6;
+    background-color: #0e3475;
+
+}
+
+
+
+/* ============ ALERT MESSAGES ============= */
+
+.information-box {
+
+    width: 94%;
+    height: auto;
+    margin: 0 auto 1.8vw auto;
+    padding: 0.9vw;
+    line-height: 1.2vw;
+    text-align: justify;
+    font-weight: bolder;
+    font-size: 1.1vw;
+    background-color: #9fb3d4;
+    color: #0e3475;
+    border: solid 1px #0e3475;
+    border-radius: 3px;
+
+}
+
+
+.success-box {
+
+    width: 94%;
+    height: auto;
+    margin: 0 auto 1.8vw auto;
+    padding: 0.9vw;
+    line-height: 1.2vw;
+    text-align: justify;
+    font-weight: bolder;
+    font-size: 1.1vw;
+    background-color: rgb(148, 216, 147);
+    color: #2B802A;
+    border: solid 1px #2B802A;
+    border-radius: 3px;
+
+}
+
+
+.alert-box {
+    
+    width: 94%;
+    height: auto;
+    margin: 0 auto 1.8vw auto;
+    padding: 0.9vw;
+    line-height: 1.2vw;
+    text-align: justify;
+    font-weight: bolder;
+    font-size: 1.1vw;
+    border: solid 1px rgb(255, 191, 0);
+    color: rgb(255, 191, 0);
+    background-color: rgb(255, 235, 176);
+    border-radius: 3px;
+
+}
+
+
+.error-box {
+    
+    width: 94%;
+    height: auto;
+    margin: 0 auto 1.8vw auto;
+    padding: 0.9vw;
+    line-height: 1.2vw;
+    text-align: justify;
+    font-weight: bolder;
+    font-size: 1.1vw;
+    background-color: rgb(255, 193, 187);
+    color: #BF1300;
+    border: solid 1px #BF1300;
+    border-radius: 3px;
+
+}

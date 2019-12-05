@@ -76,6 +76,12 @@
                     <br>
                     <a href="cadastro.php">Cadastre-se agora</a>
                 </p>
+
+                <p class="mensagemCadastro">
+                    <a href="helper/userRedefineMessage.php">Esqueceu o nome de usuário?</a>
+                    <br />
+                    <a href="helper/passwordRedefineMessage.php">Esqueceu a senha?</a>
+                </p>
             </fieldset>
         </form>
         <div id="rodapePicture"></div>
