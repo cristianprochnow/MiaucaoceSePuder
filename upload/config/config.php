@@ -1,9 +1,9 @@
 <?php
 
-    $host = 'localhost';
-    $dbname = 'file_upload';
-    $user = 'root';
-    $passwd = '';
+    $host = '//';
+    $dbname = '//';
+    $user = '//';
+    $passwd = '//';
 
 
     try {
