@@ -57,7 +57,7 @@
 	<p align="center">BACK-END</p>
 </p>
 
-##### Projeto final em PHP do segundo ano do Técnico em Informática Integrado ao Ensino Médio (<a href="http://araquari.ifc.edu.br/">Instituto Federal Catarinense - Campus Araquari</a>).
+##### Projeto final do segundo ano do Técnico em Informática Integrado ao Ensino Médio (<a href="http://araquari.ifc.edu.br/">Instituto Federal Catarinense - Campus Araquari</a>).
 
 ## Autores
 1. <a href="https://github.com/AlemaoProchnow">Cristian Prochnow</a>
