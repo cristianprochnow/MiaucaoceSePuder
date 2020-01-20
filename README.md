@@ -1,6 +1,63 @@
-# MiauCãoce se Puder
+<p align="center">
+    <img 
+         width="50%" 
+         src="https://user-images.githubusercontent.com/48127848/69908506-b7ba1000-13c9-11ea-8627-6bfc721394fa.png" 
+         alt="Logo MiauCãoce se Puder" 
+         title="Logo MiauCãoce se Puder" 
+    />
+</p>
 
-##### Projeto em PHP para o segundo ano do Técnico em Informática Integrado ao Ensino Médio (<a href="http://araquari.ifc.edu.br/">Instituto Federal Catarinense - Campus Araquari</a>).
+<h1 align="center">MiauCãoce se Puder</h1>
+
+<p align="center">
+	<a href="https://www.w3schools.com/html/">
+		<img 
+			src="https://icons-for-free.com/iconfiles/png/512/award+badge+html+html5+reward+trophy+icon-1320184828635374270.png"
+			alt="HTML5 logo" 
+			title="HTML5" 
+			width="50" height="50" 
+		/>
+	</a>
+	<a href="https://www.w3schools.com/css/">
+		<img 
+			src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" 
+			alt="CSS3 logo" 
+			title="CSS3" 
+			width="50" height="50" 
+		/>
+	</a>
+	<a href="https://www.w3schools.com/js/default.asp">
+		<img 
+			src="https://cdn.iconscout.com/icon/free/png-256/javascript-24-1174950.png" 
+			alt="JavaScript logo"
+			title="JavaScript" 
+			width="50" height="50" 
+		/>
+	</a>
+	<p align="center">FRONT-END</p>
+</p>
+
+<p align="center">
+	<a href="https://www.php.net/docs.php">
+		<img 
+			src="http://pngimg.com/uploads/php/php_PNG27.png" 
+			alt="PHP logo" 
+			title="PHP" 
+			width="60" height="60" 
+		/>
+	</a>
+	<a href="https://dev.mysql.com/doc/">
+		<img 
+			src="https://d2.alternativeto.net/dist/icons/mysql-community-edition_155326.png?width=128&height=128&mode=crop&upscale=false" 
+			alt="MySQL logo" 
+			title="MySQL" 
+			width="60" height="60" 
+		/>
+	</a>
+	<p align="center">BACK-END</p>
+</p>
+
+##### Projeto final em PHP do segundo ano do Técnico em Informática Integrado ao Ensino Médio (<a href="http://araquari.ifc.edu.br/">Instituto Federal Catarinense - Campus Araquari</a>).
 
 ## Autores
 1. <a href="https://github.com/AlemaoProchnow">Cristian Prochnow</a>
@@ -94,16 +151,5 @@ Com este projeto, visamos apenas proporcionar um portal que possibilite uma comu
          src="template/Web/animal-profile.png" 
          title="Página de Perfil do Mascote" 
          width="70%"
-    />
-</p>
-
-<hr />
-
-<p align="center">
-    <img 
-         width="50%" 
-         src="https://user-images.githubusercontent.com/48127848/69908506-b7ba1000-13c9-11ea-8627-6bfc721394fa.png" 
-         alt="Logo MiauCãoce se Puder" 
-         title="Logo MiauCãoce se Puder" 
     />
 </p>
