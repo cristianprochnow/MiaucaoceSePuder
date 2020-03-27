@@ -16,9 +16,7 @@
 			width="30" height="30" 
 		/>
 	</a>
-	
 	&nbsp;&nbsp;&nbsp;&nbsp;
-	
 	<a href="https://www.w3schools.com/css/">
 		<img 
 			src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" 
@@ -27,9 +25,7 @@
 			width="30" height="30" 
 		/>
 	</a>
-	
 	&nbsp;&nbsp;&nbsp;&nbsp;
-	
 	<a href="https://www.w3schools.com/js/default.asp">
 		<img 
 			src="https://cdn.iconscout.com/icon/free/png-256/javascript-24-1174950.png" 
@@ -38,9 +34,7 @@
 			width="30" height="30" 
 		/>
 	</a>
-	
 	&nbsp;&nbsp;&nbsp;&nbsp;
-	
 	<a href="https://www.php.net/docs.php">
 		<img 
 			src="http://pngimg.com/uploads/php/php_PNG27.png" 
@@ -49,9 +43,7 @@
 			width="40" height="40" 
 		/>
 	</a>
-	
 	&nbsp;&nbsp;&nbsp;&nbsp;
-	
 	<a href="https://dev.mysql.com/doc/">
 		<img 
 			src="https://d2.alternativeto.net/dist/icons/mysql-community-edition_155326.png?width=128&height=128&mode=crop&upscale=false" 
