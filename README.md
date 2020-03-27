@@ -9,7 +9,7 @@
     <img height="180" src="./template/notebook-home-screen.png" />
 </p>
 
-<br />
+<br /><br />
 
 <p align="center">
 	<a href="https://www.w3schools.com/html/">
@@ -57,6 +57,8 @@
 		/>
 	</a>
 </p>
+
+<br /><br />
 
 ##### Projeto final do segundo ano do Técnico em Informática Integrado ao Ensino Médio (<a href="http://araquari.ifc.edu.br/">Instituto Federal Catarinense - Campus Araquari</a>).
 
