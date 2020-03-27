@@ -1,13 +1,11 @@
 <p align="center">
     <img 
-         height="250" 
+         height="200" 
          src="https://user-images.githubusercontent.com/48127848/69908506-b7ba1000-13c9-11ea-8627-6bfc721394fa.png" 
          alt="Logo MiauCãoce se Puder" 
          title="Logo MiauCãoce se Puder" 
     />
 </p>
-
-<h1 align="center">MiauCãoce se Puder</h1>
 
 <p align="center">
 	<a href="https://www.w3schools.com/html/">
@@ -15,7 +13,7 @@
 			src="https://icons-for-free.com/iconfiles/png/512/award+badge+html+html5+reward+trophy+icon-1320184828635374270.png"
 			alt="HTML5 logo" 
 			title="HTML5" 
-			width="50" height="50" 
+			width="30" height="30" 
 		/>
 	</a>
 	<a href="https://www.w3schools.com/css/">
@@ -23,7 +21,7 @@
 			src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" 
 			alt="CSS3 logo" 
 			title="CSS3" 
-			width="50" height="50" 
+			width="30" height="30" 
 		/>
 	</a>
 	<a href="https://www.w3schools.com/js/default.asp">
@@ -31,19 +29,15 @@
 			src="https://cdn.iconscout.com/icon/free/png-256/javascript-24-1174950.png" 
 			alt="JavaScript logo"
 			title="JavaScript" 
-			width="50" height="50" 
+			width="30" height="30" 
 		/>
 	</a>
-	<p align="center">FRONT-END</p>
-</p>
-
-<p align="center">
 	<a href="https://www.php.net/docs.php">
 		<img 
 			src="http://pngimg.com/uploads/php/php_PNG27.png" 
 			alt="PHP logo" 
 			title="PHP" 
-			width="60" height="60" 
+			width="40" height="40" 
 		/>
 	</a>
 	<a href="https://dev.mysql.com/doc/">
@@ -51,10 +45,9 @@
 			src="https://d2.alternativeto.net/dist/icons/mysql-community-edition_155326.png?width=128&height=128&mode=crop&upscale=false" 
 			alt="MySQL logo" 
 			title="MySQL" 
-			width="60" height="60" 
+			width="40" height="40" 
 		/>
 	</a>
-	<p align="center">BACK-END</p>
 </p>
 
 <br />
