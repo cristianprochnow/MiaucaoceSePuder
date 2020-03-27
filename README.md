@@ -57,6 +57,10 @@
 	<p align="center">BACK-END</p>
 </p>
 
+<br />
+
+<img align="center" height="200" src="./template/notebook-home-screen.png" />
+
 ##### Projeto final do segundo ano do Técnico em Informática Integrado ao Ensino Médio (<a href="http://araquari.ifc.edu.br/">Instituto Federal Catarinense - Campus Araquari</a>).
 
 ## Autores
