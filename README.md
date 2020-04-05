@@ -64,7 +64,7 @@
 
 ## Sobre 📖
 
-Com este projeto, visamos apenas proporcionar um portal que possibilite uma comunicação facilitada entre diversos usuários. Com isso, um número cada vez maior de animais abandonados serão tirados da rua, e nossos amigos mascotes finalmente terão um lar. Qualquer dúvida acerca do projeto, acesse a documentação <a href="./documentation/MiauCãoce se Puder.pdf">aqui</a>.
+Com este projeto, visamos apenas proporcionar um portal que possibilite uma comunicação facilitada entre diversos usuários que têm seus mascotes como desaparecidos, ou também, que acabaram de encontrar algum animalzinho perdido pela rua e tomou a atitude de precurar o dono do mesmo. Com isso, um número cada vez maior de animais abandonados serão tirados da rua, e nossos amigos mascotes finalmente terão um lar. Qualquer dúvida acerca do projeto, acesse a documentação <a href="./documentation/MiauCãoce se Puder.pdf">aqui</a>.
 
 ## Autores⚙️
 
