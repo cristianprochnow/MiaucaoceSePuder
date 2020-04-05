@@ -29,7 +29,7 @@
 
 <br />
 
-<p align="center">Projeto final do segundo ano do Técnico em Informática Integrado ao Ensino Médio (<a href="http://araquari.ifc.edu.br/">Instituto Federal Catarinense - Campus Araquari</a>).</p>
+<p align="center"><strong>Projeto final do segundo ano do Técnico em Informática Integrado ao Ensino Médio (<a href="http://araquari.ifc.edu.br/">Instituto Federal Catarinense - Campus Araquari</a>).</strong></p>
 
 ## Conteúdos 📋
 
