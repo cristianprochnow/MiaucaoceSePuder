@@ -3,13 +3,50 @@
          height="200" 
          src="https://user-images.githubusercontent.com/48127848/69908506-b7ba1000-13c9-11ea-8627-6bfc721394fa.png" 
          alt="Logo MiauCãoce se Puder" 
-         title="Logo MiauCãoce se Puder" 
-    />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img height="180" src="./template/notebook-home-screen.png" />
+         title="Logo MiauCãoce se Puder"
 </p>
 
 <br />
+
+<h2 align="center">MiauCãoce se Puder</h2>
+
+  <p align="center">
+    Site para resgate e adoção de animais perdidos.
+    <br />
+    <a href="./documentation/MiauCãoce se Puder.pdf"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/cristianprochnow/MiaucaoceSePuder/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/cristianprochnow/MiaucaoceSePuder/issues">Request Feature</a>
+  </p>
+
+  <p align="center">
+	<img src="https://img.shields.io/github/license/cristianprochnow/MiaucaoceSePuder" />
+	<img src="https://img.shields.io/github/languages/code-size/cristianprochnow/MiaucaoceSePuder" />
+	<img src="https://img.shields.io/github/repo-size/cristianprochnow/MiaucaoceSePuder" />
+  </p>
+
+<br />
+
+<p align="center">Projeto final do segundo ano do Técnico em Informática Integrado ao Ensino Médio (<a href="http://araquari.ifc.edu.br/">Instituto Federal Catarinense - Campus Araquari</a>).</p>
+
+## Conteúdos 📋
+
+* [Sobre](#sobre)
+* [Tecnologias](#tecnologias)
+* [Getting Started](#getting-started)
+	* [Pré-requisitos](#pre-requisitos)
+	* [Instalação](#instalacao)
+* [Autores](#autores)
+
+## Sobre 📖
+
+<p align="center"><img height="180" src="./template/notebook-home-screen.png" /></p>
+
+Com este projeto, visamos apenas proporcionar um portal que possibilite uma comunicação facilitada entre diversos usuários que têm seus mascotes como desaparecidos, ou também, que acabaram de encontrar algum animalzinho perdido pela rua e tomou a atitude de precurar o dono do mesmo. Com isso, um número cada vez maior de animais abandonados serão tirados da rua, e nossos amigos mascotes finalmente terão um lar. Qualquer dúvida acerca do projeto, acesse a documentação <a href="./documentation/MiauCãoce se Puder.pdf">aqui</a>.
+
+## Tecnologias ⚡
 
 <p align="center">
 	<a href="https://www.w3schools.com/html/">
@@ -58,16 +95,41 @@
 	</a>
 </p>
 
-<br />
+## Getting Started 🏁
 
-##### Projeto final do segundo ano do Técnico em Informática Integrado ao Ensino Médio (<a href="http://araquari.ifc.edu.br/">Instituto Federal Catarinense - Campus Araquari</a>).
+### Pré-requisitos
 
-## Sobre 📖
+1. Ambiente PHP e MySQL instalado
+2. Servidor Apache configurado
+3. Qualquer navegador web
 
-Com este projeto, visamos apenas proporcionar um portal que possibilite uma comunicação facilitada entre diversos usuários que têm seus mascotes como desaparecidos, ou também, que acabaram de encontrar algum animalzinho perdido pela rua e tomou a atitude de precurar o dono do mesmo. Com isso, um número cada vez maior de animais abandonados serão tirados da rua, e nossos amigos mascotes finalmente terão um lar. Qualquer dúvida acerca do projeto, acesse a documentação <a href="./documentation/MiauCãoce se Puder.pdf">aqui</a>.
+### Instalação 
+
+**Windows ou MacOS**
+
+1. Instale o [XAMPP](https://www.apachefriends.org/)
+2. Inicialize os servidores Apache e MySQL
+3. Entre na pasta `htdocs` (provavelmente localizada em `C:\xampp\htdocs`), 
+4. Execute o comando `git clone https://github.com/cristianprochnow/MiaucaoceSePuder.git`
+5. E então vá até o navegador e execute a URL `localhost/MiaucaoceSePuder`
+
+**Linux**
+
+1. Siga este [tutorial de comandos](https://gist.github.com/cristianprochnow/c58d6d85855f69fb3bbb7112aace89b3)
+2. E então vá até o navegador e execute a URL `localhost/MiaucaoceSePuder`
+
+> Não esqueça de mudar o [arquivo de configuração do banco de dados](./settings/config.php) com as informações respectivas às do seu servidor local.
 
 ## Autores⚙️
 
 1. <a href="https://github.com/AlemaoProchnow">Cristian Prochnow</a>
 2. <a href="https://github.com/UnbreakableEdu">Eduardo Onofre</a>
 3. <a href="https://github.com/OthavioMartell">Othávio Martello</a>
+
+## Contato 📇
+
+Link do repositório: https://github.com/cristianprochnow/MiaucaoceSePuder
+
+## Licença 🧾
+
+Distribuído sob a MIT License. Para mais informações, acesse `LICENSE`.
