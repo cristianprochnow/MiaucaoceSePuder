@@ -38,13 +38,19 @@
 	* [Instalação](#instalacao)
 * [Autores](#autores)
 
+<br />
+
 ## Sobre 📖
 
 <p align="center"><img height="180" src="./template/notebook-home-screen.png" /></p>
 
 <strong>Projeto final do segundo ano do Técnico em Informática Integrado ao Ensino Médio (<a href="http://araquari.ifc.edu.br/">Instituto Federal Catarinense - Campus Araquari</a>).</strong>
 
+<br />
+
 Com este projeto, visamos apenas proporcionar um portal que possibilite uma comunicação facilitada entre diversos usuários que têm seus mascotes como desaparecidos, ou também, que acabaram de encontrar algum animalzinho perdido pela rua e tomou a atitude de precurar o dono do mesmo. Com isso, um número cada vez maior de animais abandonados serão tirados da rua, e nossos amigos mascotes finalmente terão um lar. Qualquer dúvida acerca do projeto, acesse a documentação <a href="./documentation/MiauCãoce se Puder.pdf">aqui</a>.
+
+<br />
 
 ## Tecnologias ⚡
 
@@ -95,6 +101,8 @@ Com este projeto, visamos apenas proporcionar um portal que possibilite uma comu
 	</a>
 </p>
 
+<br />
+
 ## Getting Started 🏁
 
 ### Pré-requisitos
@@ -120,15 +128,21 @@ Com este projeto, visamos apenas proporcionar um portal que possibilite uma comu
 
 > Não esqueça de mudar o [arquivo de configuração do banco de dados](./settings/config.php) com as informações respectivas às do seu servidor local.
 
+<br />
+
 ## Autores⚙️
 
 1. <a href="https://github.com/AlemaoProchnow">Cristian Prochnow</a>
 2. <a href="https://github.com/UnbreakableEdu">Eduardo Onofre</a>
 3. <a href="https://github.com/OthavioMartell">Othávio Martello</a>
 
+<br />
+
 ## Contato 📇
 
 Link do repositório: https://github.com/cristianprochnow/MiaucaoceSePuder
+
+<br />
 
 ## Licença 🧾
 
