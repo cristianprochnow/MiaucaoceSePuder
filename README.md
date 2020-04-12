@@ -29,7 +29,7 @@
 
 <br />
 
-## Conteúdos 📋
+<h2 id="conteúdos">Conteúdos</h2>
 
 * [Sobre](#sobre)
 * [Tecnologias](#tecnologias)
@@ -37,6 +37,8 @@
 	* [Pré-requisitos](#pre-requisitos)
 	* [Instalação](#instalacao)
 * [Autores](#autores)
+* [Contato](#contato)
+* [Licença](#licenca)
 
 <br />
 
