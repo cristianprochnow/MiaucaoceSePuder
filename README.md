@@ -40,7 +40,7 @@
 
 <br />
 
-## Sobre 📖
+<h2 id="sobre">Sobre</h2>
 
 <p align="center"><img src="./template/notebook-home-screen.png" /></p>
 
@@ -52,7 +52,7 @@ Com este projeto, visamos apenas proporcionar um portal que possibilite uma comu
 
 <br />
 
-## Tecnologias ⚡
+<h2 id="tecnologias">Tecnologias</h2>
 
 <p align="center">
 	<a href="https://www.w3schools.com/html/">
@@ -103,15 +103,15 @@ Com este projeto, visamos apenas proporcionar um portal que possibilite uma comu
 
 <br />
 
-## Getting Started 🏁
+<h2 id="getting-started">Getting Started</h2>
 
-### Pré-requisitos
+<h3 id="pre-requisitos">Pré-requisitos</h3>
 
 1. Ambiente PHP e MySQL instalado
 2. Servidor Apache configurado
 3. Qualquer navegador web
 
-### Instalação 
+<h3 id="instalacao">Instalação</h3>
 
 **Windows ou MacOS**
 
@@ -130,7 +130,7 @@ Com este projeto, visamos apenas proporcionar um portal que possibilite uma comu
 
 <br />
 
-## Autores⚙️
+<h2 id="autores">Autores</h2>
 
 1. <a href="https://github.com/AlemaoProchnow">Cristian Prochnow</a>
 2. <a href="https://github.com/UnbreakableEdu">Eduardo Onofre</a>
@@ -138,12 +138,12 @@ Com este projeto, visamos apenas proporcionar um portal que possibilite uma comu
 
 <br />
 
-## Contato 📇
+<h2 id="contato">Contato</h2>
 
 Link do repositório: https://github.com/cristianprochnow/MiaucaoceSePuder
 
 <br />
 
-## Licença 🧾
+<h2 id="licenca">Licença</h2>
 
 Distribuído sob a MIT License. Para mais informações, acesse `LICENSE`.
