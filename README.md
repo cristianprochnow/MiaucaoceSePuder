@@ -150,7 +150,8 @@ Link do repositório: https://github.com/cristianprochnow/MiaucaoceSePuder
 
 <h2 id="licenca">Licença</h2>
 
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat&logo=linkedin&colorB=0077b4
-[linkedin-url]: www.linkedin.com/in/cristianprochnow
-
 Distribuído sob a MIT License. Para mais informações, acesse `LICENSE`.
+
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat&logo=linkedin&colorB=0077b4
+[linkedin-url]: https://www.linkedin.com/in/cristianprochnow
