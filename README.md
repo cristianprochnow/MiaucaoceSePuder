@@ -142,10 +142,15 @@ Com este projeto, visamos apenas proporcionar um portal que possibilite uma comu
 
 <h2 id="contato">Contato</h2>
 
+Cristian Prochnow - [![LinkedIn][linkedin-shield]][linkedin-url]
+
 Link do repositório: https://github.com/cristianprochnow/MiaucaoceSePuder
 
 <br />
 
 <h2 id="licenca">Licença</h2>
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat&logo=linkedin&colorB=0077b4
+[linkedin-url]: www.linkedin.com/in/cristianprochnow
 
 Distribuído sob a MIT License. Para mais informações, acesse `LICENSE`.
