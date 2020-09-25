@@ -36,7 +36,6 @@
 * [Getting Started](#getting-started)
 	* [Pré-requisitos](#pre-requisitos)
 	* [Instalação](#instalacao)
-* [Autores](#autores)
 * [Contato](#contato)
 * [Licença](#licenca)
 
@@ -129,14 +128,6 @@ Com este projeto, visamos apenas proporcionar um portal que possibilite uma comu
 2. E então vá até o navegador e execute a URL `localhost/MiaucaoceSePuder`
 
 > Não esqueça de mudar o [arquivo de configuração do banco de dados](./settings/config.php) com as informações respectivas às do seu servidor local.
-
-<br />
-
-<h2 id="autores">Autores</h2>
-
-1. <a href="https://github.com/AlemaoProchnow">Cristian Prochnow</a>
-2. <a href="https://github.com/UnbreakableEdu">Eduardo Onofre</a>
-3. <a href="https://github.com/OthavioMartell">Othávio Martello</a>
 
 <br />
 
