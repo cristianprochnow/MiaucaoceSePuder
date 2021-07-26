@@ -20,11 +20,58 @@
     ·
     <a href="https://github.com/cristianprochnow/MiaucaoceSePuder/issues">Request Feature</a>
   </p>
-
+  
   <p align="center">
 	<img src="https://img.shields.io/github/license/cristianprochnow/MiaucaoceSePuder" />
 	<img src="https://img.shields.io/github/languages/code-size/cristianprochnow/MiaucaoceSePuder" />
 	<img src="https://img.shields.io/github/repo-size/cristianprochnow/MiaucaoceSePuder" />
+  </p>
+
+  <p align="center">
+	<a href="https://www.w3schools.com/html/">
+		<img 
+			src="https://icons-for-free.com/iconfiles/png/512/award+badge+html+html5+reward+trophy+icon-1320184828635374270.png"
+			alt="HTML5 logo" 
+			title="HTML5" 
+			width="30" height="30" 
+		/>
+	</a>
+	&nbsp;
+	<a href="https://www.w3schools.com/css/">
+		<img 
+			src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" 
+			alt="CSS3 logo" 
+			title="CSS3" 
+			width="30" height="30" 
+		/>
+	</a>
+	&nbsp;
+	<a href="https://www.w3schools.com/js/default.asp">
+		<img 
+			src="https://cdn.iconscout.com/icon/free/png-256/javascript-24-1174950.png" 
+			alt="JavaScript logo"
+			title="JavaScript" 
+			width="30" height="30" 
+		/>
+	</a>
+	&nbsp;
+	<a href="https://www.php.net/docs.php">
+		<img 
+			src="http://pngimg.com/uploads/php/php_PNG27.png" 
+			alt="PHP logo" 
+			title="PHP" 
+			width="40" height="40" 
+		/>
+	</a>
+	&nbsp;
+	<a href="https://dev.mysql.com/doc/">
+		<img 
+			src="https://d2.alternativeto.net/dist/icons/mysql-community-edition_155326.png?width=128&height=128&mode=crop&upscale=false" 
+			alt="MySQL logo" 
+			title="MySQL" 
+			width="40" height="40" 
+		/>
+	</a>
   </p>
 
 <br />
@@ -55,7 +102,7 @@ Com este projeto, visamos apenas proporcionar um portal que possibilite uma comu
 
 <h2 id="tecnologias">Tecnologias</h2>
 
-<p align="center">
+<p>
 	<a href="https://www.w3schools.com/html/">
 		<img 
 			src="https://icons-for-free.com/iconfiles/png/512/award+badge+html+html5+reward+trophy+icon-1320184828635374270.png"
