@@ -74,8 +74,6 @@
 	</a>
   </p>
 
-<br />
-
 <h2 id="conteúdos">Conteúdos</h2>
 
 * [Sobre](#sobre)
@@ -86,19 +84,13 @@
 * [Contato](#contato)
 * [Licença](#licenca)
 
-<br />
-
 <h2 id="sobre">Sobre</h2>
 
 <p align="center"><img src="./template/notebook-home-screen.png" /></p>
 
 <strong>Projeto final do segundo ano do Técnico em Informática Integrado ao Ensino Médio (<a href="http://araquari.ifc.edu.br/">Instituto Federal Catarinense - Campus Araquari</a>).</strong>
 
-<br />
-
 Com este projeto, visamos apenas proporcionar um portal que possibilite uma comunicação facilitada entre diversos usuários que têm seus mascotes como desaparecidos, ou também, que acabaram de encontrar algum animalzinho perdido pela rua e tomou a atitude de precurar o dono do mesmo. Com isso, um número cada vez maior de animais abandonados serão tirados da rua, e nossos amigos mascotes finalmente terão um lar. Qualquer dúvida acerca do projeto, acesse a documentação <a href="./documentation/MiauCãoce se Puder.pdf">aqui</a>.
-
-<br />
 
 <h2 id="tecnologias">Tecnologias</h2>
 
@@ -149,8 +141,6 @@ Com este projeto, visamos apenas proporcionar um portal que possibilite uma comu
 	</a>
 </p>
 
-<br />
-
 <h2 id="getting-started">Getting Started</h2>
 
 <h3 id="pre-requisitos">Pré-requisitos</h3>
@@ -176,15 +166,11 @@ Com este projeto, visamos apenas proporcionar um portal que possibilite uma comu
 
 > Não esqueça de mudar o [arquivo de configuração do banco de dados](./settings/config.php) com as informações respectivas às do seu servidor local.
 
-<br />
-
 <h2 id="contato">Contato</h2>
 
 Cristian Prochnow - [![LinkedIn][linkedin-shield]][linkedin-url]
 
 Link do repositório: https://github.com/cristianprochnow/MiaucaoceSePuder
-
-<br />
 
 <h2 id="licenca">Licença</h2>
 
